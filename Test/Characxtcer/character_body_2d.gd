@@ -26,3 +26,14 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _process(delta):
+	if velocity.x < 0.1 and velocity.x > -0.1:
+		$AnimatedSprite2D.play("default")
+	elif velocity.x < -0.1:
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play("walk")
+	elif velocity.x > 0.1:
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("walk")
+		
