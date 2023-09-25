@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Light.gd" id="1_hb8bm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_opwgi"]
-radius = 55.0364
+radius = 115.07
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_hb8bm")
