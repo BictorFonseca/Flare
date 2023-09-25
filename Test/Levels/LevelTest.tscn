@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0wyx0xxi24oy" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="1_tbta5"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_tk1df"]
-[ext_resource type="PackedScene" uid="uid://csnr3oaruejl0" path="res://Characxtcer/character_body_2d.tscn" id="2_2s02q"]
+[ext_resource type="PackedScene" uid="uid://csnr3oaruejl0" path="res://Character/character_body_2d.tscn" id="2_2s02q"]
 [ext_resource type="Script" path="res://Levels/TileMap.gd" id="2_lglv8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqoro"]
