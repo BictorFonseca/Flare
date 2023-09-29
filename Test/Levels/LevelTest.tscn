@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhjtyfl0mdxxu"]
+[gd_scene load_steps=18 format=3 uid="uid://dhjtyfl0mdxxu"]
 
 [ext_resource type="Texture2D" uid="uid://c0wyx0xxi24oy" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="1_tbta5"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_tk1df"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dr3gvpipv4r8e" path="res://PixelFantasy_Caves_1.0/ladders.png" id="3_lroc2"]
 [ext_resource type="Texture2D" uid="uid://beg8p6wg00rjh" path="res://PixelFantasy_Caves_1.0/Assets.png" id="4_2audg"]
 [ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="6_uo21f"]
+[ext_resource type="Script" path="res://Levels/StaticBody2D.gd" id="8_6n7mk"]
+[ext_resource type="Texture2D" uid="uid://cw3bwhgaw7h1y" path="res://icon.svg" id="9_n7a2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eut3p"]
 texture = ExtResource("3_lroc2")
@@ -5326,6 +5328,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_eqoro")
 sources/1 = SubResource("TileSetAtlasSource_hw7mu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8jne"]
+size = Vector2(120, 20)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Background3" type="Sprite2D" parent="."]
@@ -5352,3 +5357,16 @@ position = Vector2(447, 499)
 
 [node name="Ladder2" parent="." instance=ExtResource("6_uo21f")]
 position = Vector2(303, 364)
+
+[node name="Platform1" type="StaticBody2D" parent="."]
+position = Vector2(630, 444)
+script = ExtResource("8_6n7mk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform1"]
+position = Vector2(0, -2.5)
+scale = Vector2(1, 0.117188)
+texture = ExtResource("9_n7a2x")
+
+[node name="Platform1" type="CollisionShape2D" parent="Platform1"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_k8jne")

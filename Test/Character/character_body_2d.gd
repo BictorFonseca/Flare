@@ -12,7 +12,6 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	print(on_ladder)
 	if on_ladder==true:
 		if Input.is_action_pressed("jump"):
 			velocity.y=-SPEED
