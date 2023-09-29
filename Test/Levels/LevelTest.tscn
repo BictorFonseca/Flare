@@ -5331,8 +5331,8 @@ size = Vector2(120, 20)
 [node name="Node2D" type="Node2D"]
 
 [node name="Background3" type="Sprite2D" parent="."]
-position = Vector2(576.5, 324)
-scale = Vector2(1.20104, 1.34583)
+position = Vector2(576.5, 360.5)
+scale = Vector2(1.20104, 1.49791)
 texture = ExtResource("1_tk1df")
 
 [node name="Sludge" parent="." instance=ExtResource("2_6o2a0")]
