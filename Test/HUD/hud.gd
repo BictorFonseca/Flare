@@ -4,7 +4,8 @@ var time = 600
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$GameTimer.start()
-	$TimerLabel.text = '600s'
+	$TimerLabel.text = '10mins 0s left'
+	$TimerAnimation.play("default")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -21,14 +22,20 @@ func _process(delta):
 #here, we update the number for the time
 
 func updateTime(timeChange):
-	var changed = (str(timeChange) + "s")
-	print(changed)
-	$TimerLabel.text = changed
+	if timeChange < 0:
+		$TimerLabel.text = "Game Over"
+		$TimerAnimation.play("end")
+	else:
+		var mins = timeChange / 60
+		var secs = timeChange % 60
+		var changed = (str(mins) + "mins " + str(secs) + "s left")
+		#print(changed)
+		$TimerLabel.text = changed
 	
 	
 
 
 func _on_game_timer_timeout():
-	print('timeout' + str(time))
+	#print('timeout' + str(time))
 	time -= 1
 	self.updateTime(time)
