@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwm58swgih1si"]
+
+[ext_resource type="Script" path="res://Levels/StaticBody2D.gd" id="1_lv06l"]
+[ext_resource type="Texture2D" uid="uid://cw3bwhgaw7h1y" path="res://icon.svg" id="2_r0vu3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8jne"]
+size = Vector2(120, 20)
+
+[node name="Platform1" type="StaticBody2D"]
+position = Vector2(630, 444)
+script = ExtResource("1_lv06l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2.5)
+scale = Vector2(1, 0.117188)
+texture = ExtResource("2_r0vu3")
+
+[node name="Platform1" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_k8jne")

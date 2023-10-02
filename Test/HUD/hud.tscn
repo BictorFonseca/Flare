@@ -37,12 +37,12 @@ animations = [{
 script = ExtResource("1_jjqvf")
 
 [node name="Inventory" type="Sprite2D" parent="."]
-position = Vector2(576, 600)
+position = Vector2(576, 680)
 scale = Vector2(0.77, 0.65)
 texture = ExtResource("1_jtmo7")
 
 [node name="Selector" type="Sprite2D" parent="."]
-position = Vector2(460.25, 599.901)
+position = Vector2(460.25, 680)
 scale = Vector2(0.629167, 0.534979)
 texture = ExtResource("2_3gjbi")
 

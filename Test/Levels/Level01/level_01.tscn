@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=12 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Texture2D" uid="uid://c0wyx0xxi24oy" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="2_4b8wu"]
 [ext_resource type="Texture2D" uid="uid://dr3gvpipv4r8e" path="res://PixelFantasy_Caves_1.0/ladders.png" id="3_kra4b"]
+[ext_resource type="PackedScene" uid="uid://csnr3oaruejl0" path="res://Character/character_body_2d.tscn" id="4_ru1ff"]
+[ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="5_yqdpj"]
+[ext_resource type="PackedScene" uid="uid://dwm58swgih1si" path="res://Objects/platform_1.tscn" id="6_hbpv7"]
+[ext_resource type="PackedScene" uid="uid://dhkhdb4ei2qdu" path="res://Objects/sludge.tscn" id="7_c3hgq"]
+[ext_resource type="PackedScene" uid="uid://7u4lcflylb5g" path="res://HUD/hud.tscn" id="8_umpj8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sq36r"]
 texture = ExtResource("2_4b8wu")
@@ -3362,9 +3367,25 @@ offset_right = 309.0
 offset_bottom = 247.0
 text = "TODO: lever"
 
-[node name="TODO_07" type="RichTextLabel" parent="."]
-offset_left = 422.0
-offset_top = 126.0
-offset_right = 660.0
-offset_bottom = 197.0
-text = "TODO: platform"
+[node name="player" parent="." instance=ExtResource("4_ru1ff")]
+position = Vector2(93, 46)
+
+[node name="Ladder" parent="." instance=ExtResource("5_yqdpj")]
+position = Vector2(575, 500)
+
+[node name="Platform1" parent="." instance=ExtResource("6_hbpv7")]
+position = Vector2(857, 528)
+
+[node name="Ladder2" parent="." instance=ExtResource("5_yqdpj")]
+position = Vector2(462, 362)
+
+[node name="Ladder3" parent="." instance=ExtResource("5_yqdpj")]
+position = Vector2(702, 210)
+
+[node name="Platform2" parent="." instance=ExtResource("6_hbpv7")]
+position = Vector2(536, 167)
+
+[node name="Sludge" parent="." instance=ExtResource("7_c3hgq")]
+position = Vector2(794, 552)
+
+[node name="HUD" parent="." instance=ExtResource("8_umpj8")]

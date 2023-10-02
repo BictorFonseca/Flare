@@ -9,10 +9,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("select_1"):
+	if Input.is_action_just_pressed("select_2"):
 		if on_off==false:
 			on_off=true
 		else:
+			on_off=false
+	elif Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_3") or Input.is_action_just_pressed("select_4"):
+		if on_off==true:
 			on_off=false
 	if on_off:
 		self.visible=true
