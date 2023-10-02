@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgfc7vlp1jpjt"]
+
+[ext_resource type="Texture2D" uid="uid://bdcx8foocnls1" path="res://Objects/writing_on_wall_art.png" id="1_72mkq"]
+[ext_resource type="Script" path="res://Objects/wall_writing.gd" id="1_808cd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du1ug"]
+size = Vector2(25, 22)
+
+[node name="WallWriting" type="Area2D"]
+script = ExtResource("1_808cd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19.5, 18)
+shape = SubResource("RectangleShape2D_du1ug")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(19.5, 17.5)
+scale = Vector2(0.27, 0.21)
+texture = ExtResource("1_72mkq")
