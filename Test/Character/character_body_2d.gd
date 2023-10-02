@@ -15,6 +15,7 @@ func _physics_process(delta):
 	if on_ladder==true:
 		if Input.is_action_pressed("jump"):
 			velocity.y=-speed
+			$LadderSFX.play()
 		elif Input.is_action_pressed("down"):
 			velocity.y=speed
 	# Handle Jump.
@@ -26,6 +27,7 @@ func _physics_process(delta):
 	var direction = Input.get_axis("run_left", "run_right")
 	if direction:
 		velocity.x = direction * speed
+		$SteosSFX.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
