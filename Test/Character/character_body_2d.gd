@@ -27,9 +27,13 @@ func _physics_process(delta):
 	var direction = Input.get_axis("run_left", "run_right")
 	if direction:
 		velocity.x = direction * speed
-		$SteosSFX.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+	
+	#plays sound once it's pressed, but does not loop it 
+	#thing we need to do a .mp3 instead of a .wav so that we have the abiliyy to loop it 
+	#if Input.is_action_just_pressed("run_left") or Input.is_action_just_pressed("run_right"):
+	#	$SteosSFX.play()
 
 	move_and_slide()
 

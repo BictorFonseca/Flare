@@ -6,6 +6,7 @@ func _ready():
 	$GameTimer.start()
 	$TimerLabel.text = '10mins 0s left'
 	$TimerAnimation.play("default")
+	$BGMusic.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

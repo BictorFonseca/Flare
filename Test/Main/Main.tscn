@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://curbnaklfty3"]
+[gd_scene load_steps=4 format=3 uid="uid://curbnaklfty3"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_7g0cg"]
 [ext_resource type="PackedScene" uid="uid://7u4lcflylb5g" path="res://HUD/hud.tscn" id="2_n1fde"]
+[ext_resource type="AudioStream" uid="uid://dto68sxnimjov" path="res://Main/Background Music/Music.mp3" id="3_xugnr"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7g0cg")
 
 [node name="HUD" parent="." instance=ExtResource("2_n1fde")]
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xugnr")

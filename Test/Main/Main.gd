@@ -8,6 +8,8 @@ var player_scene = preload("res://Character/character_body_2d.tscn")
 func _ready():
 	_begin_level_01()
 	$HUD._ready()
+	#bg music needs to be implemented here once we get the main working
+	#$BGMusic.play()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
