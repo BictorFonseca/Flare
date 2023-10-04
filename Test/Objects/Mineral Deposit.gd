@@ -9,4 +9,4 @@ func _process(delta):
 	pass
 
 func _on_glow_timer_timeout():
-	$PointLight2D2.energy = randf_range(2.0, 2.3)
+	$PointLight2D2.energy = randf_range(3.0, 3.3)

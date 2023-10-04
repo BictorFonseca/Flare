@@ -21,6 +21,7 @@ energy = 1.46
 shadow_enabled = true
 shadow_item_cull_mask = 3
 texture = ExtResource("1_fu48w")
+texture_scale = 1.5
 
 [node name="GlowTimer" type="Timer" parent="."]
 wait_time = 0.25

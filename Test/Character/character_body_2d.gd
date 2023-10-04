@@ -49,4 +49,4 @@ func _process(delta):
 		
 
 func _on_timer_timeout():
-	$PointLight2D.energy = randf_range(1.5, 1.7)
+	$PointLight2D.energy = randf_range(1.1, 1.4)
