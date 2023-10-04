@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://do85w7pygcigs"]
+
+[ext_resource type="Script" path="res://Levels/Gate1.gd" id="1_ohbhw"]
+[ext_resource type="Texture2D" uid="uid://cjwyy6d6pea88" path="res://PixelFantasy_Caves_1.0/GateArtTest.PNG" id="2_gk3i0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p56ug"]
+size = Vector2(25, 116.5)
+
+[node name="Gate" type="StaticBody2D"]
+position = Vector2(-6, 5)
+script = ExtResource("1_ohbhw")
+metadata/_edit_group_ = true
+
+[node name="GateArt" type="Sprite2D" parent="."]
+position = Vector2(751, 225.5)
+scale = Vector2(0.682926, 0.323204)
+texture = ExtResource("2_gk3i0")
+
+[node name="GateCol" type="CollisionShape2D" parent="."]
+position = Vector2(750.5, 224.25)
+shape = SubResource("RectangleShape2D_p56ug")

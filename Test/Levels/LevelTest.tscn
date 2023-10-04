@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dhjtyfl0mdxxu"]
+[gd_scene load_steps=20 format=3 uid="uid://dhjtyfl0mdxxu"]
 
 [ext_resource type="Texture2D" uid="uid://c0wyx0xxi24oy" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="1_tbta5"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_tk1df"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://beg8p6wg00rjh" path="res://PixelFantasy_Caves_1.0/Assets.png" id="4_2audg"]
 [ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="6_uo21f"]
 [ext_resource type="PackedScene" uid="uid://dwm58swgih1si" path="res://Objects/platform_1.tscn" id="9_mjun5"]
+[ext_resource type="PackedScene" uid="uid://ca6kkvuq17fim" path="res://Objects/lever.tscn" id="10_4140y"]
+[ext_resource type="Script" path="res://Objects/lever.gd" id="11_ru06w"]
+[ext_resource type="PackedScene" uid="uid://do85w7pygcigs" path="res://Objects/gate.tscn" id="12_n8v67"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eut3p"]
 texture = ExtResource("3_lroc2")
@@ -5330,6 +5333,7 @@ sources/1 = SubResource("TileSetAtlasSource_hw7mu")
 position = Vector2(576.5, 360.5)
 scale = Vector2(1.20104, 1.49791)
 texture = ExtResource("1_tk1df")
+metadata/_edit_lock_ = true
 
 [node name="Sludge" parent="." instance=ExtResource("2_6o2a0")]
 position = Vector2(621, 567)
@@ -5337,7 +5341,7 @@ position = Vector2(621, 567)
 [node name="TileMap_Objects" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1edvl")
 format = 2
-layer_0/tile_data = PackedInt32Array(2228250, 3932161, 12, 2162714, 3932161, 12, 2097178, 3932161, 12, 2031642, 3932161, 12, 1966106, 3932161, 12, 1900570, 3932161, 12, 1835034, 3932161, 12, 1769498, 3932161, 12, 1638417, 3932161, 12, 1572881, 3932161, 12, 1507345, 3932161, 12, 1441809, 3932161, 12, 1376273, 3932161, 12, 1310737, 3932161, 12, 1245201, 3932161, 12, 2228253, 4063233, 12, 2162717, 4063233, 12, 2097181, 4063233, 12, 2031645, 4063233, 12, 1966109, 4063233, 12, 1900573, 4063233, 12, 1835037, 4063233, 12, 1769501, 4063233, 12, 1638420, 4063233, 12, 1572884, 4063233, 12, 1507348, 4063233, 12, 1441812, 4063233, 12, 1376276, 4063233, 12, 1310740, 4063233, 12, 1245204, 4063233, 12, 1703962, 3604481, 1, 1703963, 3604481, 1, 1703964, 3670017, 1, 1703965, 3735553, 1, 1179666, 3604481, 1, 1179667, 3670017, 1, 1179668, 3735553, 1, 2228283, 327682, 5)
+layer_0/tile_data = PackedInt32Array(2228250, 3932161, 12, 2162714, 3932161, 12, 2097178, 3932161, 12, 2031642, 3932161, 12, 1966106, 3932161, 12, 1900570, 3932161, 12, 1835034, 3932161, 12, 1769498, 3932161, 12, 1638417, 3932161, 12, 1572881, 3932161, 12, 1507345, 3932161, 12, 1441809, 3932161, 12, 1376273, 3932161, 12, 1310737, 3932161, 12, 1245201, 3932161, 12, 2228253, 4063233, 12, 2162717, 4063233, 12, 2097181, 4063233, 12, 2031645, 4063233, 12, 1966109, 4063233, 12, 1900573, 4063233, 12, 1835037, 4063233, 12, 1769501, 4063233, 12, 1638420, 4063233, 12, 1572884, 4063233, 12, 1507348, 4063233, 12, 1441812, 4063233, 12, 1376276, 4063233, 12, 1310740, 4063233, 12, 1245204, 4063233, 12, 1703962, 3604481, 1, 1703963, 3604481, 1, 1703964, 3670017, 1, 1703965, 3735553, 1, 1179666, 3604481, 1, 1179667, 3670017, 1, 1179668, 3735553, 1)
 
 [node name="TileMapLevel" type="TileMap" parent="." groups=["Environment"]]
 tile_set = SubResource("TileSet_0bpph")
@@ -5355,3 +5359,11 @@ position = Vector2(447, 499)
 position = Vector2(303, 364)
 
 [node name="Platform1" parent="." instance=ExtResource("9_mjun5")]
+
+[node name="Lever" parent="." instance=ExtResource("10_4140y")]
+position = Vector2(951, 553)
+script = ExtResource("11_ru06w")
+
+[node name="Gate" parent="." instance=ExtResource("12_n8v67")]
+
+[connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]

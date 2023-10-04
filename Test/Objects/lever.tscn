@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca6kkvuq17fim"]
+
+[ext_resource type="Texture2D" uid="uid://bxwlwpwjibesj" path="res://PixelFantasy_Caves_1.0/LeverArt.png" id="1_8i76m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lady3"]
+
+[node name="Lever" type="Area2D"]
+
+[node name="LeverBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lady3")
+
+[node name="LeverArt" type="Sprite2D" parent="."]
+texture = ExtResource("1_8i76m")

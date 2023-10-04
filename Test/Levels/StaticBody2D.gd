@@ -23,6 +23,5 @@ func _process(delta):
 	else:
 		self.visible=false
 		get_node("Platform1").set_deferred("disabled", true)
-	print(on_off)
-	pass
+	
 	pass

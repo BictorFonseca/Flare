@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://csnr3oaruejl0"]
+[gd_scene load_steps=9 format=3 uid="uid://csnr3oaruejl0"]
 
 [ext_resource type="Script" path="res://Character/character_body_2d.gd" id="1_f3a1b"]
 [ext_resource type="Texture2D" uid="uid://vneqp1owjm5s" path="res://Character/Player-1.png" id="3_8u6pf"]
 [ext_resource type="AudioStream" uid="uid://coxr33gduqw6t" path="res://Objects/woodpecker-vs-aluminum-ladder-28846.mp3" id="4_2mje3"]
 [ext_resource type="Texture2D" uid="uid://ywb54yafrrlu" path="res://Character/Player-2.png" id="4_e6q65"]
+[ext_resource type="AudioStream" uid="uid://dfce8apk8hsng" path="res://Objects/zapsplat_vehicles_bicycle_gears_lever_click_change_through_several_fast_002_79728.mp3" id="5_qavkl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55p1r"]
 size = Vector2(36, 59)
@@ -61,3 +62,7 @@ volume_db = -0.17
 stream = SubResource("AudioStreamWAV_aa3h5")
 volume_db = 1.0
 pitch_scale = 3.0
+
+[node name="SwitchSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qavkl")
+volume_db = 4.685
