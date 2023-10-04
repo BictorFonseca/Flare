@@ -47,3 +47,6 @@ func _process(delta):
 		$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play("walk")
 		
+
+func _on_timer_timeout():
+	$PointLight2D.energy = randf_range(1.5, 1.7)

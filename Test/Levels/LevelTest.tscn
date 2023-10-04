@@ -5356,7 +5356,7 @@ script = ExtResource("2_lglv8")
 position = Vector2(447, 499)
 
 [node name="Mineral Deposit" parent="." instance=ExtResource("10_nchen")]
-position = Vector2(840, 280)
+position = Vector2(840, 285)
 scale = Vector2(2, 2)
 
 [node name="Ladder2" parent="." instance=ExtResource("6_uo21f")]
