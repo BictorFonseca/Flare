@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b72vhwodq67va"]
+
+[ext_resource type="Texture2D" uid="uid://cr2py2fjpbeeh" path="res://Character/light_textured.png" id="1_e6rc6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qh2tc"]
+radius = 20.2237
+
+[node name="Mineral Deposit" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qh2tc")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+show_behind_parent = true
+color = Color(0.0588235, 0.2, 0.631373, 1)
+shadow_enabled = true
+shadow_item_cull_mask = 3
+texture = ExtResource("1_e6rc6")
