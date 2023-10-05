@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://pahyle0u6vfx"]
+
+[ext_resource type="Texture2D" uid="uid://kllybs6dqdtv" path="res://PixelFantasy_Caves_1.0/Mineral Assets/Mineral1.png" id="1_knvsb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pyxve"]
+radius = 13.0
+
+[node name="Mineral_1" type="Area2D"]
+
+[node name="Mineral1_col" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pyxve")
+
+[node name="Mineral1_art" type="Sprite2D" parent="."]
+texture = ExtResource("1_knvsb")
