@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b72vhwodq67va"]
+
+[ext_resource type="Script" path="res://Objects/Mineral Deposit.gd" id="1_11ea8"]
+[ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="1_fu48w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qh2tc"]
+radius = 20.2237
+
+[node name="Mineral Deposit" type="Node2D"]
+script = ExtResource("1_11ea8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qh2tc")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+show_behind_parent = true
+color = Color(0.0588235, 0.2, 0.631373, 1)
+energy = 1.46
+shadow_enabled = true
+shadow_item_cull_mask = 3
+texture = ExtResource("1_fu48w")
+texture_scale = 1.5
+
+[node name="GlowTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="GlowTimer" to="." method="_on_glow_timer_timeout"]

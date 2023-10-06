@@ -60,3 +60,6 @@ func _process(delta):
 		#get_node("../GateCol").set_deferred("disabled", true)
 		#get_node("../GateArt").visible=false
 		
+
+func _on_timer_timeout():
+	$PointLight2D.energy = randf_range(1.1, 1.4)
