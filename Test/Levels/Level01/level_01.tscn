@@ -4398,6 +4398,9 @@ position = Vector2(93, 46)
 position = Vector2(724, 560)
 scale = Vector2(1.3, 1.3)
 
+[node name="Gate1" parent="." instance=ExtResource("10_gvomr")]
+position = Vector2(-450, -140)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8tcoe")
 format = 2
@@ -4455,9 +4458,6 @@ position = Vector2(536, 167)
 [node name="Lever1" parent="." instance=ExtResource("9_fpgsa")]
 position = Vector2(1062, 552)
 script = ExtResource("11_f2p8i")
-
-[node name="Gate1" parent="." instance=ExtResource("10_gvomr")]
-position = Vector2(-450, -140)
 
 [node name="HUD" parent="." instance=ExtResource("8_umpj8")]
 
