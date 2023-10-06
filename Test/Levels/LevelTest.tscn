@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=21 format=3 uid="uid://dhjtyfl0mdxxu"]
-
 
 [ext_resource type="Texture2D" uid="uid://c0wyx0xxi24oy" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="1_tbta5"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_tk1df"]
@@ -11,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://beg8p6wg00rjh" path="res://PixelFantasy_Caves_1.0/Assets.png" id="4_2audg"]
 [ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="6_uo21f"]
 [ext_resource type="PackedScene" uid="uid://dwm58swgih1si" path="res://Objects/platform_1.tscn" id="9_mjun5"]
-[ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="10_nchen"]
 [ext_resource type="PackedScene" uid="uid://ca6kkvuq17fim" path="res://Objects/lever.tscn" id="10_4140y"]
+[ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="10_nchen"]
 [ext_resource type="Script" path="res://Objects/lever.gd" id="11_ru06w"]
 [ext_resource type="PackedScene" uid="uid://do85w7pygcigs" path="res://Objects/gate.tscn" id="12_n8v67"]
 
@@ -5370,8 +5368,8 @@ position = Vector2(303, 364)
 
 [node name="Platform1" parent="." instance=ExtResource("9_mjun5")]
 
-
 [node name="player" parent="." instance=ExtResource("2_2s02q")]
+
 [node name="Lever" parent="." instance=ExtResource("10_4140y")]
 position = Vector2(951, 553)
 script = ExtResource("11_ru06w")

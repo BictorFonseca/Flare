@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgfc7vlp1jpjt"]
+[gd_scene load_steps=4 format=3 uid="uid://23af2uaiygh"]
 
 [ext_resource type="Texture2D" uid="uid://bdcx8foocnls1" path="res://Objects/writing_on_wall_art.png" id="1_72mkq"]
 [ext_resource type="Script" path="res://Objects/wall_writing.gd" id="1_808cd"]

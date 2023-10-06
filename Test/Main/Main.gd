@@ -17,8 +17,12 @@ func _process(delta):
 	pass
 	
 func _begin_level_01():
-	var level = level_01_scene.instantiate()
 	var player = player_scene.instantiate()
+	var level = level_01_scene.instantiate()
 	add_child(level)
 	add_child(player)
 	player.global_position = Vector2(100, 100)
+	var modulate = CanvasModulate.new()
+	add_child(modulate)
+	modulate.color = Color(0, 0, 0)
+	print("hi")
