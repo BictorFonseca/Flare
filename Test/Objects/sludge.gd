@@ -13,11 +13,11 @@ func _process(_delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		body.speed *= .05
+		body.speed *= .025
 		body.jump_velocity = 0
 
 
 func _on_body_exited(body):
 	if body.is_in_group("Player"):
-		body.speed *= 20
+		body.speed *= 40
 		body.jump_velocity = -400
