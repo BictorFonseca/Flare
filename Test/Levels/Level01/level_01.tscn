@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=18 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Texture2D" uid="uid://c0wyx0xxi24oy" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="2_4b8wu"]
 [ext_resource type="Texture2D" uid="uid://dr3gvpipv4r8e" path="res://PixelFantasy_Caves_1.0/ladders.png" id="3_kra4b"]
-[ext_resource type="PackedScene" uid="uid://csnr3oaruejl0" path="res://Character/character_body_2d.tscn" id="4_ru1ff"]
 [ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="5_yqdpj"]
 [ext_resource type="PackedScene" uid="uid://dwm58swgih1si" path="res://Objects/platform_1.tscn" id="6_hbpv7"]
 [ext_resource type="PackedScene" uid="uid://dhkhdb4ei2qdu" path="res://Objects/sludge.tscn" id="7_c3hgq"]
@@ -4275,8 +4274,6 @@ offset_right = 309.0
 offset_bottom = 247.0
 text = "TODO: lever"
 
-[node name="player" parent="." instance=ExtResource("4_ru1ff")]
-
 [node name="Ladder" parent="." instance=ExtResource("5_yqdpj")]
 position = Vector2(575, 500)
 
@@ -4296,7 +4293,6 @@ position = Vector2(536, 167)
 position = Vector2(794, 552)
 
 [node name="Lever1" parent="." instance=ExtResource("9_fpgsa")]
-visible = false
 position = Vector2(1062, 552)
 script = ExtResource("11_f2p8i")
 
