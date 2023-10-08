@@ -3,10 +3,19 @@ var time = 600
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$GameTimer.start()
-	$TimerLabel.text = '10mins 0s left'
-	$TimerAnimation.play("default")
+	$Inventory.hide()
+	$TimerAnimation.hide()
+	$Selector.hide()
+	#$GameTimer.start()
+	#$TimerLabel.text = '10mins 0s left'
+	#$TimerAnimation.play("start")
 	$BGMusic.play()
+	$Back.hide()
+	$Movement.hide()
+	$Inventory1.hide()
+	$Inventory2.hide()
+	$Inventory3.hide()
+	$Inventory4.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -40,3 +49,36 @@ func _on_game_timer_timeout():
 	#print('timeout' + str(time))
 	time -= 1
 	self.updateTime(time)
+
+
+func _on_play_button_pressed():
+	$"Flare!".hide()
+	$Instructions.position.x = 0
+	$Instructions.position.y = 0
+	$Inventory1.show()
+	#$Instructions.theme_override_font_sizes/font_size = 20
+	$PlayButton.hide()
+	$Background.hide()
+	$Inventory.show()
+	$TimerAnimation.show()
+	$Selector.show()
+	$GameTimer.start()
+	$TimerLabel.text = '10mins 0s left'
+	$TimerAnimation.play("start")
+
+
+func _on_instructions_pressed():
+	$PlayButton.hide()
+	$Back.show()
+	$Instructions.hide()
+	$Movement.show()
+
+
+func _on_back_pressed():
+	$Back.hide()
+	if time == 600:
+		$PlayButton.show()
+	else:
+		$PlayButton.hide()
+	$Movement.hide()
+	$Instructions.show()
