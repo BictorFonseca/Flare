@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kllybs6dqdtv"
-path="res://.godot/imported/Mineral1.png-a0ba7e6f8880ae3ea6d416006d5f6609.ctex"
+uid="uid://du7vgj667o8ci"
+path="res://.godot/imported/purple_mineral_art.png-226954735910072a0ac760fe2ac7897b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PixelFantasy_Caves_1.0/Mineral Assets/Mineral1.png"
-dest_files=["res://.godot/imported/Mineral1.png-a0ba7e6f8880ae3ea6d416006d5f6609.ctex"]
+source_file="res://PixelFantasy_Caves_1.0/Mineral Assets/purple_mineral_art.png"
+dest_files=["res://.godot/imported/purple_mineral_art.png-226954735910072a0ac760fe2ac7897b.ctex"]
 
 [params]
 
