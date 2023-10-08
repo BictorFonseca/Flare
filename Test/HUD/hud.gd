@@ -7,6 +7,8 @@ func _ready():
 	$TimerLabel.text = '10mins 0s left'
 	$TimerAnimation.play("default")
 	$BGMusic.play()
+	$WallWritingLabel.hide()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -32,11 +34,16 @@ func updateTime(timeChange):
 		var changed = (str(mins) + "mins " + str(secs) + "s left")
 		#print(changed)
 		$TimerLabel.text = changed
-	
-	
 
 
 func _on_game_timer_timeout():
 	#print('timeout' + str(time))
 	time -= 1
 	self.updateTime(time)
+
+
+func _on_wall_writing_text(text):
+	if text == "show":
+		$WallWritingLabel.show()
+	elif text == "hide":
+		$WallWritingLabel.hide()
