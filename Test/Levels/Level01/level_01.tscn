@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=22 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Texture2D" uid="uid://c0wyx0xxi24oy" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="2_4b8wu"]
@@ -4370,9 +4370,13 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_sq36r")
 sources/3 = SubResource("TileSetAtlasSource_ripbc")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8mykn"]
+radius = 14.1421
+
 [node name="Level_01" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -4443,14 +4447,14 @@ text = "TODO: lever"
 [node name="Ladder" parent="." instance=ExtResource("5_yqdpj")]
 position = Vector2(575, 500)
 
-[node name="Platform1" parent="." instance=ExtResource("6_hbpv7")]
-position = Vector2(857, 528)
-
 [node name="Ladder2" parent="." instance=ExtResource("5_yqdpj")]
 position = Vector2(462, 362)
 
 [node name="Ladder3" parent="." instance=ExtResource("5_yqdpj")]
 position = Vector2(702, 210)
+
+[node name="Platform1" parent="." instance=ExtResource("6_hbpv7")]
+position = Vector2(857, 528)
 
 [node name="Platform2" parent="." instance=ExtResource("6_hbpv7")]
 position = Vector2(536, 167)
@@ -4473,6 +4477,14 @@ texture = ExtResource("13_m6s2r")
 texture_scale = 1.9
 
 [node name="Mineral Deposit" parent="." instance=ExtResource("14_xtjvk")]
-position = Vector2(1049, 138)
+position = Vector2(1048, 138)
+
+[node name="Area2ForMineral1" type="Area2D" parent="Mineral Deposit"]
+
+[node name="CollisionShape2DForMineral1" type="CollisionShape2D" parent="Mineral Deposit/Area2ForMineral1"]
+shape = SubResource("CircleShape2D_8mykn")
 
 [connection signal="body_entered" from="Lever1" to="Lever1" method="_on_body_entered"]
+[connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform1" method="_on_area_2_for_mineral_1_body_entered"]
+[connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform2" method="_on_area_2_for_mineral_1_body_entered"]
+[connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="HUD" method="_on_area_2_for_mineral_1_body_entered"]
