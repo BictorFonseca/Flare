@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwm58swgih1si"]
 
 [ext_resource type="Script" path="res://Levels/StaticBody2D.gd" id="1_lv06l"]
-[ext_resource type="Texture2D" uid="uid://cw3bwhgaw7h1y" path="res://icon.svg" id="2_r0vu3"]
+[ext_resource type="Texture2D" uid="uid://7fs3kfyagyvg" path="res://PixelFantasy_Caves_1.0/blue_platform.png" id="2_0d1ve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8jne"]
 size = Vector2(120, 20)
@@ -11,10 +11,10 @@ position = Vector2(630, 444)
 script = ExtResource("1_lv06l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -2.5)
-scale = Vector2(1, 0.117188)
-texture = ExtResource("2_r0vu3")
+position = Vector2(0.000488281, -35)
+scale = Vector2(0.0799639, 0.0592087)
+texture = ExtResource("2_0d1ve")
 
 [node name="Platform1" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0)
+position = Vector2(0, -36)
 shape = SubResource("RectangleShape2D_k8jne")
