@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=23 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Texture2D" uid="uid://c0wyx0xxi24oy" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="2_4b8wu"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://pahyle0u6vfx" path="res://Objects/mineral_1.tscn" id="12_rmlb7"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="13_m6s2r"]
 [ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="14_xtjvk"]
+[ext_resource type="Texture2D" uid="uid://6fq7de4q62rn" path="res://PixelFantasy_Caves_1.0/corpse_1.png" id="15_fsepa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs2ti"]
 texture = ExtResource("2_4b8wu")
@@ -4376,7 +4377,6 @@ radius = 14.1421
 [node name="Level_01" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -4464,6 +4464,7 @@ position = Vector2(1062, 552)
 script = ExtResource("11_f2p8i")
 
 [node name="HUD" parent="." instance=ExtResource("8_umpj8")]
+visible = false
 
 [node name="Mineral_1" parent="." instance=ExtResource("12_rmlb7")]
 visible = false
@@ -4483,6 +4484,11 @@ position = Vector2(1048, 138)
 
 [node name="CollisionShape2DForMineral1" type="CollisionShape2D" parent="Mineral Deposit/Area2ForMineral1"]
 shape = SubResource("CircleShape2D_8mykn")
+
+[node name="Skelton" type="Sprite2D" parent="."]
+position = Vector2(219, 548)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("15_fsepa")
 
 [connection signal="body_entered" from="Lever1" to="Lever1" method="_on_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform1" method="_on_area_2_for_mineral_1_body_entered"]
