@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=23 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
+[ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
 [ext_resource type="Texture2D" uid="uid://c0wyx0xxi24oy" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="2_4b8wu"]
 [ext_resource type="Texture2D" uid="uid://dr3gvpipv4r8e" path="res://PixelFantasy_Caves_1.0/ladders.png" id="3_kra4b"]
 [ext_resource type="PackedScene" uid="uid://bgfc7vlp1jpjt" path="res://Objects/wall_writing.tscn" id="4_nlurc"]
@@ -4374,19 +4375,7 @@ sources/3 = SubResource("TileSetAtlasSource_ripbc")
 radius = 14.1421
 
 [node name="Level_01" type="Node2D"]
-
-[node name="WallWritingLabel" type="Label" parent="."]
-offset_left = 741.0
-offset_top = 650.0
-offset_right = 1141.0
-offset_bottom = 710.0
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.756863, 0.113725, 0.0235294, 1)
-theme_override_fonts/font = ExtResource("14_iwolj")
-theme_override_font_sizes/font_size = 56
-text = "FOLLOW THE LIGHT"
-horizontal_alignment = 1
-vertical_alignment = 1
+script = ExtResource("1_uao53")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
@@ -4486,6 +4475,21 @@ energy = 1.58
 texture = ExtResource("13_m6s2r")
 texture_scale = 1.9
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WallWritingLabel" type="Label" parent="CanvasLayer"]
+offset_left = 741.0
+offset_top = 650.0
+offset_right = 1141.0
+offset_bottom = 710.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.756863, 0.113725, 0.0235294, 1)
+theme_override_fonts/font = ExtResource("14_iwolj")
+theme_override_font_sizes/font_size = 56
+text = "FOLLOW THE LIGHT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Mineral Deposit" parent="." instance=ExtResource("14_xtjvk")]
 position = Vector2(1048, 138)
 
@@ -4494,6 +4498,7 @@ position = Vector2(1048, 138)
 [node name="CollisionShape2DForMineral1" type="CollisionShape2D" parent="Mineral Deposit/Area2ForMineral1"]
 shape = SubResource("CircleShape2D_8mykn")
 
+[connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
 [connection signal="body_entered" from="Lever1" to="Lever1" method="_on_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform1" method="_on_area_2_for_mineral_1_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform2" method="_on_area_2_for_mineral_1_body_entered"]
