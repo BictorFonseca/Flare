@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pahyle0u6vfx"]
 
-[ext_resource type="Texture2D" uid="uid://kllybs6dqdtv" path="res://PixelFantasy_Caves_1.0/Mineral Assets/Mineral1.png" id="1_knvsb"]
+[ext_resource type="Texture2D" uid="uid://kllybs6dqdtv" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art.png" id="1_knvsb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pyxve"]
 radius = 13.0

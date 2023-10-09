@@ -1,5 +1,6 @@
 extends Node
 
+#var level_01_running = false
 var level_01_scene = preload("res://Levels/Level01/level_01.tscn")
 var player_scene = preload("res://Character/character_body_2d.tscn")
 #var hud = preload("res://HUD/hud.tscn")
@@ -8,14 +9,16 @@ var player_scene = preload("res://Character/character_body_2d.tscn")
 func _ready():
 	_begin_level_01()
 	$HUD._ready()
-	#bg music needs to be implemented here once we get the main working
-	#$BGMusic.play()
-	
+	#level_01_running = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-	
+	'''
+	if level_01_running:
+		if get_node("../level").obtained_mineral:
+			print("got it")
+	'''
+
 func _begin_level_01():
 	var level = level_01_scene.instantiate()
 	var player = player_scene.instantiate()
