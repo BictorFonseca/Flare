@@ -10,6 +10,8 @@ func _ready():
 	#$TimerLabel.text = '10mins 0s left'
 	#$TimerAnimation.play("start")
 	$BGMusic.play()
+	$WallWritingLabel.hide()
+	
 	$Back.hide()
 	$Movement.hide()
 	$Inventory1.hide()
@@ -41,8 +43,6 @@ func updateTime(timeChange):
 		var changed = (str(mins) + "mins " + str(secs) + "s left")
 		#print(changed)
 		$TimerLabel.text = changed
-	
-	
 
 
 func _on_game_timer_timeout():
@@ -51,6 +51,11 @@ func _on_game_timer_timeout():
 	self.updateTime(time)
 
 
+func _on_wall_writing_text(text):
+	if text == "show":
+		$WallWritingLabel.show()
+	elif text == "hide":
+		$WallWritingLabel.hide()
 func _on_play_button_pressed():
 	$"Flare!".hide()
 	$Instructions.position.x = 0
