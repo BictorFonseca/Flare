@@ -4378,7 +4378,6 @@ radius = 14.1421
 [node name="Level_01" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -4477,7 +4476,6 @@ position = Vector2(1062, 552)
 script = ExtResource("11_f2p8i")
 
 [node name="HUD" parent="." instance=ExtResource("8_umpj8")]
-visible = false
 
 [node name="Mineral_1" parent="." instance=ExtResource("12_rmlb7")]
 visible = false
