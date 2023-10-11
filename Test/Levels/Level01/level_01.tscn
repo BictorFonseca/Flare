@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=24 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="13_m6s2r"]
 [ext_resource type="FontFile" uid="uid://bnt7kfdusv22d" path="res://Objects/who asks satan.ttf" id="14_iwolj"]
 [ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="14_xtjvk"]
+[ext_resource type="Texture2D" uid="uid://b4hjoq5e17pno" path="res://PixelFantasy_Caves_1.0/Mineral Assets/blue_mineral_art.png" id="16_d2sj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs2ti"]
 texture = ExtResource("2_4b8wu")
@@ -4378,6 +4379,7 @@ radius = 14.1421
 script = ExtResource("1_uao53")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -4477,6 +4479,11 @@ texture_scale = 1.9
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Inventory2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(537, 680)
+scale = Vector2(1.96875, 1.65625)
+texture = ExtResource("16_d2sj1")
+
 [node name="WallWritingLabel" type="Label" parent="CanvasLayer"]
 offset_left = 741.0
 offset_top = 650.0
@@ -4500,5 +4507,6 @@ shape = SubResource("CircleShape2D_8mykn")
 
 [connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
 [connection signal="body_entered" from="Lever1" to="Lever1" method="_on_body_entered"]
+[connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="." method="_on_area_2_for_mineral_1_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform1" method="_on_area_2_for_mineral_1_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform2" method="_on_area_2_for_mineral_1_body_entered"]
