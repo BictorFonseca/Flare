@@ -9,8 +9,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var on_ladder=false
 var lever1=false
 var lever1_signal=false
-var lever2=false
-var lever2_signal=false
+#var lever2=false
+#var lever2_signal=false
 
 func _physics_process(delta):
 	# Add the gravity.
