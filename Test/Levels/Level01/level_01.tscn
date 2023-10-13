@@ -4534,7 +4534,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("18_hraba")
 
 [node name="PileBones" type="Sprite2D" parent="."]
-position = Vector2(1057, 260)
+position = Vector2(244, 404)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("19_gukoq")
 

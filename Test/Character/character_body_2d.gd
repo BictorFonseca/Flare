@@ -8,7 +8,6 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var on_ladder=false
 var on_lever=-1
-var lever1_signal=false
 var lever_list=[0,0,0,0,0]
 #var lever2=false
 #var lever2_signal=false
@@ -40,7 +39,6 @@ func _physics_process(delta):
 	#if Input.is_action_just_pressed("run_left") or Input.is_action_just_pressed("run_right"):
 	#	$SteosSFX.play()
 	if on_lever>=0 and Input.is_action_pressed("Interact"):
-		lever1_signal=true
 		lever_list[on_lever]=1
 		$SwitchSound.play()
 		

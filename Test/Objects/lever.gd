@@ -17,7 +17,6 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		get_node("../../player").on_lever=leverID
-		get_node("../../player").lever1=true
 		$Lever_Prompt.visible=true
 	pass # Replace with function body.
 
