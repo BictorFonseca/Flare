@@ -51,6 +51,7 @@ func _on_game_timer_timeout():
 
 
 func _on_play_button_pressed():
+	#print('timer should have staretd')
 	$"Flare!".hide()
 	$Instructions.position.x = 0
 	$Instructions.position.y = 0
@@ -63,7 +64,7 @@ func _on_play_button_pressed():
 	$Selector.show()
 	$GameTimer.start()
 	$TimerLabel.text = '10mins 0s left'
-	$TimerAnimation.play("start")
+	$TimerAnimation.play("default")
 
 
 func _on_instructions_pressed():
