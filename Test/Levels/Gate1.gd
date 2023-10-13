@@ -1,5 +1,8 @@
 extends StaticBody2D
 
+@export var gateID=0
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,7 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if get_node("../../player").lever1_signal:
+	if get_node("../../player").lever_list[gateID]:
 		$GateCol.set_deferred("disabled", true)
 		$GateArt.visible=false
 		
