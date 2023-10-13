@@ -7,10 +7,11 @@ extends CharacterBody2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var on_ladder=false
-var lever1=false
+var on_lever=-1
 var lever1_signal=false
-var lever2=false
-var lever2_signal=false
+var lever_list=[0,0,0,0,0]
+#var lever2=false
+#var lever2_signal=false
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -38,8 +39,9 @@ func _physics_process(delta):
 	#thing we need to do a .mp3 instead of a .wav so that we have the abiliyy to loop it 
 	#if Input.is_action_just_pressed("run_left") or Input.is_action_just_pressed("run_right"):
 	#	$SteosSFX.play()
-	if lever1 and Input.is_action_pressed("Interact"):
+	if on_lever>=0 and Input.is_action_pressed("Interact"):
 		lever1_signal=true
+		lever_list[on_lever]=1
 		$SwitchSound.play()
 		
 	

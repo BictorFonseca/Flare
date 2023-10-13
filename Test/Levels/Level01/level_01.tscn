@@ -4384,6 +4384,7 @@ radius = 14.1421
 script = ExtResource("1_uao53")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -4417,8 +4418,12 @@ texture = ExtResource("6_vlu1w")
 position = Vector2(724, 560)
 scale = Vector2(1.3, 1.3)
 
+[node name="Gate2" parent="." instance=ExtResource("10_gvomr")]
+position = Vector2(119, -128)
+gateID = 1
+
 [node name="Gate1" parent="." instance=ExtResource("10_gvomr")]
-position = Vector2(-450, -140)
+position = Vector2(-411, -123)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8tcoe")
@@ -4518,6 +4523,11 @@ position = Vector2(1048, 138)
 [node name="CollisionShape2DForMineral1" type="CollisionShape2D" parent="Mineral Deposit/Area2ForMineral1"]
 shape = SubResource("CircleShape2D_8mykn")
 
+[node name="Lever2" parent="." instance=ExtResource("9_fpgsa")]
+position = Vector2(1038, 281)
+script = ExtResource("11_f2p8i")
+leverID = 1
+
 [node name="PileOBones" type="Sprite2D" parent="."]
 position = Vector2(249, 548)
 scale = Vector2(1.5, 1.5)
@@ -4544,3 +4554,4 @@ texture = ExtResource("21_g4hw4")
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="." method="_on_area_2_for_mineral_1_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform1" method="_on_area_2_for_mineral_1_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform2" method="_on_area_2_for_mineral_1_body_entered"]
+[connection signal="body_entered" from="Lever2" to="Lever2" method="_on_body_entered"]
