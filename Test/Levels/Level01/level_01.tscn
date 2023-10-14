@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=34 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cx4tox3ifqn6" path="res://PixelFantasy_Caves_1.0/GoreArt/corpse-mangled.png" id="20_v3srr"]
 [ext_resource type="Texture2D" uid="uid://bmavk634cjf04" path="res://PixelFantasy_Caves_1.0/GoreArt/2D Gore UI/Backbone.png" id="21_g4hw4"]
 [ext_resource type="Texture2D" uid="uid://bf4fxa5wpjkdi" path="res://PixelFantasy_Caves_1.0/Actual_USed_elevator_ART.png" id="22_ani4w"]
+[ext_resource type="AudioStream" uid="uid://dj5ahuesnu6y8" path="res://Objects/ElevatorCrank.wav" id="23_tvjxs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs2ti"]
 texture = ExtResource("2_4b8wu")
@@ -4400,11 +4401,13 @@ func _process(delta):
 	if moving:
 		$el
 		$Area2DForElevator/ElFloor
+		$ElevatorSound.play()
 
 
 func _on_area_2d_for_elevator_body_entered(body):
 	if body.is_in_group(\"Player\"):
 		moving = true
+	$ElevatorSound.play()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b0tc"]
@@ -4599,6 +4602,9 @@ shape = SubResource("RectangleShape2D_2b0tc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator/ElFloor"]
 position = Vector2(0, 53.4369)
 shape = SubResource("RectangleShape2D_qy0xn")
+
+[node name="ElevatorSound" type="AudioStreamPlayer" parent="Elevator"]
+stream = ExtResource("23_tvjxs")
 
 [connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
