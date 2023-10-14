@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=33 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -4399,6 +4399,7 @@ func _ready():
 func _process(delta):
 	if moving:
 		$el
+		$Area2DForElevator/ElFloor
 
 
 func _on_area_2d_for_elevator_body_entered(body):
@@ -4408,6 +4409,9 @@ func _on_area_2d_for_elevator_body_entered(body):
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b0tc"]
 size = Vector2(126, 125.515)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy0xn"]
+size = Vector2(116, 16.2136)
 
 [node name="Level_01" type="Node2D"]
 script = ExtResource("1_uao53")
@@ -4589,6 +4593,12 @@ script = SubResource("GDScript_41ry6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator"]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_2b0tc")
+
+[node name="ElFloor" type="StaticBody2D" parent="Elevator/Area2DForElevator"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator/ElFloor"]
+position = Vector2(-4, 74.5922)
+shape = SubResource("RectangleShape2D_qy0xn")
 
 [connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
