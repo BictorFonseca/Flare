@@ -18,10 +18,16 @@ func _process(delta):
 		if get_node("../level").obtained_mineral:
 			print("got it")
 	'''
+	'''if get_node(../../level).done = true:
+		print("finished")'''
 
 func _begin_level_01():
 	var level = level_01_scene.instantiate()
 	var player = player_scene.instantiate()
 	add_child(level)
 	add_child(player)
+	
+	
 	player.global_position = Vector2(100, 100)
+	
+

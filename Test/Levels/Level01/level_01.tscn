@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=32 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://6fq7de4q62rn" path="res://PixelFantasy_Caves_1.0/corpse_1.png" id="19_gukoq"]
 [ext_resource type="Texture2D" uid="uid://cx4tox3ifqn6" path="res://PixelFantasy_Caves_1.0/GoreArt/corpse-mangled.png" id="20_v3srr"]
 [ext_resource type="Texture2D" uid="uid://bmavk634cjf04" path="res://PixelFantasy_Caves_1.0/GoreArt/2D Gore UI/Backbone.png" id="21_g4hw4"]
+[ext_resource type="Texture2D" uid="uid://cw3bwhgaw7h1y" path="res://icon.svg" id="22_o56mi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs2ti"]
 texture = ExtResource("2_4b8wu")
@@ -4380,6 +4381,34 @@ sources/3 = SubResource("TileSetAtlasSource_ripbc")
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mykn"]
 radius = 14.1421
 
+[sub_resource type="GDScript" id="GDScript_41ry6"]
+script/source = "extends Sprite2D
+var upwardsSpeed = 10
+var moving = false
+# =
+# +
+#the above comments are there becayse of the broken keyboard that doesn't allow a group member to use the keys
+#thus, that's there for copy pasting
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if moving:
+		$el
+
+
+func _on_area_2d_for_elevator_body_entered(body):
+	if body.is_in_group(\"Player\"):
+		moving = true
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b0tc"]
+size = Vector2(126, 125.515)
+
 [node name="Level_01" type="Node2D"]
 script = ExtResource("1_uao53")
 
@@ -4549,9 +4578,23 @@ rotation = 0.568977
 scale = Vector2(0.0168896, 0.0191075)
 texture = ExtResource("21_g4hw4")
 
+[node name="Elevator" type="Sprite2D" parent="."]
+position = Vector2(243, 91.5)
+scale = Vector2(0.5, 0.804688)
+texture = ExtResource("22_o56mi")
+script = SubResource("GDScript_41ry6")
+
+[node name="Area2DForElevator" type="Area2D" parent="Elevator"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_2b0tc")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
 [connection signal="body_entered" from="Lever1" to="Lever1" method="_on_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="." method="_on_area_2_for_mineral_1_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform1" method="_on_area_2_for_mineral_1_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform2" method="_on_area_2_for_mineral_1_body_entered"]
 [connection signal="body_entered" from="Lever2" to="Lever2" method="_on_body_entered"]
+[connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
