@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://6fq7de4q62rn" path="res://PixelFantasy_Caves_1.0/corpse_1.png" id="19_gukoq"]
 [ext_resource type="Texture2D" uid="uid://cx4tox3ifqn6" path="res://PixelFantasy_Caves_1.0/GoreArt/corpse-mangled.png" id="20_v3srr"]
 [ext_resource type="Texture2D" uid="uid://bmavk634cjf04" path="res://PixelFantasy_Caves_1.0/GoreArt/2D Gore UI/Backbone.png" id="21_g4hw4"]
-[ext_resource type="Texture2D" uid="uid://cw3bwhgaw7h1y" path="res://icon.svg" id="22_o56mi"]
+[ext_resource type="Texture2D" uid="uid://bf4fxa5wpjkdi" path="res://PixelFantasy_Caves_1.0/Actual_USed_elevator_ART.png" id="22_ani4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs2ti"]
 texture = ExtResource("2_4b8wu")
@@ -4408,10 +4408,10 @@ func _on_area_2d_for_elevator_body_entered(body):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b0tc"]
-size = Vector2(126, 125.515)
+size = Vector2(126, 110.602)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qy0xn"]
-size = Vector2(116, 16.2136)
+size = Vector2(122, 8.69903)
 
 [node name="Level_01" type="Node2D"]
 script = ExtResource("1_uao53")
@@ -4583,21 +4583,21 @@ scale = Vector2(0.0168896, 0.0191075)
 texture = ExtResource("21_g4hw4")
 
 [node name="Elevator" type="Sprite2D" parent="."]
-position = Vector2(243, 91.5)
+position = Vector2(243, 105)
 scale = Vector2(0.5, 0.804688)
-texture = ExtResource("22_o56mi")
+texture = ExtResource("22_ani4w")
 script = SubResource("GDScript_41ry6")
 
 [node name="Area2DForElevator" type="Area2D" parent="Elevator"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator"]
-position = Vector2(-1, 0)
+position = Vector2(-1, -7.45643)
 shape = SubResource("RectangleShape2D_2b0tc")
 
 [node name="ElFloor" type="StaticBody2D" parent="Elevator/Area2DForElevator"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator/ElFloor"]
-position = Vector2(-4, 74.5922)
+position = Vector2(0, 53.4369)
 shape = SubResource("RectangleShape2D_qy0xn")
 
 [connection signal="finished" from="." to="." method="_on_finished"]
