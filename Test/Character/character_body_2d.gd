@@ -57,6 +57,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
+	
+	#Walking animations
 	if velocity.x < 0.1 and velocity.x > -0.1:
 		$AnimatedSprite2D.play("default")
 	elif velocity.x < -0.1:
@@ -65,6 +67,15 @@ func _process(delta):
 	elif velocity.x > 0.1:
 		$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play("walk")
+	
+	#Footstep SFX
+	if (velocity.x < -0.1 or velocity.x > 0.1) and is_on_floor():
+		if not $FootstepSFX.playing:
+			print("footsteps")
+			$FootstepSFX.play()
+	else:
+		$FootstepSFX.stop()
+		
 	#if lever1:
 		#get_node("../LeverArt").set_flip_h(true)
 		#get_node("../GateCol").set_deferred("disabled", true)
@@ -72,8 +83,16 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("select_1"):
 		$PointLight2D.color = Color("ffffce")
+		$InventorySwitchSFX.play()
+		$Mineral1FlareSFX.stop()
+		if not $NormalFlareSFX.playing:
+			$NormalFlareSFX.play()
 	elif Input.is_action_just_pressed("select_2") and has_mineral1:
 		$PointLight2D.color = Color("89fae7")
+		$InventorySwitchSFX.play()
+		$NormalFlareSFX.stop()
+		if not $Mineral1FlareSFX.playing:
+			$Mineral1FlareSFX.play()
 		
 
 func _on_timer_timeout():

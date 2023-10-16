@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://csnr3oaruejl0"]
+[gd_scene load_steps=14 format=3 uid="uid://csnr3oaruejl0"]
 
 [ext_resource type="Script" path="res://Character/character_body_2d.gd" id="1_f3a1b"]
 [ext_resource type="Texture2D" uid="uid://vneqp1owjm5s" path="res://Character/Player-1.png" id="3_8u6pf"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://ywb54yafrrlu" path="res://Character/Player-2.png" id="4_e6q65"]
 [ext_resource type="AudioStream" uid="uid://dfce8apk8hsng" path="res://Objects/zapsplat_vehicles_bicycle_gears_lever_click_change_through_several_fast_002_79728.mp3" id="5_qavkl"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="5_xdkvh"]
+[ext_resource type="AudioStream" uid="uid://bqvuq11oo5m2h" path="res://Character/Footsteps.mp3" id="7_y4bft"]
+[ext_resource type="AudioStream" uid="uid://2jsx0iwbelh0" path="res://Character/normal_flare.mp3" id="7_ytewd"]
+[ext_resource type="AudioStream" uid="uid://gsxdhxya6tjv" path="res://Character/mineral1_flare.mp3" id="8_jtdiw"]
+[ext_resource type="AudioStream" uid="uid://dda5lpy1qpyyl" path="res://Character/woosh.mp3" id="10_b6g3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55p1r"]
 size = Vector2(36, 59)
@@ -56,15 +60,6 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_b662k")
 animation = &"walk"
 
-[node name="LadderSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_2mje3")
-volume_db = -0.17
-
-[node name="SteosSFX" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamWAV_aa3h5")
-volume_db = 1.0
-pitch_scale = 3.0
-
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -4)
 color = Color(1, 1, 0.807843, 1)
@@ -83,6 +78,34 @@ autostart = true
 [node name="SwitchSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qavkl")
 volume_db = 4.685
+
+[node name="FootstepSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y4bft")
+volume_db = -24.36
+
+[node name="NormalFlareSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ytewd")
+volume_db = -40.0
+autoplay = true
+
+[node name="Mineral1FlareSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_jtdiw")
+volume_db = -40.0
+
+[node name="LadderSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2mje3")
+volume_db = -14.354
+pitch_scale = 0.86
+
+[node name="SteosSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamWAV_aa3h5")
+volume_db = 1.0
+pitch_scale = 3.0
+
+[node name="InventorySwitchSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_b6g3i")
+volume_db = -30.0
+max_polyphony = 3
 
 [connection signal="timeout" from="FlareTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LightFlareTimer" to="." method="_on_light_flare_timer_timeout"]
