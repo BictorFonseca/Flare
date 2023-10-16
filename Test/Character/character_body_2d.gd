@@ -35,7 +35,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		
 	if self.position.y <=-1:
-		get_tree().quit()
+		#get_tree().quit()
+		pass
 	
 	#plays sound once it's pressed, but does not loop it 
 	#thing we need to do a .mp3 instead of a .wav so that we have the abiliyy to loop it 

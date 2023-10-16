@@ -4399,15 +4399,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if moving:
-		$el
-		$Area2DForElevator/ElFloor
+		print(moving)
+		#$Area2DForElevator/ElFloor
 		$ElevatorSound.play()
 
 
 func _on_area_2d_for_elevator_body_entered(body):
 	if body.is_in_group(\"Player\"):
 		moving = true
-	$ElevatorSound.play()
+		print(moving)
+		$ElevatorSound.play()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b0tc"]
@@ -4604,6 +4605,26 @@ shape = SubResource("RectangleShape2D_qy0xn")
 
 [node name="ElevatorSound" type="AudioStreamPlayer" parent="Elevator"]
 stream = ExtResource("23_tvjxs")
+
+[node name="EndLayer" type="CanvasLayer" parent="."]
+
+[node name="LabelEnd" type="Label" parent="EndLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -34.0
+offset_right = 89.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 27
+text = "Level 1 Finished"
 
 [connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
