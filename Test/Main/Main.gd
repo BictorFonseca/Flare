@@ -1,6 +1,7 @@
 extends Node
 
-#var level_01_running = false
+var level_01_running = false
+var dummy=true
 var level_01_scene = preload("res://Levels/Level01/level_01.tscn")
 var player_scene = preload("res://Character/character_body_2d.tscn")
 #var hud = preload("res://HUD/hud.tscn")
@@ -27,7 +28,5 @@ func _begin_level_01():
 	add_child(level)
 	add_child(player)
 	
-	
 	player.global_position = Vector2(100, 100)
-	
 

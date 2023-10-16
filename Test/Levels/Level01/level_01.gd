@@ -1,6 +1,6 @@
 extends Node2D
 signal finished
-var done = false
+@export var done = false
 # =
 # +
 #the above comments are there becayse of the broken keyboard that doesn't allow a group member to use the keys
