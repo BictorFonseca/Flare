@@ -64,6 +64,10 @@ func _process(delta):
 		#get_node("../GateCol").set_deferred("disabled", true)
 		#get_node("../GateArt").visible=false
 		
+	if Input.is_action_just_pressed("select_1"):
+		$PointLight2D.color = Color("ffffce")
+	elif Input.is_action_just_pressed("select_2") and get_node("../level_01/Platform1").mineral1Collected:
+		$PointLight2D.color = Color("2aa695")
 
 func _on_timer_timeout():
 	$PointLight2D.energy = randf_range(1.1, 1.4)

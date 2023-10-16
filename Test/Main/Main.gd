@@ -4,6 +4,7 @@ var level_01_running = false
 var dummy=true
 var level_01_scene = preload("res://Levels/Level01/level_01.tscn")
 var player_scene = preload("res://Character/character_body_2d.tscn")
+var mineral1 = false
 #var hud = preload("res://HUD/hud.tscn")
 
 # TEMPORARY CODE

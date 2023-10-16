@@ -1,6 +1,8 @@
 extends Area2D
 signal text
 
+@export var wall_text = ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,7 +15,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	text.emit("show");
+	text.emit(wall_text);
 	print("body entered");
 
 func _on_body_exited(body):
