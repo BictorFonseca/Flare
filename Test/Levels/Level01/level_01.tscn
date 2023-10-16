@@ -4530,13 +4530,6 @@ script = ExtResource("11_f2p8i")
 visible = false
 position = Vector2(1049, 129)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(243, 100)
-color = Color(0.160784, 1, 0.392157, 1)
-energy = 1.58
-texture = ExtResource("13_m6s2r")
-texture_scale = 1.9
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inventory2" type="Sprite2D" parent="CanvasLayer"]
@@ -4611,6 +4604,14 @@ shape = SubResource("RectangleShape2D_qy0xn")
 
 [node name="ElevatorSound" type="AudioStreamPlayer" parent="Elevator"]
 stream = ExtResource("23_tvjxs")
+
+[node name="PointLight2D" type="PointLight2D" parent="Elevator"]
+position = Vector2(0, -6.21359)
+scale = Vector2(2, 1.24272)
+color = Color(0.160784, 1, 0.392157, 1)
+energy = 10.0
+texture = ExtResource("13_m6s2r")
+texture_scale = 1.9
 
 [node name="EndLayer" type="CanvasLayer" parent="."]
 
