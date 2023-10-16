@@ -6,11 +6,17 @@ extends CharacterBody2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var flare_lit = true
 var on_ladder=false
 var on_lever=-1
 var lever_list=[0,0,0,0,0]
+var has_mineral1 = false
 #var lever2=false
 #var lever2_signal=false
+
+func _ready():
+	$PointLight2D.energy = 0
+	
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -64,6 +70,20 @@ func _process(delta):
 		#get_node("../GateCol").set_deferred("disabled", true)
 		#get_node("../GateArt").visible=false
 		
+	if Input.is_action_just_pressed("select_1"):
+		$PointLight2D.color = Color("ffffce")
+	elif Input.is_action_just_pressed("select_2") and has_mineral1:
+		$PointLight2D.color = Color("89fae7")
+		
 
 func _on_timer_timeout():
-	$PointLight2D.energy = randf_range(1.1, 1.4)
+	if flare_lit:
+		$PointLight2D.energy = randf_range(1.1, 1.4)
+
+#FOR USE LATER
+"""
+func _on_light_flare_timer_timeout():
+	for i in range(12):
+		$PointLight2D.energy += 0.1
+	flare_lit = true
+"""

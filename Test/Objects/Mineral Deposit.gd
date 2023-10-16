@@ -17,6 +17,7 @@ func _on_glow_timer_timeout():
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		$Mineral_Instruction.visible=true
+		body.has_mineral1 = true
 	pass # Replace with function body.
 
 

@@ -75,8 +75,14 @@ texture_scale = 9.1
 wait_time = 0.1
 autostart = true
 
+[node name="LightFlareTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
 [node name="SwitchSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qavkl")
 volume_db = 4.685
 
 [connection signal="timeout" from="FlareTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LightFlareTimer" to="." method="_on_light_flare_timer_timeout"]

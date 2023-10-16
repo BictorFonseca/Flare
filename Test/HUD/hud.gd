@@ -1,5 +1,6 @@
 extends CanvasLayer
 var time = 600
+signal start_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -65,6 +66,7 @@ func _on_play_button_pressed():
 	$GameTimer.start()
 	$TimerLabel.text = '10mins 0s left'
 	$TimerAnimation.play("default")
+	start_game.emit()
 
 
 func _on_instructions_pressed():

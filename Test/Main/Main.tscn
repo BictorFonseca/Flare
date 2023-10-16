@@ -11,3 +11,5 @@ script = ExtResource("1_7g0cg")
 stream = ExtResource("3_xugnr")
 
 [node name="HUD" parent="." instance=ExtResource("2_n1fde")]
+
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
