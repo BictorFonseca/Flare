@@ -24,11 +24,12 @@ func _process(delta):
 		$Elevator/ElevatorSound.play()
 
 func _on_wall_writing_text(text):
-	if text == "hide":
-		$CanvasLayer/WallWritingLabel.hide()
-	else:
+	if text == "show":
 		$CanvasLayer/WallWritingLabel.show()
-		$CanvasLayer/WallWritingLabel.text = text
+		print("signal show")
+	elif text == "hide":
+		$CanvasLayer/WallWritingLabel.hide()
+		print("signal hide")
 
 func _on_area_2_for_mineral_1_body_entered(body):
 	#print("show Inv2")

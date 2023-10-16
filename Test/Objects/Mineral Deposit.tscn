@@ -16,12 +16,12 @@ shape = SubResource("CircleShape2D_qh2tc")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 show_behind_parent = true
-color = Color(0.0352941, 0.301961, 0.309804, 1)
+color = Color(0.0588235, 0.2, 0.631373, 1)
 energy = 1.46
 shadow_enabled = true
 shadow_item_cull_mask = 3
 texture = ExtResource("1_fu48w")
-texture_scale = 2.5
+texture_scale = 1.5
 
 [node name="GlowTimer" type="Timer" parent="."]
 wait_time = 0.25
