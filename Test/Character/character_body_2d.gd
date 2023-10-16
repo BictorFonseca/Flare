@@ -23,7 +23,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	if on_ladder==true:
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("jump") and not $LadderSFX.playing:
 			velocity.y=-speed
 			$LadderSFX.play()
 		elif Input.is_action_pressed("down"):
