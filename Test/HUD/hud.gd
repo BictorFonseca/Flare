@@ -37,6 +37,7 @@ func updateTime(timeChange):
 	if timeChange < 0:
 		$TimerLabel.text = "Game Over"
 		$TimerAnimation.play("end")
+		$TimerAnimation.scale = 0.8
 	else:
 		var mins = timeChange / 60
 		var secs = timeChange % 60
