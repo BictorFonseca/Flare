@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=35 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bmavk634cjf04" path="res://PixelFantasy_Caves_1.0/GoreArt/2D Gore UI/Backbone.png" id="21_g4hw4"]
 [ext_resource type="Texture2D" uid="uid://bf4fxa5wpjkdi" path="res://PixelFantasy_Caves_1.0/Actual_USed_elevator_ART.png" id="22_ani4w"]
 [ext_resource type="AudioStream" uid="uid://dj5ahuesnu6y8" path="res://Objects/ElevatorCrank.wav" id="23_tvjxs"]
+[ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="24_e2lut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs2ti"]
 texture = ExtResource("2_4b8wu")
@@ -4421,6 +4422,10 @@ func _on_area_2d_for_elevator_body_entered(body):
 		moving = true
 		print(moving)
 		$ElevatorSound.play()
+
+
+func _on_lever_2_flipped():
+	$PointLight2D.energy = 10
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b0tc"]
@@ -4602,6 +4607,7 @@ texture = ExtResource("22_ani4w")
 script = SubResource("GDScript_41ry6")
 
 [node name="Area2DForElevator" type="Area2D" parent="Elevator"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator"]
 position = Vector2(-1, -7.45643)
@@ -4617,12 +4623,17 @@ shape = SubResource("RectangleShape2D_qy0xn")
 stream = ExtResource("23_tvjxs")
 
 [node name="PointLight2D" type="PointLight2D" parent="Elevator"]
-position = Vector2(0, -6.21359)
+position = Vector2(0, -72)
 scale = Vector2(2, 1.24272)
 color = Color(0.160784, 1, 0.392157, 1)
-energy = 10.0
+energy = 0.0
 texture = ExtResource("13_m6s2r")
 texture_scale = 1.9
+
+[node name="Sprite2D" type="Sprite2D" parent="Elevator"]
+position = Vector2(0, -73)
+scale = Vector2(2.2, 1.5)
+texture = ExtResource("24_e2lut")
 
 [node name="EndLayer" type="CanvasLayer" parent="."]
 
@@ -4654,4 +4665,5 @@ text = "Level 1 Finished"
 [connection signal="body_entered" from="Mineral Deposit/Area2ForMineral1" to="Platform2" method="_on_area_2_for_mineral_1_body_entered"]
 [connection signal="body_entered" from="Lever2" to="Lever2" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever2" to="Lever2" method="_on_body_exited"]
+[connection signal="flipped" from="Lever2" to="Elevator" method="_on_lever_2_flipped"]
 [connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]

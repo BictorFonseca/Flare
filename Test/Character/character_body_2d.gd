@@ -11,6 +11,8 @@ var on_ladder=false
 var on_lever=-1
 var lever_list=[0,0,0,0,0]
 var has_mineral1 = false
+var has_mineral2 = false
+var has_mineral3 = false
 #var lever2=false
 #var lever2_signal=false
 
@@ -82,18 +84,22 @@ func _process(delta):
 		#get_node("../GateArt").visible=false
 		
 	if Input.is_action_just_pressed("select_1"):
+		$InventorySwitchSFX.play()
 		$PointLight2D.color = Color("ffffce")
+	elif Input.is_action_just_pressed("select_2"):
 		$InventorySwitchSFX.play()
-		$Mineral1FlareSFX.stop()
-		if not $NormalFlareSFX.playing:
-			$NormalFlareSFX.play()
-	elif Input.is_action_just_pressed("select_2") and has_mineral1:
-		$PointLight2D.color = Color("89fae7")
+		if not has_mineral1:
+			$PointLight2D.color = Color("ffffce")
+		else:
+			$PointLight2D.color = Color("89fae7")
+	elif Input.is_action_just_pressed("select_3"):
 		$InventorySwitchSFX.play()
-		$NormalFlareSFX.stop()
-		if not $Mineral1FlareSFX.playing:
-			$Mineral1FlareSFX.play()
-		
+		if not has_mineral2:
+			$PointLight2D.color = Color("ffffce")
+	elif Input.is_action_just_pressed("select_4"):
+		$InventorySwitchSFX.play()
+		if not has_mineral3:
+			$PointLight2D.color = Color("ffffce")
 
 func _on_timer_timeout():
 	if flare_lit:
@@ -101,7 +107,7 @@ func _on_timer_timeout():
 
 #FOR USE LATER
 """
-func _on_light_flare_timer_timeout():
+func _on_light_flare_timer_timeout(delta):
 	for i in range(12):
 		$PointLight2D.energy += 0.1
 	flare_lit = true

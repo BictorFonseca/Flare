@@ -1,5 +1,7 @@
 extends Area2D
 @export var leverID=0
+var is_flipped = false
+signal flipped
 
 
 
@@ -11,6 +13,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if get_node("../../player").lever_list[leverID]:
+		if not is_flipped:
+			flipped.emit()
+		is_flipped = true
 		$LeverArt.set_flip_h(true)
 	pass
 
