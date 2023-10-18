@@ -12,5 +12,14 @@ script = ExtResource("1_4l3hl")
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_2kc56")
 
+[node name="LadderGuide" type="Label" parent="."]
+visible = false
+offset_left = 13.0
+offset_top = -31.0
+offset_right = 93.0
+offset_bottom = 21.0
+text = "\"W\"/UP
+ to climb"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

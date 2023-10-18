@@ -14,8 +14,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("select_2") and mineral1Collected:
 		if on_off==false:
 			on_off=true
-		else:
-			on_off=false
 	elif Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_3") or Input.is_action_just_pressed("select_4"):
 		if on_off==true:
 			on_off=false
