@@ -3,7 +3,8 @@ extends StaticBody2D
 var on_off=false
 
 #this is to check if the player has collected the mineral 
-var mineral1Collected = false
+#toggle this to true if you want to test level 2
+var mineral1Collected = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,6 +15,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("select_2") and mineral1Collected:
 		if on_off==false:
 			on_off=true
+		#this is needed to detoggle the platforms with the key 2. 
+		#if we dont need this we can always comment it out later
+		#else:
+		#	on_off=false
 	elif Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_3") or Input.is_action_just_pressed("select_4"):
 		if on_off==true:
 			on_off=false
