@@ -11,9 +11,11 @@ func _ready():
 	#$TimerLabel.text = '10mins 0s left'
 	#$TimerAnimation.play("start")
 	$BGMusic.play()
+	$FlareIcon.play()
 	
 	$Back.hide()
 	$Movement.hide()
+	$InstructionsText.hide()
 	$Inventory1.hide()
 	$Inventory2.hide()
 	$Inventory3.hide()
@@ -55,6 +57,7 @@ func _on_game_timer_timeout():
 func _on_play_button_pressed():
 	#print('timer should have staretd')
 	$"Flare!".hide()
+	$FlareIcon.hide()
 	$Instructions.position.x = 0
 	$Instructions.position.y = 0
 	$Inventory1.show()
@@ -71,10 +74,12 @@ func _on_play_button_pressed():
 
 
 func _on_instructions_pressed():
+	$FlareIcon.hide()
 	$PlayButton.hide()
 	$Back.show()
 	$Instructions.hide()
 	$Movement.show()
+	$InstructionsText.show()
 
 
 func _on_back_pressed():
@@ -84,7 +89,9 @@ func _on_back_pressed():
 	else:
 		$PlayButton.hide()
 	$Movement.hide()
+	$InstructionsText.hide()
 	$Instructions.show()
+	$FlareIcon.show()
 
 
 func _on_area_2_for_mineral_1_body_entered(body):

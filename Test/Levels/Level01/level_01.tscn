@@ -15,9 +15,9 @@
 [ext_resource type="Script" path="res://Objects/lever.gd" id="11_f2p8i"]
 [ext_resource type="PackedScene" uid="uid://pahyle0u6vfx" path="res://Objects/mineral_1.tscn" id="12_rmlb7"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="13_m6s2r"]
-[ext_resource type="FontFile" uid="uid://bnt7kfdusv22d" path="res://Objects/who asks satan.ttf" id="14_iwolj"]
 [ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="14_xtjvk"]
 [ext_resource type="Texture2D" uid="uid://b4hjoq5e17pno" path="res://PixelFantasy_Caves_1.0/Mineral Assets/blue_mineral_art.png" id="16_d2sj1"]
+[ext_resource type="FontFile" uid="uid://cnu12edowtuub" path="res://Objects/DoubleHomicide.ttf" id="16_o534m"]
 [ext_resource type="Texture2D" uid="uid://biaf0dmhxy7xv" path="res://PixelFantasy_Caves_1.0/corpse_2.png" id="18_hraba"]
 [ext_resource type="Texture2D" uid="uid://6fq7de4q62rn" path="res://PixelFantasy_Caves_1.0/corpse_1.png" id="19_gukoq"]
 [ext_resource type="Texture2D" uid="uid://cx4tox3ifqn6" path="res://PixelFantasy_Caves_1.0/GoreArt/corpse-mangled.png" id="20_v3srr"]
@@ -1130,7 +1130,6 @@ size = Vector2(122, 8.69903)
 script = ExtResource("1_uao53")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -1253,7 +1252,7 @@ offset_right = 1141.0
 offset_bottom = 710.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.756863, 0.113725, 0.0235294, 1)
-theme_override_fonts/font = ExtResource("14_iwolj")
+theme_override_fonts/font = ExtResource("16_o534m")
 theme_override_font_sizes/font_size = 56
 text = "TEST"
 horizontal_alignment = 1
