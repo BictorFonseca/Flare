@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://wlkqxq78gn0j"]
+[gd_scene load_steps=5 format=3 uid="uid://wlkqxq78gn0j"]
 
 [ext_resource type="Script" path="res://Character/ladder.gd" id="1_4l3hl"]
+[ext_resource type="Texture2D" uid="uid://b6aqxkmpeupcw" path="res://HUD/Art Assets/Keyboard Letters and Symbols.png" id="2_1h7uu"]
+[ext_resource type="FontFile" uid="uid://c5n0dcrx4814y" path="res://HUD/Art Assets/PetitePx.ttf" id="3_uyhjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kc56"]
 size = Vector2(15, 121)
@@ -12,14 +14,34 @@ script = ExtResource("1_4l3hl")
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_2kc56")
 
+[node name="W" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(31, -27)
+scale = Vector2(1.53297, 1.53297)
+texture = ExtResource("2_1h7uu")
+region_enabled = true
+region_rect = Rect2(97, 66, 13, 12)
+
 [node name="LadderGuide" type="Label" parent="."]
 visible = false
-offset_left = 13.0
-offset_top = -31.0
-offset_right = 93.0
-offset_bottom = 21.0
-text = "\"W\"/UP
- to climb"
+offset_left = 21.0
+offset_top = -36.0
+offset_right = 65.0
+offset_bottom = -2.0
+scale = Vector2(1.4418, 1.4418)
+theme_override_fonts/font = ExtResource("3_uyhjo")
+theme_override_font_sizes/font_size = 16
+text = "OR
+TO CLIMB"
+horizontal_alignment = 1
+
+[node name="Up" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(74, -27)
+scale = Vector2(1.57659, 1.57659)
+texture = ExtResource("2_1h7uu")
+region_enabled = true
+region_rect = Rect2(1, 2, 13, 12)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
