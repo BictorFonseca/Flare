@@ -86,12 +86,13 @@ func _on_back_pressed():
 	$Back.hide()
 	if time == 600:
 		$PlayButton.show()
+		$FlareIcon.show()
 	else:
 		$PlayButton.hide()
+		$FlareIcon.hide()
 	$Movement.hide()
 	$InstructionsText.hide()
 	$Instructions.show()
-	$FlareIcon.show()
 
 
 func _on_area_2_for_mineral_1_body_entered(body):

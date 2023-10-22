@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=34 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bf4fxa5wpjkdi" path="res://PixelFantasy_Caves_1.0/Actual_USed_elevator_ART.png" id="22_ani4w"]
 [ext_resource type="AudioStream" uid="uid://dj5ahuesnu6y8" path="res://Objects/ElevatorCrank.wav" id="23_tvjxs"]
 [ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="24_e2lut"]
+[ext_resource type="FontFile" uid="uid://c5n0dcrx4814y" path="res://HUD/Art Assets/PetitePx.ttf" id="26_4a7kk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs2ti"]
 texture = ExtResource("2_4b8wu")
@@ -1130,6 +1131,7 @@ size = Vector2(122, 8.69903)
 script = ExtResource("1_uao53")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -1335,17 +1337,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -34.0
-offset_right = 89.0
-offset_bottom = 60.0
+offset_left = -146.5
+offset_top = -47.0
+offset_right = 146.5
+offset_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 27
-text = "Level 1 Finished"
+theme_override_fonts/font = ExtResource("26_4a7kk")
+theme_override_font_sizes/font_size = 56
+text = "LEVEL 1 COMPLETE"
+horizontal_alignment = 1
 
 [connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
