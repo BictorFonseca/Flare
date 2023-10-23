@@ -43,7 +43,7 @@ func updateTime(timeChange):
 	else:
 		var mins = timeChange / 60
 		var secs = timeChange % 60
-		var changed = (str(mins) + "mins " + str(secs) + "s left")
+		var changed = (str(mins) + "M " + str(secs) + "S LEFT")
 		#print(changed)
 		$TimerLabel.text = changed
 
@@ -68,7 +68,7 @@ func _on_play_button_pressed():
 	$TimerAnimation.show()
 	$Selector.show()
 	$GameTimer.start()
-	$TimerLabel.text = '10mins 0s left'
+	$TimerLabel.text = '10M 0S LEFT'
 	$TimerAnimation.play("default")
 	start_game.emit()
 
