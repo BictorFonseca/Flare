@@ -2874,6 +2874,9 @@ texture = ExtResource("1_8ukna")
 29:63/0 = 0
 29:63/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 29:63/0/physics_layer_0/angular_velocity = 0.0
+55:0/0 = 0
+55:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+55:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ripbc"]
 texture = ExtResource("2_48x6o")

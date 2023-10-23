@@ -12,7 +12,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if get_node("../../player").lever_list[leverID]:
+	#change the .. back to what it originally was before adding it to tutorial
+	if get_node("../player").lever_list[leverID]:
 		if not is_flipped:
 			flipped.emit()
 		is_flipped = true
@@ -21,7 +22,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		get_node("../../player").on_lever=leverID
+		get_node("../player").on_lever=leverID
 		$Lever_Prompt.visible=true
 		$E.visible=true
 		print("On")
