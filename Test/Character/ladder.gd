@@ -13,7 +13,8 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		get_node("../../player").on_ladder=true
+		#fix the ... 
+		get_node("../player").on_ladder=true
 		$LadderGuide.visible=true
 		$W.visible=true
 		$Up.visible=true
@@ -22,7 +23,7 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body.is_in_group("Player"):
-		get_node("../../player").on_ladder=false
+		get_node("../player").on_ladder=false
 		$LadderGuide.visible=false
 		$W.visible=false
 		$Up.visible=false
