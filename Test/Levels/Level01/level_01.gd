@@ -1,6 +1,7 @@
 extends Node2D
 signal finished
 @export var done = false
+signal start
 # =
 # +
 #the above comments are there becayse of the broken keyboard that doesn't allow a group member to use the keys
@@ -10,6 +11,7 @@ var obtained_mineral = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	start.emit()
 	$CanvasLayer/WallWritingLabel.hide()
 	print("text hidden")
 	$CanvasLayer/Inventory2.hide()

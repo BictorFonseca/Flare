@@ -1131,6 +1131,7 @@ size = Vector2(122, 8.69903)
 script = ExtResource("1_uao53")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]

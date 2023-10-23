@@ -1,5 +1,5 @@
 extends Node
-
+var cutscene_running = false
 var level_01_running = false
 var level_02_running = false
 var level_03_running = false
@@ -8,6 +8,7 @@ var level = null
 var level_01_scene = preload("res://Levels/Level01/level_01.tscn")
 var level_02_scene = preload("res://Levels/Level02/level_02.tscn")
 var player_scene = preload("res://Character/character_body_2d.tscn")
+var cutscene = preload("res://Levels/Tutorial/cutscene.tscn")
 
 func _ready():
 	$HUD._ready()
@@ -54,8 +55,17 @@ func _begin_level_02():
 	add_child(level)
 	add_child(player)
 	
-	player.global_position = Vector2(600, 450)
 	
+	player.global_position = Vector2(600, 450)
+
+func _begin_tutorial():
+	var level = cutscene.instantiate()
+	var player = player_scene.instantiate()  
+	add_child(level)
+	add_child(player)
+	get_node("player").flare_lit = false
+	player.global_position = Vector2(100, 97)
 func _on_hud_start_game():
-	_begin_level_01()
+	_begin_tutorial()
+	#_begin_level_01()
 	
