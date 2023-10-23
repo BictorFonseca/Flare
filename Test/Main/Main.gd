@@ -54,7 +54,7 @@ func _begin_level_02():
 	add_child(level)
 	add_child(player)
 	
-	player.global_position = Vector2(600, 600)
+	player.global_position = Vector2(600, 450)
 	
 func _on_hud_start_game():
 	_begin_level_01()
