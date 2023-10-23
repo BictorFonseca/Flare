@@ -10,10 +10,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("select_3"):
-		#get_node("../RedMineralTileMap").hide()
-		#self.hide()
-		self.visible = false
-	elif Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4"):
-		#self.set_deferred("disabled", true)
-		self.visible = true
+	pass

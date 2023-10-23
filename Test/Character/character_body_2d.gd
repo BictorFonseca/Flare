@@ -13,6 +13,7 @@ var lever_list=[0,0,0,0,0]
 var has_mineral1 = false
 var has_mineral2 = false
 var has_mineral3 = false
+var inventory_slot_selected = 1
 #var lever2=false
 #var lever2_signal=false
 
@@ -84,19 +85,23 @@ func _process(delta):
 		#get_node("../GateArt").visible=false
 		
 	if Input.is_action_just_pressed("select_1"):
+		inventory_slot_selected = 1
 		$InventorySwitchSFX.play()
 		$PointLight2D.color = Color("ffffce")
 	elif Input.is_action_just_pressed("select_2"):
+		inventory_slot_selected = 2
 		$InventorySwitchSFX.play()
 		if not has_mineral1:
 			$PointLight2D.color = Color("ffffce")
 		else:
 			$PointLight2D.color = Color("89fae7")
 	elif Input.is_action_just_pressed("select_3"):
+		inventory_slot_selected = 3
 		$InventorySwitchSFX.play()
 		if not has_mineral2:
 			$PointLight2D.color = Color("ffffce")
 	elif Input.is_action_just_pressed("select_4"):
+		inventory_slot_selected = 4
 		$InventorySwitchSFX.play()
 		if not has_mineral3:
 			$PointLight2D.color = Color("ffffce")
