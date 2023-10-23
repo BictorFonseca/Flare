@@ -4,7 +4,7 @@ var on_off=false
 
 #this is to check if the player has collected the mineral 
 #toggle this to true if you want to test level 2
-var mineral1Collected = true
+var mineral1Collected = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
