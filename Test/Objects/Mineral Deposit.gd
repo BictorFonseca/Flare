@@ -19,6 +19,7 @@ func _on_area_2d_body_entered(body):
 		$Mineral_Instruction.visible=true
 		$Button2.visible=true
 		body.has_mineral1 = true
+		$PointLight2D2.enabled=false
 	pass # Replace with function body.
 
 
