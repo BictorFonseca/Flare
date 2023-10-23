@@ -88,7 +88,7 @@ func _process(delta):
 		inventory_slot_selected = 1
 		$InventorySwitchSFX.play()
 		$PointLight2D.color = Color("ffffce")
-	elif Input.is_action_just_pressed("select_2") and has_mineral1:
+	elif Input.is_action_just_pressed("select_2"):
 		inventory_slot_selected = 2
 		$InventorySwitchSFX.play()
 		if not has_mineral1:
