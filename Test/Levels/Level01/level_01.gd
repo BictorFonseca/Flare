@@ -47,6 +47,4 @@ func _on_area_2d_for_elevator_body_entered(body):
 	elevatorIsMoving = true
 
 
-func _on_finished():
-	if get_node("../player").position.y < 0:
-		$EndLayer/LabelEnd.show()
+
