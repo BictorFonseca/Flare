@@ -21,3 +21,8 @@ func _process(delta):
 
 
 
+
+
+func _on_tutorial_finished_body_entered(body):
+	if body.is_in_group("Player"):
+		$Scream.play()

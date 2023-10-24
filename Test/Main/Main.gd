@@ -65,6 +65,7 @@ func _begin_tutorial():
 	add_child(player)
 	get_node("player").flare_lit = false
 	player.global_position = Vector2(100, 97)
+	
 func _on_hud_start_game():
 	_begin_tutorial()
 	#_begin_level_01()
