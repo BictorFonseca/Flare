@@ -1,5 +1,5 @@
 extends Node
-var cutscene_running = false
+var tutorial_running = false
 var level_01_running = false
 var level_02_running = false
 var level_03_running = false
@@ -15,6 +15,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if tutorial_running:
+		var player = get_node_or_null("player")
+		if player and player.position.y>720:
+			_end_level()
+			tutorial_running=false
+			_begin_level_01()
 	if level_01_running:
 		var player = get_node_or_null("player")
 		if player and player.position.y < 0:
@@ -33,7 +39,7 @@ func _process(delta):
 
 func _begin_level_01():
 	level_01_running = true
-	var level = level_01_scene.instantiate()
+	level = level_01_scene.instantiate()
 	var player = player_scene.instantiate()
 	add_child(level)
 	add_child(player)
@@ -43,7 +49,6 @@ func _begin_level_01():
 func _end_level():
 	if (is_instance_valid(level)):
 		level.queue_free()
-		
 	
 func _begin_level_03():
 	pass
@@ -59,7 +64,8 @@ func _begin_level_02():
 	player.global_position = Vector2(600, 450)
 
 func _begin_tutorial():
-	var level = cutscene.instantiate()
+	tutorial_running=true
+	level = cutscene.instantiate()
 	var player = player_scene.instantiate()  
 	add_child(level)
 	add_child(player)
