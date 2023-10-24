@@ -5664,7 +5664,7 @@ signText = "Uh oh! The wall needs to be moved. Try flipping a lever."
 
 [node name="Sign3" parent="." instance=ExtResource("12_kydbr")]
 position = Vector2(989, 330)
-signText = "Go collect the treasure!"
+signText = "Use levers to open gates"
 
 [node name="TutorialFinished" type="Area2D" parent="."]
 script = ExtResource("13_rj4n0")
