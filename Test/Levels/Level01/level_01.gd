@@ -8,6 +8,7 @@ signal start
 #thus, that's there for copy pasting
 var elevatorIsMoving = false
 var obtained_mineral = false
+var gates_active = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

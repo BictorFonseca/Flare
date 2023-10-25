@@ -1,5 +1,6 @@
 extends Node2D
 var red_mineral_tilemap = preload("res://Levels/Level02/red_mineral_tilemap.tscn")
+var gates_active = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,3 +18,7 @@ func _process(delta):
 	elif (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("RedMineralTilemap"):
 		var tilemap = red_mineral_tilemap.instantiate()
 		add_child(tilemap)
+
+
+func _on_gate_timer_timeout():
+	gates_active = true
