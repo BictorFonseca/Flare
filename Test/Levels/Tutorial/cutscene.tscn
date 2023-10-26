@@ -5642,12 +5642,10 @@ script = ExtResource("8_2283d")
 leverID = 5
 
 [node name="Ladder1" parent="." instance=ExtResource("8_xwjxq")]
-position = Vector2(814, 455)
-scale = Vector2(0.5, 0.5)
+position = Vector2(814, 483)
 
 [node name="Ladder2" parent="." instance=ExtResource("8_xwjxq")]
-position = Vector2(255, 200)
-scale = Vector2(0.5, 0.5)
+position = Vector2(254, 260)
 
 [node name="Ladder3" parent="." instance=ExtResource("8_xwjxq")]
 position = Vector2(432, 448)

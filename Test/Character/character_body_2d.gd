@@ -38,8 +38,10 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("run_left", "run_right")
-	if direction and not on_ladder:
+	if direction:# and not on_ladder:
 		velocity.x = direction * speed
+		if on_ladder and Input.is_action_pressed('jump'):
+			velocity.x = direction * speed / 5
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		

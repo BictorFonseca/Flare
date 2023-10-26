@@ -74,6 +74,6 @@ func _begin_tutorial():
 	player.global_position = Vector2(100, 97)
 	
 func _on_hud_start_game():
-	#_begin_tutorial()
-	_begin_level_02()
+	_begin_tutorial()
+	#_begin_level_02()
 	
