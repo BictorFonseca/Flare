@@ -30,8 +30,7 @@ func _process(delta):
 			_begin_level_02()
 	if level_02_running:
 		player = get_node_or_null("player")
-		if player:
-			"and (specify player position condition for completing level)"
+		if player and player.position.y<0:
 			_end_level()
 			level_02_running=false
 			_begin_level_03()
@@ -59,6 +58,7 @@ func _begin_level_03():
 	
 func _begin_level_02():
 	level_02_running=true
+	player = player_scene.instantiate() 
 	level = level_02_scene.instantiate()
 	add_child(level)
 	add_child(player)
@@ -74,6 +74,6 @@ func _begin_tutorial():
 	player.global_position = Vector2(100, 97)
 	
 func _on_hud_start_game():
-	_begin_tutorial()
-	#_begin_level_01()
+	#_begin_tutorial()
+	_begin_level_02()
 	
