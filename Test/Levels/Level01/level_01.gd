@@ -42,8 +42,6 @@ func _on_area_2_for_mineral_1_body_entered(body):
 		
 		
 
-
-
 func _on_area_2d_for_elevator_body_entered(body):
 	elevatorIsMoving = true
 

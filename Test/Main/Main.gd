@@ -22,7 +22,7 @@ func _process(delta):
 		if player and player.position.y>720:
 			_end_level()
 			tutorial_running=false
-			_begin_level_01()
+			_begin_level_02()
 	if level_01_running:
 		player = get_node_or_null("player")
 		if player and player.position.y < 0:
@@ -75,7 +75,7 @@ func _begin_level_02():
 	level = level_02_scene.instantiate()
 	add_child(level)
 	add_child(player)
-	player.global_position = Vector2(600, 450)
+	player.global_position = Vector2(368, 800)
 
 func _begin_tutorial():
 	tutorial_running=true

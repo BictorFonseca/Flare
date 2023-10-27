@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dglwi76rwsuqq"]
+[gd_scene load_steps=20 format=3 uid="uid://dglwi76rwsuqq"]
 
 [ext_resource type="Script" path="res://Levels/Level02/level_02.gd" id="1_f3frw"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_xcqyk"]
@@ -10,9 +10,25 @@
 [ext_resource type="PackedScene" uid="uid://ca6kkvuq17fim" path="res://Objects/lever.tscn" id="8_wlvng"]
 [ext_resource type="Script" path="res://Objects/lever.gd" id="9_hm1d1"]
 [ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="10_5orar"]
+[ext_resource type="Texture2D" uid="uid://bf4fxa5wpjkdi" path="res://PixelFantasy_Caves_1.0/Actual_USed_elevator_ART.png" id="11_7j2uy"]
+[ext_resource type="AudioStream" uid="uid://dj5ahuesnu6y8" path="res://Objects/ElevatorCrank.wav" id="12_74r1v"]
+[ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="13_r6i3g"]
+[ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="14_i7fki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdcge"]
 size = Vector2(70.0938, 10.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6y2f"]
+size = Vector2(126, 110.602)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gocg"]
+size = Vector2(122, 8.69903)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg4jr"]
+size = Vector2(65, 35.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qud3q"]
+size = Vector2(113, 12)
 
 [node name="level_02" type="Node2D"]
 script = ExtResource("1_f3frw")
@@ -150,4 +166,54 @@ wait_time = 0.2
 one_shot = true
 autostart = true
 
+[node name="Elevator" type="Sprite2D" parent="."]
+position = Vector2(368, 800)
+scale = Vector2(0.5, 0.804688)
+texture = ExtResource("11_7j2uy")
+
+[node name="Area2DForElevator" type="Area2D" parent="Elevator"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator"]
+position = Vector2(-1, -7.45643)
+shape = SubResource("RectangleShape2D_o6y2f")
+
+[node name="ElFloor" type="StaticBody2D" parent="Elevator/Area2DForElevator"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator/ElFloor"]
+position = Vector2(0, 53.4369)
+shape = SubResource("RectangleShape2D_8gocg")
+
+[node name="ElevatorSound" type="AudioStreamPlayer" parent="Elevator"]
+stream = ExtResource("12_74r1v")
+
+[node name="PointLight2D" type="PointLight2D" parent="Elevator"]
+position = Vector2(0, -72)
+scale = Vector2(2, 1.24272)
+color = Color(0.160784, 1, 0.392157, 1)
+energy = 0.0
+texture = ExtResource("13_r6i3g")
+texture_scale = 1.9
+
+[node name="Sprite2D" type="Sprite2D" parent="Elevator"]
+position = Vector2(0, -73)
+scale = Vector2(2.2, 1.5)
+texture = ExtResource("14_i7fki")
+
+[node name="stopEleva" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stopEleva"]
+position = Vector2(364, 522.125)
+shape = SubResource("RectangleShape2D_gg4jr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(367, 582)
+
+[node name="eleFloor" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qud3q")
+one_way_collision = true
+one_way_collision_margin = 0.0
+
 [connection signal="timeout" from="GateTimer" to="." method="_on_gate_timer_timeout"]
+[connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
+[connection signal="body_entered" from="stopEleva" to="." method="_on_stop_eleva_body_entered"]
