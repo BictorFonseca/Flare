@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bgt4xbj8etqon"]
+[gd_scene load_steps=16 format=3 uid="uid://bgt4xbj8etqon"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_havwp"]
 [ext_resource type="TileSet" uid="uid://c7n84thamduu3" path="res://Levels/level_tilemap.tres" id="2_k031o"]
@@ -13,39 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://dj5ahuesnu6y8" path="res://Objects/ElevatorCrank.wav" id="11_f3ojo"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="12_uhyan"]
 [ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="13_k871h"]
-
-[sub_resource type="GDScript" id="GDScript_l8i28"]
-script/source = "extends Sprite2D
-var upwardsSpeed = 10
-var moving = false
-# =
-# +
-#the above comments are there becayse of the broken keyboard that doesn't allow a group member to use the keys
-#thus, that's there for copy pasting
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if moving:
-		print(moving)
-		#$Area2DForElevator/ElFloor
-		$ElevatorSound.play()
-
-
-func _on_area_2d_for_elevator_body_entered(body):
-	if body.is_in_group(\"Player\"):
-		moving = true
-		print(moving)
-		$ElevatorSound.play()
-
-
-func _on_lever_2_flipped():
-	$PointLight2D.energy = 10
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqjte"]
 size = Vector2(126, 110.602)
@@ -149,10 +116,8 @@ vertical_alignment = 1
 position = Vector2(1122, 104)
 scale = Vector2(0.5, 0.804688)
 texture = ExtResource("10_thqbj")
-script = SubResource("GDScript_l8i28")
 
 [node name="Area2DForElevator" type="Area2D" parent="Elevator"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator"]
 position = Vector2(-1, -7.45643)
