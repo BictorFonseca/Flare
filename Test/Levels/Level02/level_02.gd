@@ -2,6 +2,7 @@ extends Node2D
 var red_mineral_tilemap = preload("res://Levels/Level02/red_mineral_tilemap.tscn")
 var gates_active = false
 var elevatorIsMoving = true
+#Change to has_mineral2 when it's been implemented
 var stopped=false
 
 # Called when the node enters the scene tree for the first time.
