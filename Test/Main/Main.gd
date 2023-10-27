@@ -71,7 +71,7 @@ func _begin_level_03():
 	
 func _begin_level_02():
 	level_02_running=true
-	player = player_scene.instantiate() 
+	#player = player_scene.instantiate() 
 	level = level_02_scene.instantiate()
 	add_child(level)
 	add_child(player)
