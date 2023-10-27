@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgt4xbj8etqon"]
+[gd_scene load_steps=17 format=3 uid="uid://bgt4xbj8etqon"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_havwp"]
 [ext_resource type="TileSet" uid="uid://c7n84thamduu3" path="res://Levels/level_tilemap.tres" id="2_k031o"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dj5ahuesnu6y8" path="res://Objects/ElevatorCrank.wav" id="11_f3ojo"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="12_uhyan"]
 [ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="13_k871h"]
+[ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="14_j686j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqjte"]
 size = Vector2(126, 110.602)
@@ -144,3 +145,7 @@ texture_scale = 1.9
 position = Vector2(0, -73)
 scale = Vector2(2.2, 1.5)
 texture = ExtResource("13_k871h")
+
+[node name="Ladder" parent="." instance=ExtResource("14_j686j")]
+position = Vector2(514, 495)
+scale = Vector2(0.5, 0.5)

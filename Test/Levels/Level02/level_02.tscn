@@ -236,6 +236,8 @@ position = Vector2(0, -73)
 scale = Vector2(2.2, 1.5)
 texture = ExtResource("14_i7fki")
 
+[connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
+[connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]
 [connection signal="timeout" from="GateTimer" to="." method="_on_gate_timer_timeout"]
 [connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
 [connection signal="body_entered" from="stopEleva" to="." method="_on_stop_eleva_body_entered"]
