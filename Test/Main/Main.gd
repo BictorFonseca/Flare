@@ -24,7 +24,7 @@ func _process(delta):
 		if player and player.position.y>720:
 			_end_level()
 			tutorial_running=false
-			_begin_level_01()
+			_begin_level_03()
 	if level_01_running:
 		player = get_node_or_null("player")
 		if player and player.position.y < 0:
@@ -35,7 +35,9 @@ func _process(delta):
 		player = get_node_or_null("player")
 		if player and player.position.y<0:
 			_end_level()
+			print("ended level")
 			level_02_running=false
+			print("stopped running")
 			_begin_level_03()
 	if level_03_running:
 		player=get_node_or_null("player")
@@ -70,7 +72,9 @@ func _end_level():
 	
 func _begin_level_03():
 	level_03_running=true
+	print("not yet instantiated")
 	level=level_03_scene.instantiate()
+	print("instantiated")
 	add_child(level)
 	add_child(player)
 	player.global_position=Vector2(600,400)
