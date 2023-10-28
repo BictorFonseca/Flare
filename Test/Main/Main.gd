@@ -3,6 +3,7 @@ var tutorial_running = false
 var level_01_running = false
 var level_02_running = false
 var level_03_running = false
+var level_end_running = false
 var level = null
 var player = null
 
@@ -11,6 +12,7 @@ var level_02_scene = preload("res://Levels/Level02/level_02.tscn")
 var level_03_scene = preload("res://Levels/Level03/level_03.tscn")
 var player_scene = preload("res://Character/character_body_2d.tscn")
 var cutscene = preload("res://Levels/Tutorial/cutscene.tscn")
+var level_end_scene = preload("res://Levels/End/end_level.tscn")
 
 func _ready():
 	$HUD._ready()
@@ -41,6 +43,12 @@ func _process(delta):
 			_end_level()
 			level_03_running=false
 			pass
+		if level_end_running:
+			player=get_node_or_null("plauer")
+			if player and player.position.y > 800:
+				_end_level()
+				level_end_running=false
+				_begin_level_01()
 			
 	
 			
@@ -67,7 +75,12 @@ func _begin_level_03():
 	add_child(player)
 	player.global_position=Vector2(600,400)
 	
-	
+func _begin_end_level():
+	level_end_running=true
+	level=level_end_scene.instantiate()
+	add_child(level)
+	add_child(player)
+	player.global_position=Vector2(600,400)
 	
 func _begin_level_02():
 	level_02_running=true
