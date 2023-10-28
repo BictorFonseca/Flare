@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dglwi76rwsuqq"]
+[gd_scene load_steps=20 format=3 uid="uid://dglwi76rwsuqq"]
 
 [ext_resource type="Script" path="res://Levels/Level02/level_02.gd" id="1_f3frw"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_xcqyk"]
@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bf4fxa5wpjkdi" path="res://PixelFantasy_Caves_1.0/Actual_USed_elevator_ART.png" id="11_7j2uy"]
 [ext_resource type="AudioStream" uid="uid://dj5ahuesnu6y8" path="res://Objects/ElevatorCrank.wav" id="12_74r1v"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="13_r6i3g"]
+[ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="14_12k3g"]
 [ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="14_i7fki"]
+[ext_resource type="Texture2D" uid="uid://dv4cxyihtfrm7" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art_Pile.png.png" id="15_ilc2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdcge"]
 size = Vector2(70.0938, 10.5)
@@ -228,6 +230,13 @@ texture_scale = 1.9
 position = Vector2(0, -73)
 scale = Vector2(2.2, 1.5)
 texture = ExtResource("14_i7fki")
+
+[node name="Mineral Deposit" parent="." instance=ExtResource("14_12k3g")]
+position = Vector2(279, 405)
+
+[node name="MineralArt" type="Sprite2D" parent="Mineral Deposit"]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("15_ilc2g")
 
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]

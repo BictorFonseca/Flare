@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=36 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="14_xtjvk"]
 [ext_resource type="Texture2D" uid="uid://b4hjoq5e17pno" path="res://PixelFantasy_Caves_1.0/Mineral Assets/blue_mineral_art.png" id="16_d2sj1"]
 [ext_resource type="FontFile" uid="uid://cnu12edowtuub" path="res://Objects/DoubleHomicide.ttf" id="16_o534m"]
+[ext_resource type="Texture2D" uid="uid://u0gxgl2rkfm4" path="res://PixelFantasy_Caves_1.0/Mineral Assets/Blue_Rock_Pile.png" id="18_adqsn"]
 [ext_resource type="Texture2D" uid="uid://biaf0dmhxy7xv" path="res://PixelFantasy_Caves_1.0/corpse_2.png" id="18_hraba"]
 [ext_resource type="Texture2D" uid="uid://6fq7de4q62rn" path="res://PixelFantasy_Caves_1.0/corpse_1.png" id="19_gukoq"]
 [ext_resource type="Texture2D" uid="uid://cx4tox3ifqn6" path="res://PixelFantasy_Caves_1.0/GoreArt/corpse-mangled.png" id="20_v3srr"]
@@ -1136,6 +1137,7 @@ size = Vector2(34.75, 9)
 script = ExtResource("1_uao53")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -1279,6 +1281,10 @@ position = Vector2(1042, 127)
 
 [node name="CollisionShape2DForMineral1" type="CollisionShape2D" parent="Mineral Deposit/Area2ForMineral1"]
 shape = SubResource("CircleShape2D_8mykn")
+
+[node name="MineralArt" type="Sprite2D" parent="Mineral Deposit"]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("18_adqsn")
 
 [node name="Lever2" parent="." instance=ExtResource("9_fpgsa")]
 position = Vector2(1038, 276)

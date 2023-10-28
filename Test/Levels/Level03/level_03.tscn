@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bgt4xbj8etqon"]
+[gd_scene load_steps=19 format=3 uid="uid://bgt4xbj8etqon"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_havwp"]
 [ext_resource type="TileSet" uid="uid://c7n84thamduu3" path="res://Levels/level_tilemap.tres" id="2_k031o"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="12_uhyan"]
 [ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="13_k871h"]
 [ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="14_j686j"]
+[ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="15_t52wg"]
+[ext_resource type="Texture2D" uid="uid://ciii8d8mrm3wq" path="res://PixelFantasy_Caves_1.0/Mineral Assets/purple_mineral_art_Pile.png.png" id="16_jlsfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqjte"]
 size = Vector2(126, 110.602)
@@ -149,3 +151,11 @@ texture = ExtResource("13_k871h")
 [node name="Ladder" parent="." instance=ExtResource("14_j686j")]
 position = Vector2(514, 495)
 scale = Vector2(0.5, 0.5)
+
+[node name="Mineral Deposit" parent="." instance=ExtResource("15_t52wg")]
+position = Vector2(1067, 454)
+
+[node name="MineralArt" type="Sprite2D" parent="Mineral Deposit"]
+position = Vector2(-1, -4)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_jlsfv")

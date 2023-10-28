@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b72vhwodq67va"]
+[gd_scene load_steps=6 format=3 uid="uid://b72vhwodq67va"]
 
 [ext_resource type="Script" path="res://Objects/Mineral Deposit.gd" id="1_11ea8"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="1_fu48w"]
-[ext_resource type="Texture2D" uid="uid://u0gxgl2rkfm4" path="res://PixelFantasy_Caves_1.0/Mineral Assets/Blue_Rock_Pile.png" id="2_es2i5"]
 [ext_resource type="FontFile" uid="uid://c5n0dcrx4814y" path="res://HUD/Art Assets/PetitePx.ttf" id="3_ietyc"]
 [ext_resource type="Texture2D" uid="uid://cdjx4qyt5ge0x" path="res://HUD/Art Assets/Keyboard_Numbers.png" id="4_7gy3u"]
 
@@ -11,11 +10,6 @@ radius = 20.2237
 
 [node name="Mineral Deposit" type="Node2D"]
 script = ExtResource("1_11ea8")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.999998, -2)
-scale = Vector2(0.4375, 0.40625)
-texture = ExtResource("2_es2i5")
 
 [node name="Area2D" type="Area2D" parent="."]
 
