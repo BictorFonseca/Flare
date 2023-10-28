@@ -24,7 +24,7 @@ func _process(delta):
 		if player and player.position.y>720:
 			_end_level()
 			tutorial_running=false
-			_begin_level_03()
+			_begin_end_level()
 	if level_01_running:
 		player = get_node_or_null("player")
 		if player and player.position.y < 0:
@@ -45,12 +45,12 @@ func _process(delta):
 			_end_level()
 			level_03_running=false
 			pass
-		if level_end_running:
-			player=get_node_or_null("plauer")
-			if player and player.position.y > 800:
-				_end_level()
-				level_end_running=false
-				_begin_level_01()
+	if level_end_running:
+		player=get_node_or_null("player")
+		if player and player.position.y >= 800:
+			_end_level()
+			level_end_running=false
+			_begin_level_01()
 			
 	
 			
@@ -84,6 +84,7 @@ func _begin_end_level():
 	level=level_end_scene.instantiate()
 	add_child(level)
 	add_child(player)
+	print("Level end should be startimg")
 	player.global_position=Vector2(600,400)
 	
 func _begin_level_02():
