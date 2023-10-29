@@ -5645,7 +5645,7 @@ leverID = 5
 position = Vector2(814, 483)
 
 [node name="Ladder2" parent="." instance=ExtResource("8_xwjxq")]
-position = Vector2(254, 260)
+position = Vector2(255, 229)
 
 [node name="Ladder3" parent="." instance=ExtResource("8_xwjxq")]
 position = Vector2(432, 448)

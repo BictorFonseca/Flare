@@ -4,7 +4,7 @@ var elevatorMoving=false
 var gates_active = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Ladder/CollisionShape2D.apply_scale(Vector2(1,1.35))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

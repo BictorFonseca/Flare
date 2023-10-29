@@ -1137,7 +1137,6 @@ size = Vector2(34.75, 9)
 script = ExtResource("1_uao53")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -1230,15 +1229,12 @@ text = "TODO: lever"
 
 [node name="Ladder" parent="." instance=ExtResource("5_yqdpj")]
 position = Vector2(576, 485)
-scale = Vector2(0.5, 0.5)
 
 [node name="Ladder2" parent="." instance=ExtResource("5_yqdpj")]
-position = Vector2(462, 341)
-scale = Vector2(0.5, 0.5)
+position = Vector2(463, 350)
 
 [node name="Ladder3" parent="." instance=ExtResource("5_yqdpj")]
-position = Vector2(702, 191)
-scale = Vector2(0.5, 0.5)
+position = Vector2(702, 206)
 
 [node name="Platform1" parent="." instance=ExtResource("6_hbpv7")]
 position = Vector2(830, 532)
