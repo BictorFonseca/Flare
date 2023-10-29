@@ -11,7 +11,7 @@ var on_ladder=false
 var on_lever=-1
 var lever_list=[0,0,0,0,0,0,0,0,0]
 var has_mineral1 = false
-var has_mineral2 = true
+var has_mineral2 = false
 var has_mineral3 = false
 var inventory_slot_selected = 1
 #var lever2=false
@@ -102,6 +102,8 @@ func _process(delta):
 		$InventorySwitchSFX.play()
 		if not has_mineral2:
 			$PointLight2D.color = Color("ffffce")
+		else:
+			$PointLight2D.color = Color("ff9f98")
 	elif Input.is_action_just_pressed("select_4"):
 		inventory_slot_selected = 4
 		$InventorySwitchSFX.play()

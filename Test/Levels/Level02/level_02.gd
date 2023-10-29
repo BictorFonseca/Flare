@@ -16,6 +16,11 @@ func _ready():
 	print(tilemap)
 	add_child(tilemap)
 	$CanvasLayer/Inventory3.hide()
+	$CanvasModulate.hide()
+	await get_tree().create_timer(0.01).timeout
+	$CanvasModulate.show()
+	$PointLight2D.hide()
+	$"Mineral Deposit/PointLight2D2".color = Color("ff5454")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,9 +31,11 @@ func _process(delta):
 		if tilemap_instance:
 			print("yp I ecost and im not supposed to anymore")
 			tilemap_instance.queue_free()
+			$PointLight2D.show()
 	elif (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("RedMineralTilemap"):
 		var tilemap = red_mineral_tilemap.instantiate()
 		add_child(tilemap)
+		$PointLight2D.hide()
 	if elevatorIsMoving:
 		$Elevator.position.y -= 2
 		$Elevator/ElevatorSound.play()
@@ -62,3 +69,4 @@ func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Player"):
 		$CanvasLayer/Inventory3.show()
 		has_mineral2 = true
+		body.has_mineral2 = true

@@ -17,6 +17,7 @@ func _ready():
 	print("text hidden")
 	$CanvasLayer/Inventory2.hide()
 	$EndLayer/LabelEnd.hide()
+	$CanvasModulate.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
