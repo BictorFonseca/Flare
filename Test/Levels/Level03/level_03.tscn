@@ -90,10 +90,12 @@ position = Vector2(715, 191)
 position = Vector2(859, 540)
 
 [node name="WallWriting" parent="." instance=ExtResource("6_nca6e")]
-position = Vector2(732, 533)
+position = Vector2(344, 424)
+wall_text = "A TEST OF BRAVERY"
 
 [node name="WallWriting2" parent="." instance=ExtResource("6_nca6e")]
 position = Vector2(430, 534)
+wall_text = "VIOLET TO MAKE WATER"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
