@@ -1,6 +1,7 @@
 extends Node2D
 
 var has_mineral3 = false
+var elevator2Moving=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,7 +33,9 @@ func _process(delta):
 		get_node("BigSludge1/CollisionShape2D").set_deferred("disabled", false)
 		get_node("BigSludge2/CollisionShape2D").set_deferred("disabled", false)
 		get_node("BigSludge3/CollisionShape2D").set_deferred("disabled", false)
-		
+	
+	if elevator2Moving:
+		$Elevator2.position.y-=2
 	pass
 
 
@@ -41,3 +44,10 @@ func _on_area_2d_2_body_entered(body):
 		$CanvasLayer2/Inventory4.show()
 		has_mineral3 = true
 		body.has_mineral3 = true
+
+
+func _on_area_2d_for_elevator_body_entered(body):
+	if body.is_in_group("Player"):
+		elevator2Moving=true
+	
+	pass # Replace with function body.

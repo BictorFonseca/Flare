@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d15t3xnsroge8"]
+[gd_scene load_steps=18 format=3 uid="uid://d15t3xnsroge8"]
 
 [ext_resource type="Script" path="res://EndLevel.gd" id="1_v3kaw"]
 [ext_resource type="Texture2D" uid="uid://bt5g45q5cevis" path="res://Levels/Tutorial/TutorialBG.jpg" id="2_8syya"]
@@ -8,8 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://dj5ahuesnu6y8" path="res://Objects/ElevatorCrank.wav" id="6_bjkmr"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="7_ykw8g"]
 [ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="8_lm3io"]
-[ext_resource type="PackedScene" uid="uid://do85w7pygcigs" path="res://Objects/gate.tscn" id="9_bn756"]
-[ext_resource type="PackedScene" uid="uid://ca6kkvuq17fim" path="res://Objects/lever.tscn" id="10_wfr4w"]
 [ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="11_yudd0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u3481"]
@@ -4762,11 +4760,6 @@ scale = Vector2(1.66667, 1.66667)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/StaticBody2D"]
 position = Vector2(0.416672, 0)
 shape = SubResource("RectangleShape2D_xu017")
-
-[node name="Lever" parent="." instance=ExtResource("10_wfr4w")]
-position = Vector2(-98, 359)
-
-[node name="Gate" parent="." instance=ExtResource("9_bn756")]
 
 [node name="Ladder" parent="." instance=ExtResource("11_yudd0")]
 position = Vector2(367, 469)

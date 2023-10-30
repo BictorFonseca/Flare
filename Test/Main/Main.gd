@@ -41,9 +41,10 @@ func _process(delta):
 			_begin_level_03()
 	if level_03_running:
 		player=get_node_or_null("player")
-		if player and player.position.y<0:
+		if player and player.position.y<-50:
 			_end_level()
 			level_03_running=false
+			_begin_end_level()
 			pass
 	if level_end_running:
 		player=get_node_or_null("player")
