@@ -24,7 +24,7 @@ func _process(delta):
 		if player and player.position.y>720:
 			_end_level()
 			tutorial_running=false
-			_begin_level_01()
+			_begin_level_03()
 	if level_01_running:
 		player = get_node_or_null("player")
 		if player and player.position.y < 0:
