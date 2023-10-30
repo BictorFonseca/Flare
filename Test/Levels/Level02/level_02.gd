@@ -41,7 +41,7 @@ func _process(delta):
 		$Elevator/ElevatorSound.play()
 	if elevator2Moving:
 		$Elevator2.position.y-=2
-	if get_node("../player").position.y<140:
+	if get_node("../player").position.y<150:
 		print("im in range")
 		stopped=false
 		#$Elevator.visible=false
@@ -55,7 +55,7 @@ func _on_area_2d_for_elevator_body_entered(body):
 	print('e1')
 	if not stopped:
 		elevatorIsMoving = true
-	if not stopped and get_node("../player").position.y<140 and body.is_in_group("Player"):
+	if not stopped and get_node("../player").position.y<150 and body.is_in_group("Player"):
 		elevator2Moving=true
 	stopped = true
 
