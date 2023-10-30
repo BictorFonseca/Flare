@@ -21,6 +21,9 @@ func _ready():
 	$CanvasModulate.show()
 	$PointLight2D.hide()
 	$"Mineral Deposit/PointLight2D2".color = Color("ff5454")
+	#making it so that if 2 was selected, blue platforms show
+	#if get_node("../HUD/Selector").position.x = 469 + 67:
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,6 +65,7 @@ func _on_area_2d_for_elevator_body_entered(body):
 func _on_stop_eleva_body_entered(body):
 	if body.is_in_group("Player"):
 		elevatorIsMoving=false
+		stopped = true
 	pass # Replace with function body.
 
 #if player collect mineral 2

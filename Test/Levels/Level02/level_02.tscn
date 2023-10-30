@@ -38,6 +38,7 @@ radius = 21.0
 script = ExtResource("1_f3frw")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -271,7 +272,7 @@ scale = Vector2(1.96875, 1.65625)
 texture = ExtResource("16_dsmgh")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0.00151515, 0.00242036)
+position = Vector2(-3, -20)
 scale = Vector2(0.99697, 0.995159)
 color = Color(1, 0.454902, 0.435294, 1)
 energy = 0.29
