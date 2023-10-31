@@ -43,6 +43,7 @@ func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Player"):
 		$CanvasLayer2/Inventory4.show()
 		has_mineral3 = true
+		$RockPickUp.play()
 		body.has_mineral3 = true
 
 

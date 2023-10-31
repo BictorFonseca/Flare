@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=38 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://u0gxgl2rkfm4" path="res://PixelFantasy_Caves_1.0/Mineral Assets/Blue_Rock_Pile.png" id="18_adqsn"]
 [ext_resource type="Texture2D" uid="uid://biaf0dmhxy7xv" path="res://PixelFantasy_Caves_1.0/corpse_2.png" id="18_hraba"]
 [ext_resource type="Texture2D" uid="uid://6fq7de4q62rn" path="res://PixelFantasy_Caves_1.0/corpse_1.png" id="19_gukoq"]
+[ext_resource type="AudioStream" uid="uid://ddkfc7fpkljuo" path="res://PixelFantasy_Caves_1.0/Mineral Assets/foley_breeze_block_drop_on_hard_ground_001.mp3" id="19_n27yr"]
 [ext_resource type="Texture2D" uid="uid://cx4tox3ifqn6" path="res://PixelFantasy_Caves_1.0/GoreArt/corpse-mangled.png" id="20_v3srr"]
 [ext_resource type="Texture2D" uid="uid://bmavk634cjf04" path="res://PixelFantasy_Caves_1.0/GoreArt/2D Gore UI/Backbone.png" id="21_g4hw4"]
 [ext_resource type="Texture2D" uid="uid://bf4fxa5wpjkdi" path="res://PixelFantasy_Caves_1.0/Actual_USed_elevator_ART.png" id="22_ani4w"]
@@ -1276,6 +1277,10 @@ theme_override_font_sizes/font_size = 56
 text = "TEST"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RockPickUp" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1042, 127)
+stream = ExtResource("19_n27yr")
 
 [node name="Mineral Deposit" parent="." instance=ExtResource("14_xtjvk")]
 position = Vector2(1042, 127)

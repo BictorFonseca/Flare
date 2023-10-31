@@ -171,6 +171,9 @@ texture = ExtResource("13_k871h")
 position = Vector2(514, 495)
 scale = Vector2(0.5, 0.5)
 
+[node name="RockPickUp" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1067, 454)
+
 [node name="Mineral Deposit" parent="." instance=ExtResource("15_t52wg")]
 position = Vector2(1067, 454)
 

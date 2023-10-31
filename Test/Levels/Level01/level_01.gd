@@ -39,6 +39,7 @@ func _on_area_2_for_mineral_1_body_entered(body):
 
 	obtained_mineral = true
 	if body.is_in_group("Player"):
+		$RockPickUp.play()
 		$CanvasLayer/Inventory2.show()
 		
 		
