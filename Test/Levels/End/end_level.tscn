@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d15t3xnsroge8"]
+[gd_scene load_steps=19 format=3 uid="uid://d15t3xnsroge8"]
 
 [ext_resource type="Script" path="res://EndLevel.gd" id="1_v3kaw"]
 [ext_resource type="Texture2D" uid="uid://bt5g45q5cevis" path="res://Levels/Tutorial/TutorialBG.jpg" id="2_8syya"]
@@ -4700,6 +4700,9 @@ size = Vector2(122, 8.69903)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xu017"]
 size = Vector2(95.8333, 8.10559)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubye1"]
+size = Vector2(25, 353)
+
 [node name="EndLevel" type="Node2D"]
 script = ExtResource("1_v3kaw")
 
@@ -4763,5 +4766,11 @@ shape = SubResource("RectangleShape2D_xu017")
 
 [node name="Ladder" parent="." instance=ExtResource("11_yudd0")]
 position = Vector2(367, 469)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(154, 562)
+shape = SubResource("RectangleShape2D_ubye1")
 
 [connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]

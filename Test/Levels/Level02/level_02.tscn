@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dglwi76rwsuqq"]
+[gd_scene load_steps=25 format=3 uid="uid://dglwi76rwsuqq"]
 
 [ext_resource type="Script" path="res://Levels/Level02/level_02.gd" id="1_f3frw"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_xcqyk"]
@@ -33,6 +33,9 @@ size = Vector2(65, 35.75)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qj8cv"]
 radius = 21.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhtj7"]
+size = Vector2(25, 154)
 
 [node name="level_02" type="Node2D"]
 script = ExtResource("1_f3frw")
@@ -278,6 +281,30 @@ color = Color(1, 0.454902, 0.435294, 1)
 energy = 0.29
 texture = ExtResource("18_vr8jp")
 offset = Vector2(578, 362)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(320, 798)
+shape = SubResource("RectangleShape2D_xhtj7")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(417, 800)
+shape = SubResource("RectangleShape2D_xhtj7")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1103, -81)
+shape = SubResource("RectangleShape2D_xhtj7")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(1017, -79)
+shape = SubResource("RectangleShape2D_xhtj7")
 
 [connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]

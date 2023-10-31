@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bgt4xbj8etqon"]
+[gd_scene load_steps=25 format=3 uid="uid://bgt4xbj8etqon"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_havwp"]
 [ext_resource type="Script" path="res://Levels/Level03/level_03.gd" id="1_uyhm7"]
@@ -29,6 +29,9 @@ size = Vector2(129, 8.69903)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_judf7"]
 radius = 16.0312
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5icts"]
+size = Vector2(25, 154)
 
 [node name="level_03" type="Node2D"]
 script = ExtResource("1_uyhm7")
@@ -197,6 +200,18 @@ texture = ExtResource("19_cpj3d")
 position = Vector2(696, 680)
 scale = Vector2(1.969, 1.656)
 texture = ExtResource("20_e1oai")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1084, -77)
+shape = SubResource("RectangleShape2D_5icts")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(1165, -76)
+shape = SubResource("RectangleShape2D_5icts")
 
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]
