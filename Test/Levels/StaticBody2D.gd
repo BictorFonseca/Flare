@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("select_2") and get_node("../../player").has_mineral1:
+	if (Input.is_action_just_pressed("select_2") or get_node("../../player").inventory_slot_selected == 2) and get_node("../../player").has_mineral1:
 		if on_off==false:
 			on_off=true
 		#this is needed to detoggle the platforms with the key 2. 

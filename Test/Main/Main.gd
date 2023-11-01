@@ -14,6 +14,8 @@ var player_scene = preload("res://Character/character_body_2d.tscn")
 var cutscene = preload("res://Levels/Tutorial/cutscene.tscn")
 var level_end_scene = preload("res://Levels/End/end_level.tscn")
 
+
+
 func _ready():
 	$HUD._ready()
 

@@ -1,5 +1,7 @@
 extends CharacterBody2D
-
+#implementing seeing what key is pressed so it can be carried forwards between levels
+#so that if an inventory is selected then the functionality is openeed - going to be done w 
+#inventory_slot_selected
 
 @export var speed = 300.0
 @export var jump_velocity = -400.0
@@ -13,7 +15,7 @@ var lever_list=[0,0,0,0,0,0,0,0,0]
 var has_mineral1 = false
 var has_mineral2 = false
 var has_mineral3 = false
-var inventory_slot_selected = 1
+@export var inventory_slot_selected = 1
 #var lever2=false
 #var lever2_signal=false
 
