@@ -250,6 +250,8 @@ position = Vector2(0, -73)
 scale = Vector2(2.2, 1.5)
 texture = ExtResource("14_i7fki")
 
+[node name="PointLight2D2" type="PointLight2D" parent="Elevator2"]
+
 [node name="RockPickUp" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(279, 405)
 

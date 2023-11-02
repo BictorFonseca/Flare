@@ -72,6 +72,7 @@ func _end_level():
 	if (is_instance_valid(level)):
 		level.queue_free()
 		remove_child(player)
+	#get_node("player").flare_lit = false
 	
 func _begin_level_03():
 	level_03_running=true
