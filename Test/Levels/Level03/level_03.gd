@@ -2,6 +2,7 @@ extends Node2D
 
 var has_mineral3 = false
 var elevator2Moving=false
+var BegEle=true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,6 +37,9 @@ func _process(delta):
 	
 	if elevator2Moving:
 		$Elevator2.position.y-=2
+	if BegEle:
+		$Elevator3.position.y-=2
+	print(BegEle)
 	pass
 
 
@@ -48,7 +52,13 @@ func _on_area_2d_2_body_entered(body):
 
 
 func _on_area_2d_for_elevator_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and not BegEle:
 		elevator2Moving=true
 	
+	pass # Replace with function body.
+
+
+func _on_stop_area_body_entered(body):
+	if body.is_in_group("Player"):
+		BegEle=false
 	pass # Replace with function body.

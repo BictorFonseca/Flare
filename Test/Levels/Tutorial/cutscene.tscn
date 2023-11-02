@@ -5642,7 +5642,6 @@ layer_0/tile_data = PackedInt32Array(2359359, 3145728, 1, 2359360, 3211264, 1, 2
 [node name="Lever" parent="." instance=ExtResource("8_op3hl")]
 position = Vector2(1067, 372)
 script = ExtResource("8_2283d")
-leverID = 5
 
 [node name="Ladder1" parent="." instance=ExtResource("8_xwjxq")]
 position = Vector2(814, 483)
@@ -5655,7 +5654,6 @@ position = Vector2(432, 448)
 
 [node name="Gate" parent="." instance=ExtResource("10_u3lea")]
 position = Vector2(136, 294)
-gateID = 5
 
 [node name="Sign1" parent="." instance=ExtResource("12_kydbr")]
 position = Vector2(123, 74)

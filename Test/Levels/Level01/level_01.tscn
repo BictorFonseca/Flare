@@ -1187,10 +1187,11 @@ scale = Vector2(1.3, 1.3)
 
 [node name="Gate2" parent="." instance=ExtResource("10_gvomr")]
 position = Vector2(119, -128)
-gateID = 1
+gateID = 2
 
 [node name="Gate1" parent="." instance=ExtResource("10_gvomr")]
 position = Vector2(-420, -123)
+gateID = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("9_1gl61")
@@ -1253,6 +1254,7 @@ position = Vector2(946, 571)
 [node name="Lever1" parent="." instance=ExtResource("9_fpgsa")]
 position = Vector2(1062, 548)
 script = ExtResource("11_f2p8i")
+leverID = 1
 
 [node name="Mineral_1" parent="." instance=ExtResource("12_rmlb7")]
 visible = false
@@ -1297,7 +1299,7 @@ texture = ExtResource("18_adqsn")
 [node name="Lever2" parent="." instance=ExtResource("9_fpgsa")]
 position = Vector2(1038, 276)
 script = ExtResource("11_f2p8i")
-leverID = 1
+leverID = 2
 
 [node name="PileOBones" type="Sprite2D" parent="."]
 position = Vector2(249, 548)

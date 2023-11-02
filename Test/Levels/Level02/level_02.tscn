@@ -35,7 +35,7 @@ size = Vector2(65, 35.75)
 radius = 21.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhtj7"]
-size = Vector2(25, 154)
+size = Vector2(25.5, 284)
 
 [node name="level_02" type="Node2D"]
 script = ExtResource("1_f3frw")
@@ -108,11 +108,11 @@ texture = ExtResource("14_i7fki")
 
 [node name="Gate" parent="." instance=ExtResource("4_snrks")]
 position = Vector2(-409, 134)
-gateID = 6
+gateID = 3
 
 [node name="Gate2" parent="." instance=ExtResource("4_snrks")]
 position = Vector2(218, -154)
-gateID = 7
+gateID = 4
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_l6632")
@@ -165,12 +165,12 @@ position = Vector2(1007, 523)
 [node name="Lever" parent="." instance=ExtResource("8_wlvng")]
 position = Vector2(319, 212)
 script = ExtResource("9_hm1d1")
-leverID = 7
+leverID = 4
 
 [node name="Lever2" parent="." instance=ExtResource("8_wlvng")]
 position = Vector2(1056, 404)
 script = ExtResource("9_hm1d1")
-leverID = 6
+leverID = 3
 
 [node name="ladder_OneWAyShape" type="StaticBody2D" parent="."]
 position = Vector2(5, 13)
@@ -252,7 +252,7 @@ texture = ExtResource("14_i7fki")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Elevator2"]
 
-[node name="RockPickUp" type="AudioStreamPlayer2D" parent="."]
+[node name="RockPickUp2" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(279, 405)
 
 [node name="Mineral Deposit" parent="." instance=ExtResource("14_12k3g")]
@@ -290,13 +290,13 @@ offset = Vector2(578, 362)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(320, 798)
+position = Vector2(319.75, 733)
 shape = SubResource("RectangleShape2D_xhtj7")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(417, 800)
+position = Vector2(418, 734)
 shape = SubResource("RectangleShape2D_xhtj7")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
