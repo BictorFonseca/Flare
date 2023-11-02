@@ -15,7 +15,8 @@ var lever_list=[0,0,0,0,0,0,0,0,0]
 var has_mineral1 = false
 var has_mineral2 = false
 var has_mineral3 = false
-@export var inventory_slot_selected = 1
+
+var inventory_slot_selected = 1
 #var lever2=false
 #var lever2_signal=false
 
@@ -88,12 +89,21 @@ func _process(delta):
 		#get_node("../GateCol").set_deferred("disabled", true)
 		#get_node("../GateArt").visible=false
 		
+	'''if Input.is_action_just_released("select_1") or Input.is_action_just_released("select_2") or Input.is_action_just_released("select_3") or Input.is_action_just_released("select_4"):
+		inventory_slot_selected = 1
+		print("inventory slot selected:", inventory_slot_selected)'''
+		
+		
 	if Input.is_action_just_pressed("select_1"):
 		inventory_slot_selected = 1
+		print("inventory slot selected:", inventory_slot_selected)
+		
 		$InventorySwitchSFX.play()
 		$PointLight2D.color = Color("ffffce")
 	elif Input.is_action_just_pressed("select_2"):
 		inventory_slot_selected = 2
+		print("inventory slot selected:", inventory_slot_selected)
+		
 		$InventorySwitchSFX.play()
 		if not has_mineral1:
 			$PointLight2D.color = Color("ffffce")
@@ -101,6 +111,7 @@ func _process(delta):
 			$PointLight2D.color = Color("89fae7")
 	elif Input.is_action_just_pressed("select_3"):
 		inventory_slot_selected = 3
+		print("inventory slot selected:", inventory_slot_selected)
 		$InventorySwitchSFX.play()
 		if not has_mineral2:
 			$PointLight2D.color = Color("ffffce")
@@ -108,6 +119,7 @@ func _process(delta):
 			$PointLight2D.color = Color("ff9f98")
 	elif Input.is_action_just_pressed("select_4"):
 		inventory_slot_selected = 4
+		print("inventory slot selected:", inventory_slot_selected)
 		$InventorySwitchSFX.play()
 		if not has_mineral3:
 			$PointLight2D.color = Color("e669ff")
