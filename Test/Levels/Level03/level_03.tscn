@@ -89,14 +89,12 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator3/Area2DForElevator"]
 position = Vector2(2.05273, -4.03894)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_aqjte")
 
 [node name="ElFloor" type="StaticBody2D" parent="Elevator3/Area2DForElevator"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator3/Area2DForElevator/ElFloor"]
 position = Vector2(-1.32861, 54.7386)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_mn12f")
 
 [node name="ElevatorSound" type="AudioStreamPlayer" parent="Elevator3"]

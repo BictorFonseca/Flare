@@ -4821,7 +4821,6 @@ position = Vector2(0, -60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator2/StaticBody2D"]
 position = Vector2(0, -6.16461)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dk1pm")
 
 [node name="StopShape" type="Area2D" parent="."]

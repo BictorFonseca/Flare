@@ -306,6 +306,7 @@ position = Vector2(1103, -81)
 shape = SubResource("RectangleShape2D_xhtj7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(998, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(1006, -79)

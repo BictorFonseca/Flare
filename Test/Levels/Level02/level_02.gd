@@ -40,15 +40,13 @@ func _process(delta):
 		add_child(tilemap)
 		$PointLight2D.hide()
 	if elevatorIsMoving:
-		$Elevator.position.y -= 2
 		$Elevator/ElevatorSound.play()
+		$Elevator.position.y -= 2
 	if elevator2Moving:
+		$Elevator2/ElevatorSound.play()
 		$Elevator2.position.y-=2
-	if get_node("../player").position.y<150:
-		print("im in range")
-		stopped=false
-		#$Elevator.visible=false
-		print(stopped)
+	
+		
 
 
 func _on_gate_timer_timeout():
@@ -56,16 +54,13 @@ func _on_gate_timer_timeout():
 	
 func _on_area_2d_for_elevator_body_entered(body):
 	print('e1')
-	if not stopped:
-		elevatorIsMoving = true
-	if not stopped and get_node("../player").position.y<150 and body.is_in_group("Player"):
+	if body.is_in_group("Player") and get_node('../player').position.y <=100 and get_node("../player").position.x>=1000 and not elevatorIsMoving:
 		elevator2Moving=true
-	stopped = true
+		
 
 func _on_stop_eleva_body_entered(body):
 	if body.is_in_group("Player"):
 		elevatorIsMoving=false
-		stopped = true
 	pass # Replace with function body.
 
 #if player collect mineral 2
