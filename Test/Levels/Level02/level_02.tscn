@@ -158,9 +158,11 @@ position = Vector2(340, 71)
 
 [node name="WallWriting2" parent="." instance=ExtResource("7_ahg5g")]
 position = Vector2(1036, 160)
+wall_text = "TAKE A LEAP OF FAITH"
 
 [node name="WallWriting3" parent="." instance=ExtResource("7_ahg5g")]
 position = Vector2(1007, 523)
+wall_text = "USE THE STONE"
 
 [node name="Lever" parent="." instance=ExtResource("8_wlvng")]
 position = Vector2(319, 212)
