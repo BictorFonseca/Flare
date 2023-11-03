@@ -59,6 +59,7 @@ func _physics_process(delta):
 	if on_lever>=0 and Input.is_action_pressed("Interact"):
 		lever_list[on_lever]=1
 		$SwitchSound.play()
+		$GateSFX.play()
 		
 	
 

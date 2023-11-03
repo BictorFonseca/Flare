@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://do85w7pygcigs"]
+[gd_scene load_steps=4 format=3 uid="uid://do85w7pygcigs"]
 
 [ext_resource type="Script" path="res://Levels/Gate1.gd" id="1_ohbhw"]
 [ext_resource type="Texture2D" uid="uid://dsto7ukccya2b" path="res://PixelFantasy_Caves_1.0/Gate_art_Chains.png" id="2_5qrh5"]
-[ext_resource type="AudioStream" uid="uid://kyg0vh3ukpwa" path="res://Objects/SFX/Door_Open_Noise.mp3" id="3_8uoqg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p56ug"]
 size = Vector2(25, 116.5)
@@ -20,6 +19,3 @@ texture = ExtResource("2_5qrh5")
 [node name="GateCol" type="CollisionShape2D" parent="."]
 position = Vector2(750.5, 224.25)
 shape = SubResource("RectangleShape2D_p56ug")
-
-[node name="GateSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_8uoqg")

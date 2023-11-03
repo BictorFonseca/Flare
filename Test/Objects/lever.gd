@@ -30,6 +30,7 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body.is_in_group("Player"):
+		get_node("../../player").on_lever=-1
 		$Lever_Prompt.visible=false
 		$E.visible=false
 	print("off")
