@@ -19,7 +19,8 @@ func _ready():
 	$CanvasModulate.hide()
 	await get_tree().create_timer(0.01).timeout
 	$CanvasModulate.show()
-	$PointLight2D.hide()
+	#$PointLight2D2.hide()
+	$Elevator2/PointLight2D2.energy = 0
 	$"Mineral Deposit/PointLight2D2".color = Color("ff5454")
 	#making it so that if 2 was selected, blue platforms show
 	#if get_node("../HUD/Selector").position.x = 469 + 67:
@@ -52,6 +53,7 @@ func _process(delta):
 func _on_gate_timer_timeout():
 	gates_active = true
 	
+	
 func _on_area_2d_for_elevator_body_entered(body):
 	print('e1')
 	if body.is_in_group("Player") and get_node('../player').position.y <=100 and get_node("../player").position.x>=1000 and not elevatorIsMoving:
@@ -70,3 +72,7 @@ func _on_area_2d_2_body_entered(body):
 		has_mineral2 = true
 		$RockPickUp2.play()
 		body.has_mineral2 = true
+
+
+func _on_lever_2_flipped():
+	$Elevator2/PointLight2D2.energy = 20
