@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://do85w7pygcigs" path="res://Objects/gate.tscn" id="10_gvomr"]
 [ext_resource type="Script" path="res://Objects/lever.gd" id="11_f2p8i"]
 [ext_resource type="PackedScene" uid="uid://pahyle0u6vfx" path="res://Objects/mineral_1.tscn" id="12_rmlb7"]
-[ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="13_m6s2r"]
 [ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="14_xtjvk"]
 [ext_resource type="Texture2D" uid="uid://b4hjoq5e17pno" path="res://PixelFantasy_Caves_1.0/Mineral Assets/blue_mineral_art.png" id="16_d2sj1"]
 [ext_resource type="FontFile" uid="uid://cnu12edowtuub" path="res://Objects/DoubleHomicide.ttf" id="16_o534m"]
@@ -1122,7 +1121,7 @@ func _on_area_2d_for_elevator_body_entered(body):
 
 
 func _on_lever_2_flipped():
-	$PointLight2D.energy = 10
+	$PointLight2D2.energy = 10
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b0tc"]
@@ -1130,6 +1129,9 @@ size = Vector2(126, 110.602)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qy0xn"]
 size = Vector2(122, 8.69903)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5kfeu"]
+load_path = "res://.godot/imported/light_glow.png-d17c354de5375caa08eb73263441114e.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrcm2"]
 size = Vector2(34.75, 9)
@@ -1344,18 +1346,16 @@ shape = SubResource("RectangleShape2D_qy0xn")
 [node name="ElevatorSound" type="AudioStreamPlayer" parent="Elevator"]
 stream = ExtResource("23_tvjxs")
 
-[node name="PointLight2D" type="PointLight2D" parent="Elevator"]
-position = Vector2(0, -72)
-scale = Vector2(2, 1.24272)
-color = Color(0.160784, 1, 0.392157, 1)
-energy = 0.0
-texture = ExtResource("13_m6s2r")
-texture_scale = 1.9
-
 [node name="Sprite2D" type="Sprite2D" parent="Elevator"]
 position = Vector2(0, -73)
 scale = Vector2(2.2, 1.5)
 texture = ExtResource("24_e2lut")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Elevator"]
+position = Vector2(0, -72.0776)
+color = Color(0.764706, 0.678431, 0, 1)
+energy = 0.0
+texture = SubResource("CompressedTexture2D_5kfeu")
 
 [node name="EndLayer" type="CanvasLayer" parent="."]
 visible = false

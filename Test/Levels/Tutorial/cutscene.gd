@@ -6,6 +6,7 @@ var gates_active = true
 func _ready():
 	#$Ladder/Up.apply_scale(Vector2(1,0.6523157208))
 	#$Ladder/W.apply_scale(Vector2(1,0.6523157208))
+	#get_node("../../Player/Flame").hide()
 	$Ladder1/CollisionShape2D.apply_scale(Vector2(1,1.3333))
 	$Ladder2/CollisionShape2D.apply_scale(Vector2(1,2))
 	$Ladder3/CollisionShape2D.apply_scale(Vector2(1,2))

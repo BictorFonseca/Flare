@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://csnr3oaruejl0"]
+[gd_scene load_steps=19 format=3 uid="uid://csnr3oaruejl0"]
 
 [ext_resource type="Script" path="res://Character/character_body_2d.gd" id="1_f3a1b"]
 [ext_resource type="Texture2D" uid="uid://vneqp1owjm5s" path="res://Character/Player-1.png" id="3_8u6pf"]
@@ -11,6 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://gsxdhxya6tjv" path="res://Character/mineral1_flare.mp3" id="8_jtdiw"]
 [ext_resource type="AudioStream" uid="uid://dda5lpy1qpyyl" path="res://Character/woosh.mp3" id="10_b6g3i"]
 [ext_resource type="AudioStream" uid="uid://kyg0vh3ukpwa" path="res://Objects/SFX/Door_Open_Noise.mp3" id="11_757vn"]
+[ext_resource type="Texture2D" uid="uid://ckqwqg82ustn7" path="res://HUD/Art Assets/Fire Anim 1.png" id="12_xsjrj"]
+[ext_resource type="Texture2D" uid="uid://colvflvgtyf6u" path="res://HUD/Art Assets/Fire Anim 2.png" id="13_qjepl"]
+[ext_resource type="Texture2D" uid="uid://cbrce7akhy515" path="res://HUD/Art Assets/Fire Anim 3.png" id="14_ebdnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55p1r"]
 size = Vector2(36, 59)
@@ -42,6 +45,23 @@ data = PackedByteArray(130, 0, 95, 0, 135, 0, 97, 0, 137, 0, 96, 0, 142, 0, 101,
 format = 1
 mix_rate = 48000
 stereo = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rww0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_xsjrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qjepl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ebdnl")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}]
 
 [node name="player" type="CharacterBody2D" groups=["Player"]]
 light_mask = 2
@@ -110,6 +130,12 @@ max_polyphony = 3
 
 [node name="GateSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_757vn")
+
+[node name="Flame" type="AnimatedSprite2D" parent="."]
+position = Vector2(16.5, -8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rww0f")
+animation = &"fire"
 
 [connection signal="timeout" from="FlareTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LightFlareTimer" to="." method="_on_light_flare_timer_timeout"]

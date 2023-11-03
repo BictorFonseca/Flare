@@ -24,14 +24,14 @@ size = Vector2(98, 110.602)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gocg"]
 size = Vector2(122, 8.69903)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ept8n"]
+load_path = "res://.godot/imported/light_glow.png-d17c354de5375caa08eb73263441114e.ctex"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdcge"]
 size = Vector2(53.0469, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gg4jr"]
 size = Vector2(65, 35.75)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ept8n"]
-load_path = "res://.godot/imported/light_glow.png-d17c354de5375caa08eb73263441114e.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qj8cv"]
 radius = 21.0
@@ -170,6 +170,12 @@ wall_text = "USE THE STONE"
 position = Vector2(319, 212)
 script = ExtResource("9_hm1d1")
 leverID = 4
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lever"]
+position = Vector2(0, -0.0775986)
+color = Color(0.764706, 0.678431, 0, 1)
+energy = 13.85
+texture = SubResource("CompressedTexture2D_ept8n")
 
 [node name="Lever2" parent="." instance=ExtResource("8_wlvng")]
 position = Vector2(1056, 404)
@@ -315,6 +321,7 @@ shape = SubResource("RectangleShape2D_xhtj7")
 [connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]
+[connection signal="flipped" from="Lever" to="." method="_on_lever_flipped"]
 [connection signal="body_entered" from="Lever2" to="Lever2" method="_on_body_entered"]
 [connection signal="flipped" from="Lever2" to="." method="_on_lever_2_flipped"]
 [connection signal="timeout" from="GateTimer" to="." method="_on_gate_timer_timeout"]

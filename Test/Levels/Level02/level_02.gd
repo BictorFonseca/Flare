@@ -21,6 +21,7 @@ func _ready():
 	$CanvasModulate.show()
 	#$PointLight2D2.hide()
 	$Elevator2/PointLight2D2.energy = 0
+	$Lever/PointLight2D2.energy = 0
 	$"Mineral Deposit/PointLight2D2".color = Color("ff5454")
 	#making it so that if 2 was selected, blue platforms show
 	#if get_node("../HUD/Selector").position.x = 469 + 67:
@@ -73,4 +74,10 @@ func _on_area_2d_2_body_entered(body):
 
 
 func _on_lever_2_flipped():
+	#$Elevator2/PointLight2D2.energy = 20
+	$Lever/PointLight2D2.energy = 13
+
+
+func _on_lever_flipped():
 	$Elevator2/PointLight2D2.energy = 20
+	$Lever/PointLight2D2.energy = 0

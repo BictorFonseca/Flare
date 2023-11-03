@@ -66,15 +66,22 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	
+	#Flame animation
+	$Flame.play("fire")
 	#Walking animations
 	if velocity.x < 0.1 and velocity.x > -0.1:
 		$AnimatedSprite2D.play("default")
 	elif velocity.x < -0.1:
 		$AnimatedSprite2D.flip_h = true
+		$Flame.flip_h = true
+		$Flame.position.x = -16.5
+		$Flame.position.y = -8
 		$AnimatedSprite2D.play("walk")
 	elif velocity.x > 0.1:
 		$AnimatedSprite2D.flip_h = false
+		$Flame.position.x = 16.5
+		$Flame.position.y = -8
+		$Flame.flip_h = false
 		$AnimatedSprite2D.play("walk")
 	
 	#Footstep SFX

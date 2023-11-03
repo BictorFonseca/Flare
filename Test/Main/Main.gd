@@ -99,6 +99,7 @@ func _begin_level_02():
 	player.global_position = Vector2(368, 800)
 
 func _begin_tutorial():
+	
 	tutorial_running=true
 	level = cutscene.instantiate()
 	player = player_scene.instantiate()  
@@ -106,6 +107,7 @@ func _begin_tutorial():
 	add_child(player)
 	get_node("player").flare_lit = false
 	player.global_position = Vector2(100, 97)
+	
 	
 func _on_hud_start_game():
 	_begin_tutorial()
