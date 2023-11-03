@@ -15,5 +15,6 @@ func _process(delta):
 	if get_node("../../player").lever_list[gateID]:
 		$GateCol.set_deferred("disabled", true)
 		$GateArt.visible=false
+		$GateSFX.play()
 		
 	pass
