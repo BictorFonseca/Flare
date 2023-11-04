@@ -130,9 +130,9 @@ func _process(delta):
 		print("inventory slot selected:", inventory_slot_selected)
 		$InventorySwitchSFX.play()
 		if not has_mineral3:
-			$PointLight2D.color = Color("e669ff")
-		else:
 			$PointLight2D.color = Color("ffffce")
+		else:
+			$PointLight2D.color = Color("e669ff")
 
 func _on_timer_timeout():
 	if flare_lit:

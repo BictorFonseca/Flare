@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bld5otitbym7j"]
+
+[ext_resource type="AudioStream" uid="uid://drtmbkyey4x5l" path="res://Levels/Tutorial/Scream.wav" id="1_yy5jn"]
+[ext_resource type="Script" path="res://Levels/Tutorial/scream.gd" id="2_2serp"]
+
+[node name="Scream" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_yy5jn")
+autoplay = true
+script = ExtResource("2_2serp")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
