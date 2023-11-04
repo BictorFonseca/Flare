@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=40 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -27,6 +27,8 @@
 [ext_resource type="AudioStream" uid="uid://dj5ahuesnu6y8" path="res://Objects/ElevatorCrank.wav" id="23_tvjxs"]
 [ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="24_e2lut"]
 [ext_resource type="FontFile" uid="uid://c5n0dcrx4814y" path="res://HUD/Art Assets/PetitePx.ttf" id="26_4a7kk"]
+[ext_resource type="AudioStream" uid="uid://bc0cg2mhejoso" path="res://Levels/Level01/fallingwooshfaster.mp3" id="28_pip86"]
+[ext_resource type="AudioStream" uid="uid://bh0v7le80u7gf" path="res://Levels/Level01/thud.mp3" id="28_x0sip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs2ti"]
 texture = ExtResource("2_4b8wu")
@@ -1416,6 +1418,18 @@ shape = SubResource("RectangleShape2D_vhpj8")
 position = Vector2(199, -76)
 shape = SubResource("RectangleShape2D_vhpj8")
 
+[node name="Falling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_pip86")
+autoplay = true
+
+[node name="Thud" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_x0sip")
+
+[node name="IntroSequence" type="Timer" parent="."]
+wait_time = 1.7
+one_shot = true
+autostart = true
+
 [connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
 [connection signal="text" from="WallWriting2" to="." method="_on_wall_writing_text"]
@@ -1428,3 +1442,4 @@ shape = SubResource("RectangleShape2D_vhpj8")
 [connection signal="body_exited" from="Lever2" to="Lever2" method="_on_body_exited"]
 [connection signal="flipped" from="Lever2" to="Elevator" method="_on_lever_2_flipped"]
 [connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
+[connection signal="timeout" from="IntroSequence" to="." method="_on_intro_sequence_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csnr3oaruejl0"]
+[gd_scene load_steps=21 format=3 uid="uid://csnr3oaruejl0"]
 
 [ext_resource type="Script" path="res://Character/character_body_2d.gd" id="1_f3a1b"]
 [ext_resource type="Texture2D" uid="uid://vneqp1owjm5s" path="res://Character/Player-1.png" id="3_8u6pf"]
@@ -11,9 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://gsxdhxya6tjv" path="res://Character/mineral1_flare.mp3" id="8_jtdiw"]
 [ext_resource type="AudioStream" uid="uid://dda5lpy1qpyyl" path="res://Character/woosh.mp3" id="10_b6g3i"]
 [ext_resource type="AudioStream" uid="uid://kyg0vh3ukpwa" path="res://Objects/SFX/Door_Open_Noise.mp3" id="11_757vn"]
+[ext_resource type="AudioStream" uid="uid://bt7islckrv7qb" path="res://Character/lightflare.mp3" id="12_w0s14"]
 [ext_resource type="Texture2D" uid="uid://ckqwqg82ustn7" path="res://HUD/Art Assets/Fire Anim 1.png" id="12_xsjrj"]
 [ext_resource type="Texture2D" uid="uid://colvflvgtyf6u" path="res://HUD/Art Assets/Fire Anim 2.png" id="13_qjepl"]
 [ext_resource type="Texture2D" uid="uid://cbrce7akhy515" path="res://HUD/Art Assets/Fire Anim 3.png" id="14_ebdnl"]
+[ext_resource type="Texture2D" uid="uid://do4qf27i2obi0" path="res://HUD/Art Assets/transparent.png" id="15_vbdd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55p1r"]
 size = Vector2(36, 59)
@@ -61,6 +63,14 @@ animations = [{
 "loop": true,
 "name": &"fire",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_vbdd6")
+}],
+"loop": true,
+"name": &"unlit",
+"speed": 5.0
 }]
 
 [node name="player" type="CharacterBody2D" groups=["Player"]]
@@ -106,8 +116,7 @@ volume_db = -24.36
 
 [node name="NormalFlareSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ytewd")
-volume_db = -40.0
-autoplay = true
+volume_db = -35.0
 
 [node name="Mineral1FlareSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_jtdiw")
@@ -132,11 +141,16 @@ max_polyphony = 3
 stream = ExtResource("11_757vn")
 volume_db = -24.36
 
+[node name="LightFlareSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_w0s14")
+volume_db = -11.243
+
 [node name="Flame" type="AnimatedSprite2D" parent="."]
 position = Vector2(16.5, -8)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_rww0f")
-animation = &"fire"
+animation = &"unlit"
+frame_progress = 0.0185989
 
 [connection signal="timeout" from="FlareTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LightFlareTimer" to="." method="_on_light_flare_timer_timeout"]

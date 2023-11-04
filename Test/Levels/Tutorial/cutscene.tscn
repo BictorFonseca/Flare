@@ -5685,6 +5685,11 @@ shape = SubResource("RectangleShape2D_1n657")
 position = Vector2(996, 663)
 shape = SubResource("RectangleShape2D_1n657")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0)
+
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]
 [connection signal="body_entered" from="TutorialFinished" to="." method="_on_tutorial_finished_body_entered"]

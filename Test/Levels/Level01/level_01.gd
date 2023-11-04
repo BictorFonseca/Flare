@@ -11,6 +11,7 @@ var obtained_mineral = false
 var gates_active = true
 var eleSound = false
 var minSound = false
+var intro = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +20,8 @@ func _ready():
 	print("text hidden")
 	$CanvasLayer/Inventory2.hide()
 	$EndLayer/LabelEnd.hide()
+	$CanvasModulate.hide()
+	await get_tree().create_timer(0.01).timeout
 	$CanvasModulate.show()
 
 
@@ -33,7 +36,8 @@ func _process(delta):
 	if minSound:
 		$RockPickUp.play()
 		minSound=false
-			
+	if intro:
+		get_node("../player").position = Vector2(100, 520)
 	
 
 func _on_wall_writing_text(text):
@@ -50,11 +54,13 @@ func _on_area_2_for_mineral_1_body_entered(body):
 	if body.is_in_group("Player"):
 		minSound=true
 		$CanvasLayer/Inventory2.show()
-		
-		
 
 func _on_area_2d_for_elevator_body_entered(body):
 	elevatorIsMoving = true
 
 
-
+func _on_intro_sequence_timeout():
+	intro = false
+	$Thud.play()
+	await get_tree().create_timer(2).timeout
+	get_node("../player").light_flare = true

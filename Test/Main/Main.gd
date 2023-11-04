@@ -23,7 +23,7 @@ func _ready():
 func _process(delta):
 	if tutorial_running:
 		player = get_node_or_null("player")
-		if player and player.position.y>720:
+		if player and player.position.y>3000:
 			_end_level()
 			tutorial_running=false
 			_begin_level_01()
@@ -64,7 +64,6 @@ func _begin_level_01():
 	
 	add_child(level)
 	add_child(player)
-	get_node("player").flare_lit = true
 	
 	player.global_position = Vector2(100, 0)
 	

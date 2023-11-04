@@ -8,13 +8,15 @@ extends CharacterBody2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var flare_lit = true
+var flare_lit = false
+var light_flare = false
 var on_ladder=false
 var on_lever=-1
 var lever_list=[0,0,0,0,0,0,0,0,0]
 var has_mineral1 = false
 var has_mineral2 = false
 var has_mineral3 = false
+var finished_tutorial = false
 
 var inventory_slot_selected = 1
 #var lever2=false
@@ -22,6 +24,7 @@ var inventory_slot_selected = 1
 
 func _ready():
 	$PointLight2D.energy = 0
+	$Flame.play("unlit")
 	
 
 func _physics_process(delta):
@@ -67,7 +70,6 @@ func _physics_process(delta):
 
 func _process(delta):
 	#Flame animation
-	$Flame.play("fire")
 	#Walking animations
 	if velocity.x < 0.1 and velocity.x > -0.1:
 		$AnimatedSprite2D.play("default")
@@ -92,10 +94,15 @@ func _process(delta):
 	else:
 		$FootstepSFX.stop()
 		
-	#if lever1:
-		#get_node("../LeverArt").set_flip_h(true)
-		#get_node("../GateCol").set_deferred("disabled", true)
-		#get_node("../GateArt").visible=false
+	#Lighting Flare
+	if light_flare:
+		$Flame.play("fire")
+		$LightFlareSFX.play()
+		await get_tree().create_timer(0.2).timeout
+		$NormalFlareSFX.play()
+		flare_lit = true
+		light_flare = false
+
 		
 	'''if Input.is_action_just_released("select_1") or Input.is_action_just_released("select_2") or Input.is_action_just_released("select_3") or Input.is_action_just_released("select_4"):
 		inventory_slot_selected = 1

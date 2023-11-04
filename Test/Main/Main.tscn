@@ -9,7 +9,7 @@ script = ExtResource("1_7g0cg")
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xugnr")
-volume_db = -10.0
+volume_db = -48.414
 
 [node name="HUD" parent="." instance=ExtResource("2_n1fde")]
 
