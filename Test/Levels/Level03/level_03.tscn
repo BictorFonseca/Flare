@@ -176,6 +176,7 @@ vertical_alignment = 1
 position = Vector2(1122, 104)
 scale = Vector2(0.5, 0.804688)
 texture = ExtResource("10_thqbj")
+metadata/_edit_group_ = true
 
 [node name="Area2DForElevator" type="Area2D" parent="Elevator2"]
 

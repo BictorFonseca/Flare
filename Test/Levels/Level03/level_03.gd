@@ -63,7 +63,7 @@ func _on_area_2d_2_body_entered(body):
 
 
 func _on_area_2d_for_elevator_body_entered(body):
-	if body.is_in_group("Player") and not BegEle:
+	if body.is_in_group("Player") and not BegEle and get_node('../player').position.y <=150 and get_node("../player").position.x>=1000:
 		elevator2Moving=true
 		eleSound=false
 	
