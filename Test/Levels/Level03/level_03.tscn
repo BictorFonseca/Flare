@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bgt4xbj8etqon"]
+[gd_scene load_steps=27 format=3 uid="uid://bgt4xbj8etqon"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_havwp"]
 [ext_resource type="Script" path="res://Levels/Level03/level_03.gd" id="1_uyhm7"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="14_j686j"]
 [ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="15_t52wg"]
 [ext_resource type="Texture2D" uid="uid://ciii8d8mrm3wq" path="res://PixelFantasy_Caves_1.0/Mineral Assets/purple_mineral_art_Pile.png.png" id="16_jlsfv"]
+[ext_resource type="AudioStream" uid="uid://ddkfc7fpkljuo" path="res://PixelFantasy_Caves_1.0/Mineral Assets/foley_breeze_block_drop_on_hard_ground_001.mp3" id="17_7gtpb"]
 [ext_resource type="Texture2D" uid="uid://doydsmj7jal3e" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art.png" id="19_cpj3d"]
 [ext_resource type="Texture2D" uid="uid://du7vgj667o8ci" path="res://PixelFantasy_Caves_1.0/Mineral Assets/purple_mineral_art.png" id="20_e1oai"]
 
@@ -211,6 +212,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="RockPickUp" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1067, 454)
+stream = ExtResource("17_7gtpb")
 
 [node name="Mineral Deposit" parent="." instance=ExtResource("15_t52wg")]
 position = Vector2(1067, 454)

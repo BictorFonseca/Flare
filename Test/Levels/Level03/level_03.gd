@@ -3,6 +3,8 @@ extends Node2D
 var has_mineral3 = false
 var elevator2Moving=false
 var BegEle=true
+var eleSound = false
+var minSound = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,9 +39,18 @@ func _process(delta):
 	
 	if elevator2Moving:
 		$Elevator2.position.y-=2
+		if not eleSound:
+			$Elevator2/ElevatorSound.play()
+			eleSound=true
 	if BegEle:
+		if not eleSound:
+			$Elevator3/ElevatorSound.play()
+			eleSound=true
 		$Elevator3.position.y-=2
 	print(BegEle)
+	if minSound:
+		$RockPickUp.play()
+		minSound=false
 	pass
 
 
@@ -47,13 +58,14 @@ func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Player"):
 		$CanvasLayer2/Inventory4.show()
 		has_mineral3 = true
-		$RockPickUp.play()
+		minSound=true
 		body.has_mineral3 = true
 
 
 func _on_area_2d_for_elevator_body_entered(body):
 	if body.is_in_group("Player") and not BegEle:
 		elevator2Moving=true
+		eleSound=false
 	
 	pass # Replace with function body.
 
@@ -61,4 +73,5 @@ func _on_area_2d_for_elevator_body_entered(body):
 func _on_stop_area_body_entered(body):
 	if body.is_in_group("Player"):
 		BegEle=false
+		
 	pass # Replace with function body.

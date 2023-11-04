@@ -9,6 +9,8 @@ signal start
 var elevatorIsMoving = false
 var obtained_mineral = false
 var gates_active = true
+var eleSound = false
+var minSound = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +27,14 @@ func _process(delta):
 	if elevatorIsMoving:
 		$Elevator.position.y -= 2
 		finished.emit()
-		$Elevator/ElevatorSound.play()
+		if not eleSound:
+			$Elevator/ElevatorSound.play()
+			eleSound=true
+	if minSound:
+		$RockPickUp.play()
+		minSound=false
+			
+	
 
 func _on_wall_writing_text(text):
 	if text == "hide":
@@ -39,7 +48,7 @@ func _on_area_2_for_mineral_1_body_entered(body):
 
 	obtained_mineral = true
 	if body.is_in_group("Player"):
-		$RockPickUp.play()
+		minSound=true
 		$CanvasLayer/Inventory2.show()
 		
 		

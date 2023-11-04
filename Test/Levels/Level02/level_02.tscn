@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dglwi76rwsuqq"]
+[gd_scene load_steps=26 format=3 uid="uid://dglwi76rwsuqq"]
 
 [ext_resource type="Script" path="res://Levels/Level02/level_02.gd" id="1_f3frw"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_xcqyk"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="13_r6i3g"]
 [ext_resource type="PackedScene" uid="uid://b72vhwodq67va" path="res://Objects/Mineral Deposit.tscn" id="14_12k3g"]
 [ext_resource type="Texture2D" uid="uid://dcd7fe6vi7kaq" path="res://Objects/bulb_sprite.png" id="14_i7fki"]
+[ext_resource type="AudioStream" uid="uid://ddkfc7fpkljuo" path="res://PixelFantasy_Caves_1.0/Mineral Assets/foley_breeze_block_drop_on_hard_ground_001.mp3" id="14_v2t4j"]
 [ext_resource type="Texture2D" uid="uid://dv4cxyihtfrm7" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art_Pile.png.png" id="15_ilc2g"]
 [ext_resource type="Texture2D" uid="uid://doydsmj7jal3e" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art.png" id="16_dsmgh"]
 [ext_resource type="Texture2D" uid="uid://b4hjoq5e17pno" path="res://PixelFantasy_Caves_1.0/Mineral Assets/blue_mineral_art.png" id="16_tcbtm"]
@@ -268,6 +269,7 @@ texture = SubResource("CompressedTexture2D_ept8n")
 
 [node name="RockPickUp2" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(279, 405)
+stream = ExtResource("14_v2t4j")
 
 [node name="Mineral Deposit" parent="." instance=ExtResource("14_12k3g")]
 position = Vector2(279, 405)

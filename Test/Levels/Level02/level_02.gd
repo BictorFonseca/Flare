@@ -6,6 +6,8 @@ var elevatorIsMoving = true
 var stopped=false
 var elevator2Moving=false
 var has_mineral2 = false
+var eleSound=false
+var minSound =false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,12 +42,19 @@ func _process(delta):
 		var tilemap = red_mineral_tilemap.instantiate()
 		add_child(tilemap)
 	if elevatorIsMoving:
-		$Elevator/ElevatorSound.play()
+		if not eleSound:
+			$Elevator/ElevatorSound.play()
+			eleSound=true
 		$Elevator.position.y -= 2
 	if elevator2Moving:
-		$Elevator2/ElevatorSound.play()
+		if not eleSound:
+			$Elevator2/ElevatorSound.play()
+			eleSound=true
 		$Elevator2.position.y-=2
-	
+	if minSound:
+		$RockPickUp2.play()
+		minSound=false
+		
 		
 
 
@@ -57,11 +66,13 @@ func _on_area_2d_for_elevator_body_entered(body):
 	print('e1')
 	if body.is_in_group("Player") and get_node('../player').position.y <=100 and get_node("../player").position.x>=1000 and not elevatorIsMoving:
 		elevator2Moving=true
+		eleSound=false
 		
 
 func _on_stop_eleva_body_entered(body):
 	if body.is_in_group("Player"):
 		elevatorIsMoving=false
+		
 	pass # Replace with function body.
 
 #if player collect mineral 2
@@ -69,7 +80,7 @@ func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Player"):
 		$CanvasLayer/Inventory3.show()
 		has_mineral2 = true
-		$RockPickUp2.play()
+		minSound=true
 		body.has_mineral2 = true
 
 
