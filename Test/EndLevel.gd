@@ -3,6 +3,8 @@ extends Node2D
 var elevatorMoving=false
 var begEle=true
 var gates_active = true
+var eleSound = false
+var eleCrash=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Ladder/CollisionShape2D.apply_scale(Vector2(1,1.35))
@@ -12,9 +14,15 @@ func _ready():
 func _process(delta):
 	if elevatorMoving:
 		$Elevator.position.y += 20
+		if not eleCrash:
+			$ElevatorCrash.play()
+			eleCrash=true
 		#Add crash sound
 	if begEle:
 		$Elevator2.position.y-=2
+		if not eleSound:
+			$Elevator2/ElevatorSound.play()
+			eleSound=true
 	pass
 
 
