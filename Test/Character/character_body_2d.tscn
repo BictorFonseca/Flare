@@ -1,11 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://csnr3oaruejl0"]
+[gd_scene load_steps=25 format=3 uid="uid://csnr3oaruejl0"]
 
 [ext_resource type="Script" path="res://Character/character_body_2d.gd" id="1_f3a1b"]
-[ext_resource type="Texture2D" uid="uid://vneqp1owjm5s" path="res://Character/Player-1.png" id="3_8u6pf"]
+[ext_resource type="Texture2D" uid="uid://bgd1w8tbm4wvp" path="res://Character/Sprites/Player_Ladder_1.png" id="2_jac5i"]
+[ext_resource type="Texture2D" uid="uid://uf5g0ni5vpj6" path="res://Character/Sprites/Player_Walk_0.png" id="2_yyvvm"]
+[ext_resource type="Texture2D" uid="uid://cyy8oap4dtnya" path="res://Character/Sprites/Player_Ladder_2.png" id="3_1jilh"]
+[ext_resource type="Texture2D" uid="uid://bqycehfjip4li" path="res://Character/Sprites/Player_Walk_1.png" id="3_4jh06"]
 [ext_resource type="AudioStream" uid="uid://coxr33gduqw6t" path="res://Objects/woodpecker-vs-aluminum-ladder-28846.mp3" id="4_2mje3"]
-[ext_resource type="Texture2D" uid="uid://ywb54yafrrlu" path="res://Character/Player-2.png" id="4_e6q65"]
+[ext_resource type="Texture2D" uid="uid://utedyjwj82xq" path="res://Character/Sprites/Player_Jump_Down.png" id="5_kr2jx"]
 [ext_resource type="AudioStream" uid="uid://dfce8apk8hsng" path="res://Objects/zapsplat_vehicles_bicycle_gears_lever_click_change_through_several_fast_002_79728.mp3" id="5_qavkl"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="5_xdkvh"]
+[ext_resource type="Texture2D" uid="uid://dui3f0n4cr402" path="res://Character/Sprites/Player_Jump_Up.png" id="6_5tpx2"]
 [ext_resource type="AudioStream" uid="uid://bqvuq11oo5m2h" path="res://Character/Footsteps.mp3" id="7_y4bft"]
 [ext_resource type="AudioStream" uid="uid://2jsx0iwbelh0" path="res://Character/normal_flare.mp3" id="7_ytewd"]
 [ext_resource type="AudioStream" uid="uid://gsxdhxya6tjv" path="res://Character/mineral1_flare.mp3" id="8_jtdiw"]
@@ -24,7 +28,18 @@ size = Vector2(36, 59)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8u6pf")
+"texture": ExtResource("2_jac5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1jilh")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yyvvm")
 }],
 "loop": true,
 "name": &"default",
@@ -32,10 +47,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8u6pf")
+"texture": ExtResource("5_kr2jx")
+}],
+"loop": true,
+"name": &"jump_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5tpx2")
+}],
+"loop": true,
+"name": &"jump_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yyvvm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_e6q65")
+"texture": ExtResource("3_4jh06")
 }],
 "loop": true,
 "name": &"walk",
@@ -87,9 +118,10 @@ scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_55p1r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+position = Vector2(1.75, 7.1875)
+scale = Vector2(0.555, 0.555)
 sprite_frames = SubResource("SpriteFrames_b662k")
-animation = &"walk"
+animation = &"jump_down"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(12.65, -12.85)
