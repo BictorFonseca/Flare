@@ -70,6 +70,7 @@ func _process(delta):
 		elif get_node("../player").position.x >= 925 and get_node("../player").position.x <= 950:
 			get_node("../player").position.x = 960
 		var tilemap = red_mineral_tilemap.instantiate()
+		
 		add_child(tilemap)
 		
 
