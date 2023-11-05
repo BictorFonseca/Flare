@@ -86,7 +86,7 @@ func _on_area_2d_2_body_entered(body):
 
 func _on_lever_2_flipped():
 	#$Elevator2/PointLight2D2.energy = 20
-	$Lever/PointLight2D2.energy = 13
+	$Lever/PointLight2D2.energy = 5
 
 
 func _on_lever_flipped():

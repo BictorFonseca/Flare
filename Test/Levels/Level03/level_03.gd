@@ -5,7 +5,7 @@ var elevator2Moving=false
 var BegEle=true
 var eleSound = false
 var minSound = false
-
+var red_mineral_tilemap = preload("res://Objects/level_3_red_mineral_tilemap.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CanvasLayer2/Inventory2.show()
@@ -13,6 +13,8 @@ func _ready():
 	$CanvasLayer2/Inventory4.hide()
 	$CanvasModulate.hide()
 	await get_tree().create_timer(0.01).timeout
+	var tilemap = red_mineral_tilemap.instantiate()
+	add_child(tilemap)
 	$CanvasModulate.show()
 
 
@@ -51,8 +53,21 @@ func _process(delta):
 	if minSound:
 		$RockPickUp.play()
 		minSound=false
-	pass
-
+	#Tilemap
+	if Input.is_action_just_pressed("select_3") or get_node("../player").inventory_slot_selected == 3:
+		var tilemap_instance = get_node_or_null("Level3RedMineralTilemap")
+		print(tilemap_instance)
+		if tilemap_instance:
+			print("not sure what the original message is meant to say but whatever i guess")
+			tilemap_instance.queue_free()
+	if (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("Level3RedMineralTilemap"):
+		if get_node("../player").position.x >= 580 and get_node("../player").position.x <= 635:
+			get_node("../player").position.x = 575
+		elif get_node("../player").position.x >= 635 and get_node("../player").position.x <= 680:
+			get_node("../player").position.x = 690
+		var tilemap = red_mineral_tilemap.instantiate()
+		add_child(tilemap)
+		
 
 func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Player"):
@@ -60,6 +75,7 @@ func _on_area_2d_2_body_entered(body):
 		has_mineral3 = true
 		minSound=true
 		body.has_mineral3 = true
+		$Light1.energy = 5
 
 
 func _on_area_2d_for_elevator_body_entered(body):
@@ -75,3 +91,21 @@ func _on_stop_area_body_entered(body):
 		BegEle=false
 		
 	pass # Replace with function body.
+
+
+func _on_lever_flipped():
+	$Light1.energy = 0
+	#$Light2.energy = 5
+	pass
+
+
+#this one flips before lever2
+func _on_lever_3_flipped():
+	#$Light2.energy = 0
+	#$Light3.energy = 5
+	pass
+
+
+func _on_lever_2_flipped():
+	#$Light3.energy = 0
+	$Elevator2/Light4.energy = 5

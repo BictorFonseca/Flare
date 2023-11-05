@@ -174,8 +174,8 @@ leverID = 4
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lever"]
 position = Vector2(0, -0.0775986)
-color = Color(0.764706, 0.678431, 0, 1)
-energy = 13.85
+color = Color(0.909804, 0.752941, 0.376471, 1)
+energy = 5.0
 texture = SubResource("CompressedTexture2D_ept8n")
 
 [node name="Lever2" parent="." instance=ExtResource("8_wlvng")]

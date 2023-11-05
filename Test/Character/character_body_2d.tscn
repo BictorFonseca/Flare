@@ -92,7 +92,8 @@ sprite_frames = SubResource("SpriteFrames_b662k")
 animation = &"walk"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(12.65, -12.85)
+scale = Vector2(0.574519, 0.564217)
 color = Color(1, 1, 0.807843, 1)
 texture = ExtResource("5_xdkvh")
 texture_scale = 9.1

@@ -78,11 +78,15 @@ func _process(delta):
 		$Flame.flip_h = true
 		$Flame.position.x = -16.5
 		$Flame.position.y = -8
+		$PointLight2D.position.x = -18
+		$PointLight2D.position.y = -5
 		$AnimatedSprite2D.play("walk")
 	elif velocity.x > 0.1:
 		$AnimatedSprite2D.flip_h = false
 		$Flame.position.x = 16.5
 		$Flame.position.y = -8
+		$PointLight2D.position.x = 18
+		$PointLight2D.position.y = -5
 		$Flame.flip_h = false
 		$AnimatedSprite2D.play("walk")
 	
@@ -144,11 +148,15 @@ func _process(delta):
 func _on_timer_timeout():
 	if flare_lit:
 		$PointLight2D.energy = randf_range(1.1, 1.4)
+		
 
 #FOR USE LATER
-"""
 func _on_light_flare_timer_timeout(delta):
-	for i in range(12):
+	if flare_lit:
+		$PointLight2D.scale.x = randf_range(0.49,0.51)
+		$PointLight2D.scale.y = randf_range(0.49,0.51)
+	
+	'''for i in range(12):
 		$PointLight2D.energy += 0.1
-	flare_lit = true
-"""
+	flare_lit = true'''
+
