@@ -61,10 +61,14 @@ func _process(delta):
 			print("not sure what the original message is meant to say but whatever i guess")
 			tilemap_instance.queue_free()
 	if (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("Level3RedMineralTilemap"):
-		if get_node("../player").position.x >= 580 and get_node("../player").position.x <= 635:
-			get_node("../player").position.x = 575
+		if get_node("../player").position.x >= 535 and get_node("../player").position.x <= 635:
+			get_node("../player").position.x = 530
 		elif get_node("../player").position.x >= 635 and get_node("../player").position.x <= 680:
 			get_node("../player").position.x = 690
+		if get_node("../player").position.x >= 900 and get_node("../player").position.x <= 925:
+			get_node("../player").position.x = 890
+		elif get_node("../player").position.x >= 925 and get_node("../player").position.x <= 950:
+			get_node("../player").position.x = 960
 		var tilemap = red_mineral_tilemap.instantiate()
 		add_child(tilemap)
 		
