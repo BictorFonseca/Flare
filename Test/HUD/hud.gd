@@ -1,6 +1,6 @@
 extends CanvasLayer
 var time = 600
-var timerStopped=false
+var timerPaused=false
 signal start_game
 
 # Called when the node enters the scene tree for the first time.
@@ -51,7 +51,7 @@ func updateTime(timeChange):
 
 func _on_game_timer_timeout():
 	#print('timeout' + str(time))
-	if not timerStopped:
+	if not timerPaused:
 		time -= 1
 		self.updateTime(time)
 
@@ -93,7 +93,7 @@ func _on_instructions_pressed():
 	$Instructions.hide()
 	$Movement.show()
 	$InstructionsText.show()
-	timerStopped=true
+	timerPaused=true
 
 
 func _on_back_pressed():
@@ -109,7 +109,7 @@ func _on_back_pressed():
 	$Movement.hide()
 	$InstructionsText.hide()
 	$Instructions.show()
-	timerStopped = false
+	timerPaused = false
 
 
 func _on_area_2_for_mineral_1_body_entered(body):
