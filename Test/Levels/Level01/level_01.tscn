@@ -1136,7 +1136,7 @@ size = Vector2(122, 8.69903)
 load_path = "res://.godot/imported/light_glow.png-d17c354de5375caa08eb73263441114e.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrcm2"]
-size = Vector2(34.75, 9)
+size = Vector2(34.75, 9.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhpj8"]
 size = Vector2(25, 154)
@@ -1394,7 +1394,7 @@ one_way_collision = true
 position = Vector2(5, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder_OneWAyShape2"]
-position = Vector2(458, 280)
+position = Vector2(458, 279.75)
 shape = SubResource("RectangleShape2D_qrcm2")
 one_way_collision = true
 
