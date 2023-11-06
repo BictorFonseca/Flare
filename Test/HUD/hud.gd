@@ -63,6 +63,9 @@ func _on_play_button_pressed():
 	$Instructions.position.x = 0
 	$Instructions.position.y = 0
 	var scale = Vector2(0.5, 0.5)
+	$Quit.position.x=995
+	$Quit.position.y=23
+	$Quit.set_size(Vector2(139,53))
 	$Instructions.set_scale(scale)
 	$Inventory1.show()
 	#$Instructions.theme_override_font_sizes/font_size = 20
@@ -82,6 +85,10 @@ func _on_instructions_pressed():
 	$FlareIcon.hide()
 	$PlayButton.hide()
 	$Quit.hide()
+	if time<=599:
+		$Quit.show()
+	else:
+		$Quit.hide()
 	$Back.show()
 	$Instructions.hide()
 	$Movement.show()
