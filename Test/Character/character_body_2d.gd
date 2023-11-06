@@ -116,6 +116,8 @@ func _process(delta):
 		$NormalFlareSFX.play()
 		flare_lit = true
 		light_flare = false
+		get_parent().startTimer=true
+		print("Activating flare and startTimer")
 
 		
 	'''if Input.is_action_just_released("select_1") or Input.is_action_just_released("select_2") or Input.is_action_just_released("select_3") or Input.is_action_just_released("select_4"):

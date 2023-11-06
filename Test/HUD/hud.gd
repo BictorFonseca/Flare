@@ -33,6 +33,9 @@ func _process(delta):
 		$Selector.position.x = 469 + 67 * 2.15
 	if Input.is_action_pressed('select_4'):
 		$Selector.position.x = 469 + 67 * 3.3
+	if get_parent().startTimer:
+		$GameTimer.start()
+		get_parent().startTimer=false
 		
 #here, we update the number for the time
 
@@ -75,7 +78,6 @@ func _on_play_button_pressed():
 	$Inventory.show()
 	$TimerAnimation.show()
 	$Selector.show()
-	$GameTimer.start()
 	$TimerLabel.text = '10M 0S LEFT'
 	$TimerAnimation.play("default")
 	start_game.emit()
