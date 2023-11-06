@@ -1,5 +1,6 @@
 extends CanvasLayer
 var time = 600
+var timerStopped=false
 signal start_game
 
 # Called when the node enters the scene tree for the first time.
@@ -50,8 +51,9 @@ func updateTime(timeChange):
 
 func _on_game_timer_timeout():
 	#print('timeout' + str(time))
-	time -= 1
-	self.updateTime(time)
+	if not timerStopped:
+		time -= 1
+		self.updateTime(time)
 
 
 func _on_play_button_pressed():
@@ -66,6 +68,7 @@ func _on_play_button_pressed():
 	#$Instructions.theme_override_font_sizes/font_size = 20
 	$PlayButton.hide()
 	$Background.hide()
+	$Quit.hide()
 	$Inventory.show()
 	$TimerAnimation.show()
 	$Selector.show()
@@ -78,10 +81,12 @@ func _on_play_button_pressed():
 func _on_instructions_pressed():
 	$FlareIcon.hide()
 	$PlayButton.hide()
+	$Quit.hide()
 	$Back.show()
 	$Instructions.hide()
 	$Movement.show()
 	$InstructionsText.show()
+	timerStopped=true
 
 
 func _on_back_pressed():
@@ -89,12 +94,15 @@ func _on_back_pressed():
 	if time == 600:
 		$PlayButton.show()
 		$FlareIcon.show()
+		$Quit.show()
 	else:
 		$PlayButton.hide()
 		$FlareIcon.hide()
+		$Quit.hide()
 	$Movement.hide()
 	$InstructionsText.hide()
 	$Instructions.show()
+	timerStopped = false
 
 
 func _on_area_2_for_mineral_1_body_entered(body):
@@ -102,3 +110,8 @@ func _on_area_2_for_mineral_1_body_entered(body):
 		print("Character has touched the mineral")
 		$Inventory2.show()
 	
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+	pass # Replace with function body.
