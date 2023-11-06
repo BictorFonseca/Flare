@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmkc7d6c3ai8k"]
+
+[ext_resource type="Script" path="res://Levels/Level03/RedMinArea.gd" id="1_lox7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvjrb"]
+size = Vector2(57, 322.5)
+
+[node name="RedMinArea" type="Area2D"]
+script = ExtResource("1_lox7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(608.5, 192.75)
+shape = SubResource("RectangleShape2D_cvjrb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

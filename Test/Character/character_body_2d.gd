@@ -17,6 +17,7 @@ var has_mineral1 = false
 var has_mineral2 = false
 var has_mineral3 = false
 var finished_tutorial = false
+var inRed=false
 
 var inventory_slot_selected = 1
 #var lever2=false
@@ -28,6 +29,7 @@ func _ready():
 	
 
 func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -103,7 +105,7 @@ func _process(delta):
 	#Footstep SFX
 	if (velocity.x < -0.1 or velocity.x > 0.1) and is_on_floor():
 		if not $FootstepSFX.playing:
-			print("footsteps")
+			#print("footsteps")
 			$FootstepSFX.play()
 	else:
 		$FootstepSFX.stop()
@@ -117,7 +119,7 @@ func _process(delta):
 		flare_lit = true
 		light_flare = false
 		get_parent().startTimer=true
-		print("Activating flare and startTimer")
+		#print("Activating flare and startTimer")
 
 		
 	'''if Input.is_action_just_released("select_1") or Input.is_action_just_released("select_2") or Input.is_action_just_released("select_3") or Input.is_action_just_released("select_4"):
@@ -133,7 +135,7 @@ func _process(delta):
 		$PointLight2D.color = Color("ffffce")
 	elif Input.is_action_just_pressed("select_2"):
 		inventory_slot_selected = 2
-		print("inventory slot selected:", inventory_slot_selected)
+		#print("inventory slot selected:", inventory_slot_selected)
 		
 		$InventorySwitchSFX.play()
 		if not has_mineral1:

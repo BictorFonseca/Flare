@@ -6,7 +6,8 @@ var level_03_running = false
 var level_end_running = false
 var level = null
 var player = null
-var startTimer = false
+var startTimer=false
+
 
 var level_01_scene = preload("res://Levels/Level01/level_01.tscn")
 var level_02_scene = preload("res://Levels/Level02/level_02.tscn")
@@ -99,7 +100,6 @@ func _begin_level_02():
 	player.global_position = Vector2(368, 800)
 
 func _begin_tutorial():
-	
 	tutorial_running=true
 	level = cutscene.instantiate()
 	player = player_scene.instantiate()  

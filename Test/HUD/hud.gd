@@ -36,6 +36,8 @@ func _process(delta):
 	if get_parent().startTimer:
 		$GameTimer.start()
 		get_parent().startTimer=false
+		$TimerLabel.show()
+		$TimerAnimation.show()
 		
 #here, we update the number for the time
 
@@ -76,9 +78,10 @@ func _on_play_button_pressed():
 	$Background.hide()
 	$Quit.hide()
 	$Inventory.show()
-	$TimerAnimation.show()
+	#$TimerAnimation.show()
 	$Selector.show()
 	$TimerLabel.text = '10M 0S LEFT'
+	$TimerLabel.hide()
 	$TimerAnimation.play("default")
 	start_game.emit()
 

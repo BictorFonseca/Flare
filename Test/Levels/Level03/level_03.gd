@@ -21,6 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#Only for SLudge
 	if get_node("../player").has_mineral3 and Input.is_action_pressed("select_4"):
 		get_node("Sludge/WaterArt").visible=true
 		get_node("BigSludge1/WaterArt").visible=true
@@ -56,13 +57,15 @@ func _process(delta):
 		minSound=false
 		minOnce=true
 	#Tilemap
-	if Input.is_action_just_pressed("select_3") or get_node("../player").inventory_slot_selected == 3:
+	if (Input.is_action_just_pressed("select_3") or get_node("../player").inventory_slot_selected == 3) and not get_node("../player").inRed:
 		var tilemap_instance = get_node_or_null("Level3RedMineralTilemap")
 		print(tilemap_instance)
 		if tilemap_instance:
 			print("not sure what the original message is meant to say but whatever i guess")
 			tilemap_instance.queue_free()
+	
 	if (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("Level3RedMineralTilemap"):
+		'''
 		if get_node("../player").position.x >= 535 and get_node("../player").position.x <= 635:
 			get_node("../player").position.x = 530
 		elif get_node("../player").position.x >= 635 and get_node("../player").position.x <= 680:
@@ -71,6 +74,7 @@ func _process(delta):
 			get_node("../player").position.x = 890
 		elif get_node("../player").position.x >= 925 and get_node("../player").position.x <= 950:
 			get_node("../player").position.x = 960
+		'''
 		var tilemap = red_mineral_tilemap.instantiate()
 		
 		add_child(tilemap)
