@@ -90,6 +90,16 @@ func _process(delta):
 		$Flame.flip_h = false
 		$AnimatedSprite2D.play("walk")
 	
+	# Jumping Animations
+	if on_ladder == false and velocity.y < 0:
+		$AnimatedSprite2D.play("jump_up")
+	elif on_ladder == false and velocity.y > 0:
+		$AnimatedSprite2D.play("jump_down")
+	
+	# Climbing Animations
+	if on_ladder == true and is_on_floor() == false:
+		$AnimatedSprite2D.play("climb")
+	
 	#Footstep SFX
 	if (velocity.x < -0.1 or velocity.x > 0.1) and is_on_floor():
 		if not $FootstepSFX.playing:
