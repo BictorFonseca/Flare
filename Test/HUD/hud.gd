@@ -25,13 +25,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#the shifting of hte shifter will be hard coded with coordinates 
-	if Input.is_action_pressed("select_1"):
+	if Input.is_action_pressed("select_1") and not get_node("../player").inRed:
 		$Selector.position.x = 460
-	if Input.is_action_pressed('select_2'):
+	if Input.is_action_pressed('select_2') and not get_node("../player").inRed:
 		$Selector.position.x = 469 + 67
 	if Input.is_action_pressed("select_3"):
 		$Selector.position.x = 469 + 67 * 2.15
-	if Input.is_action_pressed('select_4'):
+	if Input.is_action_pressed('select_4') and not get_node("../player").inRed:
 		$Selector.position.x = 469 + 67 * 3.3
 	if get_parent().startTimer:
 		$GameTimer.start()

@@ -26,6 +26,7 @@ func _ready():
 	$Elevator2/PointLight2D2.energy = 0
 	$Lever/PointLight2D2.energy = 0
 	$"Mineral Deposit/PointLight2D2".color = Color("ff5454")
+	$CanvasLayer/WallWritingLabel.hide()
 	#making it so that if 2 was selected, blue platforms show
 	#if get_node("../HUD/Selector").position.x = 469 + 67:
 		
@@ -39,7 +40,7 @@ func _process(delta):
 		if tilemap_instance:
 			print("yp I ecost and im not supposed to anymore")
 			tilemap_instance.queue_free()
-	elif (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("RedMineralTilemap"):
+	elif (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("RedMineralTilemap") and not get_node("../player").inRed:
 		var tilemap = red_mineral_tilemap.instantiate()
 		add_child(tilemap)
 	if elevatorIsMoving:

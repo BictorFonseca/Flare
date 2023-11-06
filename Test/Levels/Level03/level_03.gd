@@ -17,7 +17,7 @@ func _ready():
 	var tilemap = red_mineral_tilemap.instantiate()
 	add_child(tilemap)
 	$CanvasModulate.show()
-
+	$CanvasLayer/WallWritingLabel.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -57,14 +57,14 @@ func _process(delta):
 		minSound=false
 		minOnce=true
 	#Tilemap
-	if (Input.is_action_just_pressed("select_3") or get_node("../player").inventory_slot_selected == 3) and not get_node("../player").inRed:
+	if (Input.is_action_just_pressed("select_3") or get_node("../player").inventory_slot_selected == 3):
 		var tilemap_instance = get_node_or_null("Level3RedMineralTilemap")
 		print(tilemap_instance)
 		if tilemap_instance:
 			print("not sure what the original message is meant to say but whatever i guess")
 			tilemap_instance.queue_free()
 	
-	if (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("Level3RedMineralTilemap"):
+	if (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and get_node_or_null("Level3RedMineralTilemap"):
 		'''
 		if get_node("../player").position.x >= 535 and get_node("../player").position.x <= 635:
 			get_node("../player").position.x = 530

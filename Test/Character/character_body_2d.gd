@@ -130,13 +130,13 @@ func _process(delta):
 		print("inventory slot selected:", inventory_slot_selected)'''
 		
 		
-	if Input.is_action_just_pressed("select_1"):
+	if Input.is_action_just_pressed("select_1") and not inRed:
 		inventory_slot_selected = 1
 		print("inventory slot selected:", inventory_slot_selected)
 		
 		$InventorySwitchSFX.play()
 		$PointLight2D.color = Color("ffffce")
-	elif Input.is_action_just_pressed("select_2"):
+	elif Input.is_action_just_pressed("select_2") and not inRed:
 		inventory_slot_selected = 2
 		#print("inventory slot selected:", inventory_slot_selected)
 		
@@ -153,7 +153,7 @@ func _process(delta):
 			$PointLight2D.color = Color("ffffce")
 		else:
 			$PointLight2D.color = Color("ff9f98")
-	elif Input.is_action_just_pressed("select_4"):
+	elif Input.is_action_just_pressed("select_4") and not inRed:
 		inventory_slot_selected = 4
 		print("inventory slot selected:", inventory_slot_selected)
 		$InventorySwitchSFX.play()
