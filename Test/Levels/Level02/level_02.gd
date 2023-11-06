@@ -94,3 +94,11 @@ func _on_lever_2_flipped():
 func _on_lever_flipped():
 	$Elevator2/PointLight2D2.energy = 20
 	$Lever/PointLight2D2.energy = 0
+
+
+func _on_wall_writing_text(text):
+	if text == "hide":
+		$CanvasLayer/WallWritingLabel.hide()
+	else:
+		$CanvasLayer/WallWritingLabel.show()
+		$CanvasLayer/WallWritingLabel.text = text

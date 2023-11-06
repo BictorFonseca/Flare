@@ -120,3 +120,13 @@ func _on_lever_3_flipped():
 func _on_lever_2_flipped():
 	#$Light3.energy = 0
 	$Elevator2/Light4.energy = 5
+	
+
+
+
+func _on_wall_writing_text(text):
+	if text == "hide":
+		$CanvasLayer/WallWritingLabel.hide()
+	else:
+		$CanvasLayer/WallWritingLabel.show()
+		$CanvasLayer/WallWritingLabel.text = text

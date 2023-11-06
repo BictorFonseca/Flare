@@ -322,6 +322,8 @@ shape = SubResource("RectangleShape2D_quw4j")
 [connection signal="body_entered" from="Lever2" to="Lever2" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever2" to="Lever2" method="_on_body_exited"]
 [connection signal="flipped" from="Lever2" to="." method="_on_lever_2_flipped"]
+[connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
+[connection signal="text" from="WallWriting2" to="." method="_on_wall_writing_text"]
 [connection signal="body_entered" from="Elevator2/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
 [connection signal="body_entered" from="Mineral Deposit/Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="StopArea" to="." method="_on_stop_area_body_entered"]

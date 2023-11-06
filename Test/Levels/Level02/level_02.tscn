@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dglwi76rwsuqq"]
+[gd_scene load_steps=27 format=3 uid="uid://dglwi76rwsuqq"]
 
 [ext_resource type="Script" path="res://Levels/Level02/level_02.gd" id="1_f3frw"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_xcqyk"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dv4cxyihtfrm7" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art_Pile.png.png" id="15_ilc2g"]
 [ext_resource type="Texture2D" uid="uid://doydsmj7jal3e" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art.png" id="16_dsmgh"]
 [ext_resource type="Texture2D" uid="uid://b4hjoq5e17pno" path="res://PixelFantasy_Caves_1.0/Mineral Assets/blue_mineral_art.png" id="16_tcbtm"]
+[ext_resource type="FontFile" uid="uid://cnu12edowtuub" path="res://Objects/DoubleHomicide.ttf" id="19_was0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6y2f"]
 size = Vector2(98, 110.602)
@@ -165,7 +166,7 @@ wall_text = "TAKE A LEAP OF FAITH"
 
 [node name="WallWriting3" parent="." instance=ExtResource("7_ahg5g")]
 position = Vector2(1007, 523)
-wall_text = "USE THE STONE"
+wall_text = "TWO PATHS TO THE SKY"
 
 [node name="Lever" parent="." instance=ExtResource("8_wlvng")]
 position = Vector2(319, 212)
@@ -295,6 +296,19 @@ position = Vector2(615, 679)
 scale = Vector2(1.96875, 1.65625)
 texture = ExtResource("16_dsmgh")
 
+[node name="WallWritingLabel" type="Label" parent="CanvasLayer"]
+offset_left = 741.0
+offset_top = 650.0
+offset_right = 1141.0
+offset_bottom = 710.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.756863, 0.113725, 0.0235294, 1)
+theme_override_fonts/font = ExtResource("19_was0y")
+theme_override_font_sizes/font_size = 56
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -321,6 +335,9 @@ position = Vector2(9, -232)
 shape = SubResource("RectangleShape2D_xhtj7")
 
 [connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
+[connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
+[connection signal="text" from="WallWriting2" to="." method="_on_wall_writing_text"]
+[connection signal="text" from="WallWriting3" to="." method="_on_wall_writing_text"]
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]
 [connection signal="flipped" from="Lever" to="." method="_on_lever_flipped"]
