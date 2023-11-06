@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bgt4xbj8etqon"]
+[gd_scene load_steps=28 format=3 uid="uid://bgt4xbj8etqon"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_havwp"]
 [ext_resource type="Script" path="res://Levels/Level03/level_03.gd" id="1_uyhm7"]
@@ -21,7 +21,6 @@
 [ext_resource type="AudioStream" uid="uid://ddkfc7fpkljuo" path="res://PixelFantasy_Caves_1.0/Mineral Assets/foley_breeze_block_drop_on_hard_ground_001.mp3" id="17_7gtpb"]
 [ext_resource type="Texture2D" uid="uid://doydsmj7jal3e" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art.png" id="19_cpj3d"]
 [ext_resource type="Texture2D" uid="uid://du7vgj667o8ci" path="res://PixelFantasy_Caves_1.0/Mineral Assets/purple_mineral_art.png" id="20_e1oai"]
-[ext_resource type="PackedScene" uid="uid://cmkc7d6c3ai8k" path="res://Objects/red_min_area.tscn" id="23_8rfkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqjte"]
 size = Vector2(119.895, 103.767)
@@ -312,12 +311,6 @@ shape = SubResource("RectangleShape2D_5icts")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StopArea"]
 position = Vector2(1057, 522)
 shape = SubResource("RectangleShape2D_quw4j")
-
-[node name="RedMinArea" parent="." instance=ExtResource("23_8rfkm")]
-
-[node name="RedMinArea2" parent="." instance=ExtResource("23_8rfkm")]
-position = Vector2(320, -27)
-scale = Vector2(1, 0.45)
 
 [connection signal="body_entered" from="Elevator3/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
 [connection signal="body_entered" from="Lever3" to="Lever3" method="_on_body_entered"]

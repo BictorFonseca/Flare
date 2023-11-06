@@ -101,6 +101,9 @@ func _process(delta):
 	# Climbing Animations
 	if on_ladder == true and is_on_floor() == false:
 		$AnimatedSprite2D.play("climb")
+		$Flame.play("unlit")
+	else:
+		$Flame.play("fire")
 	
 	#Footstep SFX
 	if (velocity.x < -0.1 or velocity.x > 0.1) and is_on_floor():

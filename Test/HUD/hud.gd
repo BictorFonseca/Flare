@@ -15,12 +15,12 @@ func _ready():
 	$FlareIcon.play()
 	
 	$Back.hide()
-	$Movement.hide()
 	$InstructionsText.hide()
 	$Inventory1.hide()
 	$Inventory2.hide()
 	$Inventory3.hide()
 	$Inventory4.hide()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -90,13 +90,18 @@ func _on_instructions_pressed():
 	$FlareIcon.hide()
 	$PlayButton.hide()
 	$Quit.hide()
+	$Background.show()
+	$Inventory.hide()
+	$TimerLabel.hide()
+	$TimerAnimation.hide()
+	$Selector.hide()
+	$Inventory1.hide()
 	if time<=599:
 		$Quit.show()
 	else:
 		$Quit.hide()
 	$Back.show()
 	$Instructions.hide()
-	$Movement.show()
 	$InstructionsText.show()
 	timerPaused=true
 
@@ -111,7 +116,13 @@ func _on_back_pressed():
 		$PlayButton.hide()
 		$FlareIcon.hide()
 		$Quit.hide()
-	$Movement.hide()
+		$Background.hide()
+		$Inventory.show()
+		$TimerLabel.show()
+		$TimerAnimation.show()
+		$Selector.show()
+		$Inventory1.show()
+
 	$InstructionsText.hide()
 	$Instructions.show()
 	timerPaused = false
