@@ -8,6 +8,7 @@ var elevator2Moving=false
 var has_mineral2 = false
 var eleSound=false
 var minSound =false
+var minOnce=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,9 +52,10 @@ func _process(delta):
 			$Elevator2/ElevatorSound.play()
 			eleSound=true
 		$Elevator2.position.y-=2
-	if minSound:
+	if minSound and not minOnce:
 		$RockPickUp2.play()
 		minSound=false
+		minOnce=true
 		
 		
 

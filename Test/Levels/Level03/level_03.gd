@@ -5,6 +5,7 @@ var elevator2Moving=false
 var BegEle=true
 var eleSound = false
 var minSound = false
+var minOnce=false
 var red_mineral_tilemap = preload("res://Objects/level_3_red_mineral_tilemap.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,9 +51,10 @@ func _process(delta):
 			eleSound=true
 		$Elevator3.position.y-=2
 	print(BegEle)
-	if minSound:
+	if minSound and not minOnce:
 		$RockPickUp.play()
 		minSound=false
+		minOnce=true
 	#Tilemap
 	if Input.is_action_just_pressed("select_3") or get_node("../player").inventory_slot_selected == 3:
 		var tilemap_instance = get_node_or_null("Level3RedMineralTilemap")
