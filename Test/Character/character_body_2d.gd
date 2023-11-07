@@ -132,6 +132,7 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("select_1") and not inRed:
 		inventory_slot_selected = 1
+		
 		print("inventory slot selected:", inventory_slot_selected)
 		
 		$InventorySwitchSFX.play()
@@ -172,6 +173,9 @@ func _on_light_flare_timer_timeout(delta):
 	if flare_lit:
 		$PointLight2D.scale.x = randf_range(0.49,0.51)
 		$PointLight2D.scale.y = randf_range(0.49,0.51)
+	if flare_lit and inventory_slot_selected == 1:
+		$PointLight2D.scale.x = randf_range(0.55,0.57)
+		$PointLight2D.scale.y = randf_range(0.55,0.57)
 	
 	'''for i in range(12):
 		$PointLight2D.energy += 0.1

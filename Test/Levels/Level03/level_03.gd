@@ -65,16 +65,6 @@ func _process(delta):
 			tilemap_instance.queue_free()
 	
 	if (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and get_node_or_null("Level3RedMineralTilemap"):
-		'''
-		if get_node("../player").position.x >= 535 and get_node("../player").position.x <= 635:
-			get_node("../player").position.x = 530
-		elif get_node("../player").position.x >= 635 and get_node("../player").position.x <= 680:
-			get_node("../player").position.x = 690
-		if get_node("../player").position.x >= 900 and get_node("../player").position.x <= 925:
-			get_node("../player").position.x = 890
-		elif get_node("../player").position.x >= 925 and get_node("../player").position.x <= 950:
-			get_node("../player").position.x = 960
-		'''
 		var tilemap = red_mineral_tilemap.instantiate()
 		
 		add_child(tilemap)
@@ -82,11 +72,15 @@ func _process(delta):
 
 func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Player"):
+		if not body.has_mineral3:
+			$Light1.energy = 5
+			
 		$CanvasLayer2/Inventory4.show()
 		has_mineral3 = true
 		minSound=true
 		body.has_mineral3 = true
-		$Light1.energy = 5
+		
+		
 
 
 func _on_area_2d_for_elevator_body_entered(body):
