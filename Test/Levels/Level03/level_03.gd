@@ -22,7 +22,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#Only for SLudge
-	if get_node("../player").has_mineral3 and Input.is_action_pressed("select_4"):
+	if get_node("../player").has_mineral3 and Input.is_action_pressed("select_4") and not get_node("../player").inRed:
 		get_node("Sludge/WaterArt").visible=true
 		get_node("BigSludge1/WaterArt").visible=true
 		get_node("BigSludge2/WaterArt").visible=true
@@ -64,7 +64,7 @@ func _process(delta):
 			print("not sure what the original message is meant to say but whatever i guess")
 			tilemap_instance.queue_free()
 	
-	if (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and get_node_or_null("Level3RedMineralTilemap"):
+	if (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("Level3RedMineralTilemap") and not get_node("../player").inRed:
 		var tilemap = red_mineral_tilemap.instantiate()
 		
 		add_child(tilemap)

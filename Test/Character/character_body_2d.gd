@@ -18,6 +18,7 @@ var has_mineral2 = false
 var has_mineral3 = false
 var finished_tutorial = false
 var inRed=false
+var climbing = true
 
 var inventory_slot_selected = 1
 #var lever2=false
@@ -100,10 +101,14 @@ func _process(delta):
 	
 	# Climbing Animations
 	if on_ladder == true and is_on_floor() == false:
-		$AnimatedSprite2D.play("climb")
+		if  $AnimatedSprite2D.animation != "climb":
+			$AnimatedSprite2D.play("climb")
+			print("should be climbing")
+			
 		$Flame.play("unlit")
 	else:
 		$Flame.play("fire")
+		
 	
 	#Footstep SFX
 	if (velocity.x < -0.1 or velocity.x > 0.1) and is_on_floor():

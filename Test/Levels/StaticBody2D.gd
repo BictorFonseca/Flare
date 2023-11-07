@@ -15,7 +15,7 @@ func _ready():
 '''or get_node("../../player").inventory_slot_selected == 2'''
 func _process(delta):
 	
-	if (Input.is_action_just_pressed("select_2") or get_node("../../player").inventory_slot_selected == 2) and get_node("../../player").has_mineral1:
+	if (Input.is_action_just_pressed("select_2") or get_node("../../player").inventory_slot_selected == 2) and get_node("../../player").has_mineral1 and not get_node("../../player").inRed:
 		if on_off==false:
 			on_off=true
 		#get_node("../../player").inventory_slot_selected == 0
