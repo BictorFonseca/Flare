@@ -74,7 +74,7 @@ func _physics_process(delta):
 func _process(delta):
 	#Flame animation
 	#Walking animations
-	if velocity.x < 0.1 and velocity.x > -0.1:
+	if velocity.x < 0.1 and velocity.x > -0.1 and velocity.y == 0:
 		$AnimatedSprite2D.play("default")
 	elif velocity.x < -0.1:
 		$AnimatedSprite2D.flip_h = true

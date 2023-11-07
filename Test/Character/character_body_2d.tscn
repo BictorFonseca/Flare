@@ -122,7 +122,7 @@ position = Vector2(1.75, 7.1875)
 scale = Vector2(0.555, 0.555)
 sprite_frames = SubResource("SpriteFrames_b662k")
 animation = &"climb"
-frame_progress = 0.991241
+frame_progress = 0.499325
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(12.65, -12.85)
