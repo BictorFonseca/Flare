@@ -103,7 +103,6 @@ func _process(delta):
 	if on_ladder == true and is_on_floor() == false:
 		if  $AnimatedSprite2D.animation != "climb":
 			$AnimatedSprite2D.play("climb")
-			print("should be climbing")
 			
 		$Flame.play("unlit")
 	else:

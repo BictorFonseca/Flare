@@ -16,6 +16,7 @@ func _ready():
 	
 	$Back.hide()
 	$InstructionsText.hide()
+	$QuitConfirmation.hide()
 	$Inventory1.hide()
 	$Inventory2.hide()
 	$Inventory3.hide()
@@ -136,5 +137,29 @@ func _on_area_2_for_mineral_1_body_entered(body):
 
 
 func _on_quit_pressed():
-	get_tree().quit()
-	pass # Replace with function body.
+	$InstructionsText.hide()
+	$Quit.hide()
+	$Back.hide()
+	$QuitConfirmation.show()
+
+
+func _on_no_continue_pressed():
+	$QuitConfirmation.hide()
+	$InstructionsText.show()
+	$Quit.show()
+	$Back.show()
+
+
+func _on_yes_quit_pressed():
+	$FlareIcon.show()
+	$PlayButton.show()
+	$Instructions.show() # this isn't working
+	$Quit.show() # this also isn't working
+	$Background.show()
+	
+	$Back.hide()
+	$InstructionsText.hide()
+	$QuitConfirmation.hide()
+	
+	# need to find a way to actually restart the game
+	

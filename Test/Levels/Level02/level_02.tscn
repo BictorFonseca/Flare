@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dglwi76rwsuqq"]
+[gd_scene load_steps=27 format=3 uid="uid://dglwi76rwsuqq"]
 
 [ext_resource type="Script" path="res://Levels/Level02/level_02.gd" id="1_f3frw"]
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_xcqyk"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://doydsmj7jal3e" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art.png" id="16_dsmgh"]
 [ext_resource type="Texture2D" uid="uid://b4hjoq5e17pno" path="res://PixelFantasy_Caves_1.0/Mineral Assets/blue_mineral_art.png" id="16_tcbtm"]
 [ext_resource type="FontFile" uid="uid://cnu12edowtuub" path="res://Objects/DoubleHomicide.ttf" id="19_was0y"]
-[ext_resource type="PackedScene" uid="uid://cmkc7d6c3ai8k" path="res://Objects/red_min_area.tscn" id="20_7t3yg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6y2f"]
 size = Vector2(98, 110.602)
@@ -160,14 +159,15 @@ position = Vector2(682, 368)
 
 [node name="WallWriting" parent="." instance=ExtResource("7_ahg5g")]
 position = Vector2(340, 71)
+wall_text = "FOUND THE WAY"
 
 [node name="WallWriting2" parent="." instance=ExtResource("7_ahg5g")]
 position = Vector2(1036, 160)
-wall_text = "TAKE A LEAP OF FAITH"
+wall_text = "LEAP OF FAITH"
 
 [node name="WallWriting3" parent="." instance=ExtResource("7_ahg5g")]
 position = Vector2(1007, 523)
-wall_text = "TWO PATHS TO THE SKY"
+wall_text = "TWO PATHS TO SKY"
 
 [node name="Lever" parent="." instance=ExtResource("8_wlvng")]
 position = Vector2(319, 212)
@@ -334,22 +334,6 @@ position = Vector2(998, 100)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(9, -232)
 shape = SubResource("RectangleShape2D_xhtj7")
-
-[node name="BottomLeftArea" parent="." instance=ExtResource("20_7t3yg")]
-position = Vector2(-416, 469)
-scale = Vector2(1, 0.3)
-
-[node name="BottomRight" parent="." instance=ExtResource("20_7t3yg")]
-position = Vector2(283, 434)
-scale = Vector2(0.9, 0.4)
-
-[node name="Stalactite" parent="." instance=ExtResource("20_7t3yg")]
-position = Vector2(37, 162)
-scale = Vector2(0.9, 0.4)
-
-[node name="TopLeft" parent="." instance=ExtResource("20_7t3yg")]
-position = Vector2(-359, 23)
-scale = Vector2(0.9, 0.3)
 
 [connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
 [connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
