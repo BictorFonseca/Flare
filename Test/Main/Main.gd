@@ -76,6 +76,7 @@ func _end_level():
 	#get_node("player").flare_lit = false
 	
 func _begin_level_03():
+	
 	level_03_running=true
 	print("not yet instantiated")
 	level=level_03_scene.instantiate()
@@ -100,6 +101,7 @@ func _begin_level_02():
 	player.global_position = Vector2(368, 800)
 
 func _begin_tutorial():
+	$HUD.started = true
 	tutorial_running=true
 	level = cutscene.instantiate()
 	player = player_scene.instantiate()  

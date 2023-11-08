@@ -2,7 +2,7 @@ extends CanvasLayer
 var time = 900
 var timerPaused=false
 signal start_game
-
+var started = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Inventory.hide()
@@ -109,7 +109,7 @@ func _on_instructions_pressed():
 
 func _on_back_pressed():
 	$Back.hide()
-	if time == 600:
+	if time == 900 and not started:
 		$PlayButton.show()
 		$FlareIcon.show()
 		$Quit.show()
