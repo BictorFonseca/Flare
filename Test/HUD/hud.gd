@@ -97,7 +97,7 @@ func _on_instructions_pressed():
 	$TimerAnimation.hide()
 	$Selector.hide()
 	$Inventory1.hide()
-	if time<=599:
+	if started:
 		$Quit.show()
 	else:
 		$Quit.hide()
@@ -109,7 +109,7 @@ func _on_instructions_pressed():
 
 func _on_back_pressed():
 	$Back.hide()
-	if time == 900 and not started:
+	if not started:
 		$PlayButton.show()
 		$FlareIcon.show()
 		$Quit.show()
