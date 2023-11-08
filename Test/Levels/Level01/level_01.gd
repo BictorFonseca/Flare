@@ -16,6 +16,7 @@ var intro = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	start.emit()
 	$CanvasLayer/WallWritingLabel.hide()
 	print("text hidden")
@@ -68,3 +69,5 @@ func _on_intro_sequence_timeout():
 	await get_tree().create_timer(2).timeout
 	get_node("../player").light_flare = true
 	get_parent().startTimer = true
+	get_node("../HUD").timerPaused = false
+	get_node("../HUD").time = 900

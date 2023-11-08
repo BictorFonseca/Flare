@@ -73,7 +73,7 @@ func _end_level():
 	if (is_instance_valid(level)):
 		level.queue_free()
 		remove_child(player)
-	#get_node("player").flare_lit = false
+		#get_node("player").flare_lit = false
 	
 func _begin_level_03():
 	
@@ -90,6 +90,7 @@ func _begin_end_level():
 	level=level_end_scene.instantiate()
 	add_child(level)
 	add_child(player)
+	get_node("player").flare_lit = false
 	player.global_position=Vector2(1055,800)
 	
 func _begin_level_02():
