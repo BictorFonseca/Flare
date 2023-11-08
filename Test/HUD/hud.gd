@@ -81,7 +81,7 @@ func _on_play_button_pressed():
 	$Inventory.show()
 	#$TimerAnimation.show()
 	$Selector.show()
-	$TimerLabel.text = '10M 0S LEFT'
+	$TimerLabel.text = '15M 0S LEFT'
 	$TimerLabel.hide()
 	$TimerAnimation.play("default")
 	start_game.emit()
@@ -153,13 +153,18 @@ func _on_no_continue_pressed():
 func _on_yes_quit_pressed():
 	$FlareIcon.show()
 	$PlayButton.show()
+	$Instructions.position.x = 416.15
+	$Instructions.position.y = 490.5
+	$Instructions.scale.x = 1
+	$Instructions.scale.y = 1
 	$Instructions.show() # this isn't working
-	$Quit.show() # this also isn't working
+	$Quit.hide() # this also isn't working
 	$Background.show()
 	
 	$Back.hide()
 	$InstructionsText.hide()
 	$QuitConfirmation.hide()
-	
+	get_parent()._end_level()
+	get_parent().startTimer = false
 	# need to find a way to actually restart the game
 	

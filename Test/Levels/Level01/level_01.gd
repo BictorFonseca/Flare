@@ -23,6 +23,7 @@ func _ready():
 	$EndLayer/LabelEnd.hide()
 	$CanvasModulate.hide()
 	await get_tree().create_timer(0.01).timeout
+	
 	$CanvasModulate.show()
 
 
@@ -66,3 +67,4 @@ func _on_intro_sequence_timeout():
 	$Thud.play()
 	await get_tree().create_timer(2).timeout
 	get_node("../player").light_flare = true
+	get_parent().startTimer = true
