@@ -10,6 +10,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var flare_lit = false
 var light_flare = false
+var flare_die = false
 var on_ladder=false
 var on_lever=-1
 var lever_list=[0,0,0,0,0,0,0,0,0]
@@ -106,7 +107,8 @@ func _process(delta):
 			
 		$Flame.play("unlit")
 	else:
-		$Flame.play("fire")
+		if flare_lit:
+			$Flame.play("fire")
 		
 	
 	#Footstep SFX
@@ -119,16 +121,15 @@ func _process(delta):
 		
 	#Lighting Flare
 	if light_flare:
-		$Flame.play("fire")
-		$LightFlareSFX.play()
-		await get_tree().create_timer(0.2).timeout
-		$NormalFlareSFX.play()
-		flare_lit = true
+		_light_flare()
 		light_flare = false
-		get_parent().startTimer=true
 		#print("Activating flare and startTimer")
-
 		
+	#Killing Flare
+	if flare_die:
+		_kill_flare()
+		flare_die = false
+
 	'''if Input.is_action_just_released("select_1") or Input.is_action_just_released("select_2") or Input.is_action_just_released("select_3") or Input.is_action_just_released("select_4"):
 		inventory_slot_selected = 1
 		print("inventory slot selected:", inventory_slot_selected)'''
@@ -166,6 +167,24 @@ func _process(delta):
 			$PointLight2D.color = Color("ffffce")
 		else:
 			$PointLight2D.color = Color("e669ff")
+
+func _light_flare():
+	$Flame.play("fire")
+	$LightFlareSFX.play()
+	await get_tree().create_timer(0.2).timeout
+	$NormalFlareSFX.play()
+	flare_lit = true
+	get_parent().startTimer=true
+	
+func _kill_flare():
+	var energy = 1.3
+	while energy > 0.05:
+		energy -= 0.05
+		$PointLight2D.energy = energy
+		await $FlareTimer.timeout
+		
+		
+		
 
 func _on_timer_timeout():
 	if flare_lit:

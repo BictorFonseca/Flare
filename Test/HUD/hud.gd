@@ -44,9 +44,11 @@ func _process(delta):
 
 func updateTime(timeChange):
 	if timeChange < 0:
-		$TimerLabel.text = "Game Over"
+		$GameTimer.stop()
+		$TimerLabel.text = "GAME OVER"
 		$TimerAnimation.play("end")
-		$TimerAnimation.scale = 0.8
+		get_node("../player").flare_lit = false
+		get_node("../player").flare_die = true
 	else:
 		var mins = timeChange / 60
 		var secs = timeChange % 60
