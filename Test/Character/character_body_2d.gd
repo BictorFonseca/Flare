@@ -20,6 +20,9 @@ var has_mineral3 = false
 var finished_tutorial = false
 var inRed=false
 var climbing = true
+var game_over=false
+var credit=false
+var lock=false
 
 var inventory_slot_selected = 1
 #var lever2=false
@@ -126,9 +129,12 @@ func _process(delta):
 		#print("Activating flare and startTimer")
 		
 	#Killing Flare
-	if flare_die:
+	if Input.is_action_just_pressed("select_1") or flare_die or (game_over and self.position.x >=245 and not lock):
+		lock=true
 		_kill_flare()
-		flare_die = false
+		#flare_die = false
+		
+		
 
 	'''if Input.is_action_just_released("select_1") or Input.is_action_just_released("select_2") or Input.is_action_just_released("select_3") or Input.is_action_just_released("select_4"):
 		inventory_slot_selected = 1
@@ -182,6 +188,11 @@ func _kill_flare():
 		energy -= 0.05
 		$PointLight2D.energy = energy
 		await $FlareTimer.timeout
+		print("is it done now?")
+	credit=true
+	$PointLight2D.enabled=false
+	print("Yoo we;re done")
+		
 		
 		
 		
