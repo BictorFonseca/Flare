@@ -13,9 +13,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if elevatorMoving:
-		$Elevator.position.y += 20
+		$Elevator.position.y += 9.8
 		if not eleCrash:
-			$ElevatorCrash.play()
+			#$elevatorSnap.play()
+			$ElevatorCrash.play(3)
 			eleCrash=true
 		#Add crash sound
 	if begEle:
