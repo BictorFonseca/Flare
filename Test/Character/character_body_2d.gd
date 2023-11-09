@@ -129,7 +129,8 @@ func _process(delta):
 		#print("Activating flare and startTimer")
 		
 	#Killing Flare
-	if Input.is_action_just_pressed("select_1") or flare_die or (game_over and self.position.x >=245 and not lock):
+	if flare_die or (game_over and self.position.x >=245 and not lock):
+		#Named lock in case we want to lock the players movement
 		lock=true
 		_kill_flare()
 		#flare_die = false
