@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d15t3xnsroge8"]
+[gd_scene load_steps=29 format=3 uid="uid://d15t3xnsroge8"]
 
 [ext_resource type="Script" path="res://EndLevel.gd" id="1_v3kaw"]
 [ext_resource type="Texture2D" uid="uid://bt5g45q5cevis" path="res://Levels/Tutorial/TutorialBG.jpg" id="2_8syya"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://wlkqxq78gn0j" path="res://Character/ladder.tscn" id="11_yudd0"]
 [ext_resource type="AudioStream" uid="uid://b4evntt34f7cs" path="res://Objects/Snap_Iguess.wav" id="12_do8a8"]
 [ext_resource type="Texture2D" uid="uid://h57asslgrnbb" path="res://PixelFantasy_Caves_1.0/exit_sign1.png" id="13_tmwhm"]
+[ext_resource type="Texture2D" uid="uid://bfu4qj6rs3gt2" path="res://PixelFantasy_Caves_1.0/cart'-1.png.png" id="14_tuts4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u3481"]
 texture = ExtResource("3_ig6o1")
@@ -5782,6 +5783,17 @@ stream = ExtResource("12_do8a8")
 position = Vector2(703.5, 557)
 scale = Vector2(0.104444, 0.155556)
 texture = ExtResource("13_tmwhm")
+
+[node name="cart" type="Sprite2D" parent="."]
+position = Vector2(463, 541)
+scale = Vector2(0.2, 0.199)
+texture = ExtResource("14_tuts4")
+
+[node name="cart2" type="Sprite2D" parent="."]
+position = Vector2(886, 573)
+rotation = 3.14159
+scale = Vector2(0.2, 0.199)
+texture = ExtResource("14_tuts4")
 
 [connection signal="body_entered" from="Elevator2/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
 [connection signal="body_entered" from="Elevator/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
