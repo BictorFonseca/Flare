@@ -5626,7 +5626,7 @@ size = Vector2(25, 353)
 size = Vector2(58, 115)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yik2n"]
-size = Vector2(64.5, 320.25)
+size = Vector2(71.25, 320.25)
 
 [node name="EndLevel" type="Node2D"]
 script = ExtResource("1_v3kaw")
@@ -5764,7 +5764,7 @@ shape = SubResource("RectangleShape2D_yik2n")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(963, 753)
+position = Vector2(966.375, 753)
 shape = SubResource("RectangleShape2D_yik2n")
 
 [node name="ElevatorCrash" type="AudioStreamPlayer2D" parent="."]

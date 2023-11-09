@@ -55,7 +55,10 @@ func _process(delta):
 		if player and player.position.y >= 850:
 			_end_level()
 			level_end_running=false
+			player.game_over=true
 			_begin_level_01()
+			
+		
 			
 	
 			

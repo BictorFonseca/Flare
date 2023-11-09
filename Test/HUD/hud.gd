@@ -40,12 +40,14 @@ func _process(delta):
 		$TimerLabel.show()
 		$TimerAnimation.show()
 		
+	if started and get_node("../player").credit:
+		$Credits.visible=true
 #here, we update the number for the time
 
 func updateTime(timeChange):
-	if timeChange < 0:
+	if timeChange <= 0:
 		$GameTimer.stop()
-		$TimerLabel.text = "GAME OVER"
+		#$TimerLabel.text = "GAME OVER"
 		$TimerAnimation.play("end")
 		get_node("../player").flare_lit = false
 		get_node("../player").flare_die = true
