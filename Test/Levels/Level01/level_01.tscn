@@ -1290,6 +1290,7 @@ stream = ExtResource("19_n27yr")
 
 [node name="Mineral Deposit" parent="." instance=ExtResource("14_xtjvk")]
 position = Vector2(1042, 127)
+button = 2
 
 [node name="Area2ForMineral1" type="Area2D" parent="Mineral Deposit"]
 

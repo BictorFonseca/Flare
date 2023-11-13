@@ -66,7 +66,7 @@ func _physics_process(delta):
 	#thing we need to do a .mp3 instead of a .wav so that we have the abiliyy to loop it 
 	#if Input.is_action_just_pressed("run_left") or Input.is_action_just_pressed("run_right"):
 	#	$SteosSFX.play()
-	if on_lever>=0 and Input.is_action_pressed("Interact"):
+	if on_lever>=0 and lever_list[on_lever]==0 and Input.is_action_just_pressed("Interact"):
 		lever_list[on_lever]=1
 		$SwitchSound.play()
 		$GateSFX.play()
@@ -131,9 +131,10 @@ func _process(delta):
 	#Killing Flare
 	if flare_die or (game_over and self.position.x >=245 and not lock):
 		#Named lock in case we want to lock the players movement
+		$NormalFlareSFX.stop()
 		lock=true
 		_kill_flare()
-		#flare_die = false
+		flare_die = false
 		
 		
 

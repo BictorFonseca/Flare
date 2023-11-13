@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b72vhwodq67va"]
+[gd_scene load_steps=7 format=3 uid="uid://b72vhwodq67va"]
 
 [ext_resource type="Script" path="res://Objects/Mineral Deposit.gd" id="1_11ea8"]
 [ext_resource type="Texture2D" uid="uid://dhpop8ie31o0j" path="res://Character/light_glow.png" id="1_fu48w"]
 [ext_resource type="FontFile" uid="uid://c5n0dcrx4814y" path="res://HUD/Art Assets/PetitePx.ttf" id="3_ietyc"]
 [ext_resource type="Texture2D" uid="uid://cdjx4qyt5ge0x" path="res://HUD/Art Assets/Keyboard_Numbers.png" id="4_7gy3u"]
+[ext_resource type="Texture2D" uid="uid://dbm0nurqfe5go" path="res://HUD/Art Assets/Keys/7890_Keys.png" id="5_le084"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qh2tc"]
 radius = 20.2237
@@ -32,23 +33,57 @@ autostart = true
 
 [node name="Mineral_Instruction" type="Label" parent="."]
 visible = false
-offset_left = -43.0
+offset_left = -53.0
 offset_top = -72.0
-offset_right = 43.0
+offset_right = 53.0
 offset_bottom = -38.0
 theme_override_fonts/font = ExtResource("3_ietyc")
 theme_override_font_sizes/font_size = 16
-text = "PRESS      TO ADD
-TO YOUR FLARE"
+text = "PRESS      OR      TO
+ADD TO YOUR FLARE"
 horizontal_alignment = 1
 
 [node name="Button2" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-3, -67)
+position = Vector2(-13, -65)
 scale = Vector2(1.41667, 1.41667)
 texture = ExtResource("4_7gy3u")
 region_enabled = true
 region_rect = Rect2(81, 2, 13, 12)
+
+[node name="Button8" type="Sprite2D" parent="Button2"]
+position = Vector2(28.2352, 0)
+texture = ExtResource("5_le084")
+region_enabled = true
+region_rect = Rect2(48.7285, 17.7558, 13.5131, 12.432)
+
+[node name="Button3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-13, -65)
+scale = Vector2(1.41667, 1.41667)
+texture = ExtResource("4_7gy3u")
+region_enabled = true
+region_rect = Rect2(96.7005, 1.92097, 13.9184, 12.432)
+
+[node name="Button9" type="Sprite2D" parent="Button3"]
+position = Vector2(28.2352, 0)
+texture = ExtResource("5_le084")
+region_enabled = true
+region_rect = Rect2(64.6753, 17.7491, 13.7833, 12.5671)
+
+[node name="Button4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-13, -65)
+scale = Vector2(1.41667, 1.41667)
+texture = ExtResource("4_7gy3u")
+region_enabled = true
+region_rect = Rect2(112.644, 1.66702, 13.6482, 12.5671)
+
+[node name="Button0" type="Sprite2D" parent="Button4"]
+position = Vector2(28.2352, 0)
+texture = ExtResource("5_le084")
+region_enabled = true
+region_rect = Rect2(80.7527, 17.7458, 13.6482, 12.5671)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

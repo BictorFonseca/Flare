@@ -53,21 +53,27 @@ func _process(delta):
 		$Inventory.visible=false
 		$Selector.visible=false
 		$Inventory1.visible=false
+		$Instructions.hide()
 		$BGMusic.stop()
 #here, we update the number for the time
 func creditScroll():
 	await get_tree().create_timer(1).timeout
+	$Credits.position.x = 576
+	$Credits.position.y = 360
 	$Credits.visible=true
+	$Credits/TitleCard.play()
 	await get_tree().create_timer(4).timeout
 	scrolling=true
+	$CreditsTimer.start()
 	
 func updateTime(timeChange):
 	if timeChange <= 0:
 		$GameTimer.stop()
-		#$TimerLabel.text = "GAME OVER"
+		$TimerLabel.text = "GAME OVER"
 		$TimerAnimation.play("end")
 		get_node("../player").flare_lit = false
 		get_node("../player").flare_die = true
+		get_node("../player").game_over = true
 	else:
 		var mins = timeChange / 60
 		var secs = timeChange % 60
@@ -187,5 +193,30 @@ func _on_yes_quit_pressed():
 	$QuitConfirmation.hide()
 	get_parent()._end_level()
 	get_parent().startTimer = false
+	started = false
 	# need to find a way to actually restart the game
 	
+
+
+func _on_credits_timer_timeout():
+	$FlareIcon.show()
+	$PlayButton.show()
+	$Instructions.position.x = 416.15
+	$Instructions.position.y = 490.5
+	$Instructions.scale.x = 1
+	$Instructions.scale.y = 1
+	$Instructions.show() # this isn't working
+	$Quit.hide() # this also isn't working
+	$Background.show()
+	
+	$Back.hide()
+	$InstructionsText.hide()
+	$QuitConfirmation.hide()
+	get_parent()._end_level()
+	get_parent().tutorial_running=false
+	get_parent().level_01_running=false
+	get_parent().level_02_running=false
+	get_parent().level_03_running=false
+	get_parent().level_end_running=false
+	get_parent().startTimer = false
+	started = false

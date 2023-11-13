@@ -250,6 +250,7 @@ stream = ExtResource("17_7gtpb")
 
 [node name="Mineral Deposit" parent="." instance=ExtResource("15_t52wg")]
 position = Vector2(1067, 454)
+button = 4
 
 [node name="MineralArt" type="Sprite2D" parent="Mineral Deposit"]
 position = Vector2(-1, -4)
