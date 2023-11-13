@@ -42,6 +42,10 @@ func _process(delta):
 		minOnce=true
 	if intro:
 		get_node("../player").position = Vector2(100, 520)
+	if get_node('../player').game_over:
+		$Elevator.visible=false
+		$"Mineral Deposit".visible=false
+		
 	
 
 func _on_wall_writing_text(text):

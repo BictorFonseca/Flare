@@ -42,6 +42,13 @@ func _process(delta):
 		
 	if started and get_node("../player").credit:
 		$Credits.visible=true
+	if started and get_node('../player').game_over:
+		$TimerLabel.visible=false
+		$TimerAnimation.visible=false
+		$Inventory.visible=false
+		$Selector.visible=false
+		$Inventory1.visible=false
+		$BGMusic.stop()
 #here, we update the number for the time
 
 func updateTime(timeChange):
