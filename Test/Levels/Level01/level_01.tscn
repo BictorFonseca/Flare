@@ -1139,7 +1139,7 @@ load_path = "res://.godot/imported/light_glow.png-d17c354de5375caa08eb7326344111
 size = Vector2(34.75, 9.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhpj8"]
-size = Vector2(25, 233)
+size = Vector2(25, 216)
 
 [node name="Level_01" type="Node2D"]
 script = ExtResource("1_uao53")
@@ -1409,13 +1409,13 @@ one_way_collision = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(287, -37.5)
+position = Vector2(293, -45)
 shape = SubResource("RectangleShape2D_vhpj8")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(199, -76)
+position = Vector2(191, -77)
 shape = SubResource("RectangleShape2D_vhpj8")
 
 [node name="Falling" type="AudioStreamPlayer" parent="."]
