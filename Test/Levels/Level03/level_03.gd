@@ -18,6 +18,7 @@ func _ready():
 	add_child(tilemap)
 	$CanvasModulate.show()
 	$CanvasLayer/WallWritingLabel.hide()
+	$"Mineral Deposit/PointLight2D2".color = Color("e669ff")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
