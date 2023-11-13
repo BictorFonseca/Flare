@@ -3,6 +3,7 @@ var time = 900
 var timerPaused=false
 signal start_game
 var started = false
+var scrolling=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Inventory.hide()
@@ -41,7 +42,11 @@ func _process(delta):
 		$TimerAnimation.show()
 		
 	if started and get_node("../player").credit:
-		$Credits.visible=true
+		creditScroll()
+		get_node('../player').credit=false
+	
+	if scrolling:
+		$Credits.position.y-=1
 	if started and get_node('../player').game_over:
 		$TimerLabel.visible=false
 		$TimerAnimation.visible=false
@@ -50,7 +55,12 @@ func _process(delta):
 		$Inventory1.visible=false
 		$BGMusic.stop()
 #here, we update the number for the time
-
+func creditScroll():
+	await get_tree().create_timer(1).timeout
+	$Credits.visible=true
+	await get_tree().create_timer(4).timeout
+	scrolling=true
+	
 func updateTime(timeChange):
 	if timeChange <= 0:
 		$GameTimer.stop()

@@ -1130,7 +1130,7 @@ func _on_lever_2_flipped():
 size = Vector2(126, 110.602)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qy0xn"]
-size = Vector2(122, 8.69903)
+size = Vector2(194, 8.69903)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5kfeu"]
 load_path = "res://.godot/imported/light_glow.png-d17c354de5375caa08eb73263441114e.ctex"
@@ -1139,7 +1139,7 @@ load_path = "res://.godot/imported/light_glow.png-d17c354de5375caa08eb7326344111
 size = Vector2(34.75, 9.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhpj8"]
-size = Vector2(25, 154)
+size = Vector2(25, 233)
 
 [node name="Level_01" type="Node2D"]
 script = ExtResource("1_uao53")
@@ -1333,7 +1333,6 @@ texture = ExtResource("22_ani4w")
 script = SubResource("GDScript_41ry6")
 
 [node name="Area2DForElevator" type="Area2D" parent="Elevator"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator"]
 position = Vector2(-1, -7.45643)
@@ -1342,7 +1341,7 @@ shape = SubResource("RectangleShape2D_2b0tc")
 [node name="ElFloor" type="StaticBody2D" parent="Elevator/Area2DForElevator"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2DForElevator/ElFloor"]
-position = Vector2(0, 53.4369)
+position = Vector2(-7, 53.4369)
 shape = SubResource("RectangleShape2D_qy0xn")
 
 [node name="ElevatorSound" type="AudioStreamPlayer" parent="Elevator"]
@@ -1409,7 +1408,7 @@ one_way_collision = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(287, -77)
+position = Vector2(287, -37.5)
 shape = SubResource("RectangleShape2D_vhpj8")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]

@@ -67,14 +67,9 @@ layer_0/tile_data = PackedInt32Array(1900577, 2555905, 54, 1966113, 2555905, 53,
 [node name="Sludge" parent="." instance=ExtResource("3_b1oxk")]
 position = Vector2(92, 581)
 
-[node name="BigSludge1" parent="." instance=ExtResource("3_b1oxk")]
-position = Vector2(792, 341)
-
-[node name="BigSludge2" parent="." instance=ExtResource("3_b1oxk")]
-position = Vector2(507, 341)
-
 [node name="BigSludge3" parent="." instance=ExtResource("3_b1oxk")]
 position = Vector2(324, 341)
+scale = Vector2(3, 1)
 
 [node name="Gate" parent="." instance=ExtResource("4_ji0jt")]
 position = Vector2(-336, 218)

@@ -130,7 +130,6 @@ func _process(delta):
 		
 	#Killing Flare
 	if flare_die or (game_over and self.position.x >=245 and not lock):
-		
 		#Named lock in case we want to lock the players movement
 		lock=true
 		_kill_flare()
