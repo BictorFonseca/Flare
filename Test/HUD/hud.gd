@@ -1,5 +1,5 @@
 extends CanvasLayer
-var time = 900
+var time = 45
 var timerPaused=false
 signal start_game
 var started = false
@@ -61,6 +61,7 @@ func creditScroll():
 	$Credits.position.x = 576
 	$Credits.position.y = 360
 	$Credits.visible=true
+	$ColorRect.visible=true
 	$Credits/TitleCard.play()
 	await get_tree().create_timer(4).timeout
 	scrolling=true

@@ -70,6 +70,11 @@ func _process(delta):
 		
 		add_child(tilemap)
 		
+	if get_node('../player').game_over:
+		$Elevator.visible=false
+		$"Mineral Deposit".visible=false
+		$CanvasLayer.hide()
+		$CanvasLayer2.hide()
 
 func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Player"):

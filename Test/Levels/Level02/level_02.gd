@@ -57,7 +57,10 @@ func _process(delta):
 		$RockPickUp2.play()
 		minSound=false
 		minOnce=true
-		
+	if get_node('../player').game_over:
+		$Elevator.visible=false
+		$"Mineral Deposit".visible=false
+		$CanvasLayer.hide()
 		
 
 
