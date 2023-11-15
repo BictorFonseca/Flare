@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://wlkqxq78gn0j"]
 
 [ext_resource type="Script" path="res://Character/ladder.gd" id="1_4l3hl"]
-[ext_resource type="Texture2D" uid="uid://b6aqxkmpeupcw" path="res://HUD/Art Assets/Keyboard Letters and Symbols.png" id="2_1h7uu"]
+[ext_resource type="Texture2D" uid="uid://ckipwjtyjei4u" path="res://HUD/Art Assets/Keys/Keyboard Letters and Symbols.png" id="2_ubqks"]
 [ext_resource type="FontFile" uid="uid://c5n0dcrx4814y" path="res://HUD/Art Assets/PetitePx.ttf" id="3_uyhjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kc56"]
@@ -18,7 +18,7 @@ shape = SubResource("RectangleShape2D_2kc56")
 visible = false
 position = Vector2(31, -27)
 scale = Vector2(1.53297, 1.53297)
-texture = ExtResource("2_1h7uu")
+texture = ExtResource("2_ubqks")
 region_enabled = true
 region_rect = Rect2(97, 66, 13, 12)
 
@@ -39,7 +39,7 @@ horizontal_alignment = 1
 visible = false
 position = Vector2(74, -27)
 scale = Vector2(1.57659, 1.57659)
-texture = ExtResource("2_1h7uu")
+texture = ExtResource("2_ubqks")
 region_enabled = true
 region_rect = Rect2(1, 2, 13, 12)
 
