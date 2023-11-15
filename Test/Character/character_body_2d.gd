@@ -179,9 +179,9 @@ func _process(delta):
 func _light_flare():
 	$Flame.play("fire")
 	$LightFlareSFX.play()
+	flare_lit = true
 	await get_tree().create_timer(0.2).timeout
 	$NormalFlareSFX.play()
-	flare_lit = true
 	get_parent().startTimer=true
 	
 func _kill_flare():
