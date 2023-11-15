@@ -75,4 +75,4 @@ func _on_intro_sequence_timeout():
 	get_node("../player").light_flare = true
 	get_parent().startTimer = true
 	get_node("../HUD").timerPaused = false
-	get_node("../HUD").time = 45
+	get_node("../HUD").time = 900

@@ -1,5 +1,5 @@
 extends CanvasLayer
-var time = 45
+var time = 900
 var timerPaused=false
 signal start_game
 var started = false
