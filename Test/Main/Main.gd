@@ -76,7 +76,9 @@ func _end_level():
 	if (is_instance_valid(level)):
 		print("kill the level")
 		level.queue_free()
-		remove_child(player)
+		if not player.game_over:
+			remove_child(player)
+			print('player removed')
 		#get_node("player").flare_lit = false
 	
 func _begin_level_03():

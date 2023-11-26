@@ -200,6 +200,15 @@ func _on_yes_quit_pressed():
 
 
 func _on_credits_timer_timeout():
+	get_parent()._end_level()
+	get_parent().tutorial_running=false
+	get_parent().level_01_running=false
+	get_parent().level_02_running=false
+	get_parent().level_03_running=false
+	get_parent().level_end_running=false
+	get_parent().startTimer = false
+	started = false
+	print("Display stuff after ths")
 	$FlareIcon.show()
 	$PlayButton.show()
 	$Instructions.position.x = 416.15
@@ -213,11 +222,12 @@ func _on_credits_timer_timeout():
 	$Back.hide()
 	$InstructionsText.hide()
 	$QuitConfirmation.hide()
-	get_parent()._end_level()
-	get_parent().tutorial_running=false
-	get_parent().level_01_running=false
-	get_parent().level_02_running=false
-	get_parent().level_03_running=false
-	get_parent().level_end_running=false
-	get_parent().startTimer = false
-	started = false
+	
+	$Credits.position.x = 576
+	$Credits.position.y = 360
+	$Credits.visible=false
+	$ColorRect.visible=false
+	$Credits/TitleCard.stop()
+	scrolling=false
+	$CreditsTimer.stop()
+	
