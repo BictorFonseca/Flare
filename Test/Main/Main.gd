@@ -72,6 +72,7 @@ func _begin_level_01():
 	
 	player.global_position = Vector2(100, 0)
 	
+	
 func _end_level():
 	if (is_instance_valid(level)):
 		print("kill the level")

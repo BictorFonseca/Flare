@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://qkax8mglju1d"]
+[gd_scene load_steps=41 format=3 uid="uid://qkax8mglju1d"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_pbchb"]
 [ext_resource type="Script" path="res://Levels/Level01/level_01.gd" id="1_uao53"]
@@ -1141,6 +1141,9 @@ size = Vector2(34.75, 9.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhpj8"]
 size = Vector2(25, 216)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehihm"]
+size = Vector2(27, 1137.5)
+
 [node name="Level_01" type="Node2D"]
 script = ExtResource("1_uao53")
 
@@ -1429,6 +1432,18 @@ stream = ExtResource("28_x0sip")
 wait_time = 1.7
 one_shot = true
 autostart = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(50.5, -568.5)
+shape = SubResource("RectangleShape2D_ehihm")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(142, -568.5)
+shape = SubResource("RectangleShape2D_ehihm")
 
 [connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="text" from="WallWriting" to="." method="_on_wall_writing_text"]
