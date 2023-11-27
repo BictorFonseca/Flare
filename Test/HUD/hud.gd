@@ -23,6 +23,7 @@ func _ready():
 	$Inventory2.hide()
 	$Inventory3.hide()
 	$Inventory4.hide()
+	$HideMinerals.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -126,6 +127,7 @@ func _on_instructions_pressed():
 	$TimerAnimation.hide()
 	$Selector.hide()
 	$Inventory1.hide()
+	$HideMinerals.show()
 	if started:
 		$Quit.show()
 	else:
@@ -153,7 +155,7 @@ func _on_back_pressed():
 			$TimerAnimation.show()
 		$Selector.show()
 		$Inventory1.show()
-
+	$HideMinerals.hide()
 	$InstructionsText.hide()
 	$Instructions.show()
 	timerPaused = false
@@ -170,10 +172,12 @@ func _on_quit_pressed():
 	$InstructionsText.hide()
 	$Quit.hide()
 	$Back.hide()
+	$HideMinerals.hide()
+	$HideMinerals.show()
 	if started:
 		$QuitConfirmation.show()
 	if not started:
-		get_tree().quit()
+		get_tree().quit() 
 
 
 func _on_no_continue_pressed():
@@ -181,6 +185,7 @@ func _on_no_continue_pressed():
 	$InstructionsText.show()
 	$Quit.show()
 	$Back.show()
+	#$HideMinerals.hide()
 
 
 func _on_yes_quit_pressed():
@@ -193,10 +198,15 @@ func _on_yes_quit_pressed():
 	$Instructions.show() # this isn't working
 	$Quit.hide() # this also isn't working
 	$Background.show()
-	
 	$Back.hide()
+	$HideMinerals.hide()
 	$InstructionsText.hide()
 	$QuitConfirmation.hide()
+	var scale = Vector2(2, 2)
+	$Quit.position.x=416.15
+	$Quit.position.y=570.5
+	$Quit.set_size(Vector2(319,71))
+	$Quit.show()
 	get_parent()._end_level()
 	get_parent().startTimer = false
 	started = false
