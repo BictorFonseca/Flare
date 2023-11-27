@@ -3,6 +3,7 @@ var time = 900
 var timerPaused=false
 signal start_game
 var started = false
+var tutorial = false
 var scrolling=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -147,8 +148,9 @@ func _on_back_pressed():
 		$Quit.hide()
 		$Background.hide()
 		$Inventory.show()
-		$TimerLabel.show()
-		$TimerAnimation.show()
+		if not tutorial:
+			$TimerLabel.show()
+			$TimerAnimation.show()
 		$Selector.show()
 		$Inventory1.show()
 
@@ -168,7 +170,10 @@ func _on_quit_pressed():
 	$InstructionsText.hide()
 	$Quit.hide()
 	$Back.hide()
-	$QuitConfirmation.show()
+	if started:
+		$QuitConfirmation.show()
+	if not started:
+		get_tree().quit()
 
 
 func _on_no_continue_pressed():

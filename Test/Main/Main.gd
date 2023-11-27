@@ -94,6 +94,7 @@ func _begin_level_03():
 	
 func _begin_end_level():
 	level_end_running=true
+	$HUD.tutorial = false
 	level=level_end_scene.instantiate()
 	add_child(level)
 	add_child(player)
@@ -110,6 +111,7 @@ func _begin_level_02():
 
 func _begin_tutorial():
 	$HUD.started = true
+	$HUD.tutorial = true
 	tutorial_running=true
 	level = cutscene.instantiate()
 	player = player_scene.instantiate()  
