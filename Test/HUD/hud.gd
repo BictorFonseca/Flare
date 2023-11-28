@@ -222,6 +222,9 @@ func _on_credits_timer_timeout():
 	get_parent().level_03_running=false
 	get_parent().level_end_running=false
 	get_parent().startTimer = false
+	get_node('../player').game_over=false
+	get_node('../player').credit=false
+	tutorial=false
 	started = false
 	print("Display stuff after ths")
 	$FlareIcon.show()

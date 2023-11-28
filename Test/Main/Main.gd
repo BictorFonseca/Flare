@@ -81,6 +81,8 @@ func _end_level():
 			remove_child(player)
 			print('player removed')
 		#get_node("player").flare_lit = false
+		else:
+			get_tree().reload_current_scene()
 	
 func _begin_level_03():
 	
