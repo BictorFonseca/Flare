@@ -59,6 +59,7 @@ func _process(delta):
 		$BGMusic.stop()
 #here, we update the number for the time
 func creditScroll():
+	get_node('../player').locked=true
 	await get_tree().create_timer(1).timeout
 	$Credits.position.x = 576
 	$Credits.position.y = 360

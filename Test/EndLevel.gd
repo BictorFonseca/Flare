@@ -34,8 +34,9 @@ func _on_area_2d_for_elevator_body_entered(body):
 
 
 func _on_stop_shape_body_entered(body):
-	print('close but not yet')
+	#print('close but not yet')
 	if not body.is_in_group("Tilemap"):
-		print("yooo")
+		#print("yooo")
 		begEle=false
+		$Elevator2/ElevatorSound.stop()
 	pass # Replace with function body.

@@ -100,6 +100,7 @@ func _on_area_2d_for_elevator_body_entered(body):
 func _on_stop_area_body_entered(body):
 	if body.is_in_group("Player"):
 		BegEle=false
+		$Elevator3/ElevatorSound.stop()
 		
 	pass # Replace with function body.
 

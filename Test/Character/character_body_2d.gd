@@ -23,6 +23,7 @@ var climbing = true
 var game_over=false
 var credit=false
 var lock=false
+var locked=false
 
 var inventory_slot_selected = 1
 #var lever2=false
@@ -38,20 +39,20 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	if on_ladder==true:
+	if on_ladder==true and not locked:
 		if Input.is_action_pressed("jump") and not $LadderSFX.playing:
 			velocity.y=-speed
 			$LadderSFX.play()
 		elif Input.is_action_pressed("down"):
 			velocity.y=speed
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and not locked:
 		velocity.y = jump_velocity
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("run_left", "run_right")
-	if direction:# and not on_ladder:
+	if direction and not locked:# and not on_ladder:
 		velocity.x = direction * speed
 		if on_ladder and Input.is_action_pressed('jump'):
 			velocity.x = direction * speed / 5
