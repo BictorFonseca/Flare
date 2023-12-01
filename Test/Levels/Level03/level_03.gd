@@ -32,6 +32,8 @@ func _process(delta):
 		#get_node("BigSludge1/CollisionShape2D").set_deferred("disabled", true)
 		#get_node("BigSludge2/CollisionShape2D").set_deferred("disabled", true)
 		get_node("BigSludge3/CollisionShape2D").set_deferred("disabled", true)
+		$VioletMinLight.show()
+		$VioletMinLight2.show()
 	elif Input.is_action_pressed("select_1") or Input.is_action_pressed("select_2") or Input.is_action_pressed("select_3"):
 		get_node("Sludge/WaterArt").visible=false
 		#get_node("BigSludge1/WaterArt").visible=false
@@ -41,6 +43,8 @@ func _process(delta):
 		#get_node("BigSludge1/CollisionShape2D").set_deferred("disabled", false)
 		#get_node("BigSludge2/CollisionShape2D").set_deferred("disabled", false)
 		get_node("BigSludge3/CollisionShape2D").set_deferred("disabled", false)
+		$VioletMinLight.hide()
+		$VioletMinLight2.hide()
 	
 	if elevator2Moving:
 		$Elevator2.position.y-=2

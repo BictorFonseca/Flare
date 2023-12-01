@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bgt4xbj8etqon"]
+[gd_scene load_steps=32 format=3 uid="uid://bgt4xbj8etqon"]
 
 [ext_resource type="Texture2D" uid="uid://drtv1nf3yryfr" path="res://PixelFantasy_Caves_1.0/background3.png" id="1_havwp"]
 [ext_resource type="Script" path="res://Levels/Level03/level_03.gd" id="1_uyhm7"]
@@ -22,7 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://doydsmj7jal3e" path="res://PixelFantasy_Caves_1.0/Mineral Assets/red_mineral_art.png" id="19_cpj3d"]
 [ext_resource type="Texture2D" uid="uid://du7vgj667o8ci" path="res://PixelFantasy_Caves_1.0/Mineral Assets/purple_mineral_art.png" id="20_e1oai"]
 [ext_resource type="PackedScene" uid="uid://cmkc7d6c3ai8k" path="res://Objects/red_min_area.tscn" id="22_bogr6"]
-[ext_resource type="Texture2D" uid="uid://cl1c7rkt3uh2n" path="res://Levels/Level03/level3glowingred2.png" id="23_iaopr"]
+[ext_resource type="Texture2D" uid="uid://brpnbwh7hscwu" path="res://Levels/Level03/level3glowingred3.png" id="23_4ihfp"]
+[ext_resource type="Texture2D" uid="uid://dqpijw1qcw312" path="res://Levels/Level03/level3glowingpurple3.png" id="24_vkr2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqjte"]
 size = Vector2(119.895, 103.767)
@@ -333,7 +334,23 @@ position = Vector2(786, 212)
 scale = Vector2(1.06, 1.05)
 color = Color(1, 0.427451, 0.427451, 1)
 energy = 1.5
-texture = ExtResource("23_iaopr")
+texture = ExtResource("23_4ihfp")
+
+[node name="VioletMinLight" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(237, 587)
+scale = Vector2(1.65, 1.3)
+color = Color(0.65098, 0.0509804, 1, 1)
+energy = 0.3
+texture = ExtResource("24_vkr2t")
+
+[node name="VioletMinLight2" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(587, 347)
+scale = Vector2(3, 1.3)
+color = Color(0.65098, 0.0509804, 1, 1)
+energy = 0.3
+texture = ExtResource("24_vkr2t")
 
 [connection signal="body_entered" from="Elevator3/Area2DForElevator" to="." method="_on_area_2d_for_elevator_body_entered"]
 [connection signal="body_entered" from="Lever3" to="Lever3" method="_on_body_entered"]

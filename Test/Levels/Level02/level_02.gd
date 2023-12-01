@@ -40,9 +40,11 @@ func _process(delta):
 		if tilemap_instance:
 			print("yp I ecost and im not supposed to anymore")
 			tilemap_instance.queue_free()
+			$RedMinLight.show()
 	elif (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("RedMineralTilemap") and not get_node("../player").inRed:
 		var tilemap = red_mineral_tilemap.instantiate()
 		add_child(tilemap)
+		$RedMinLight.hide()
 	if elevatorIsMoving:
 		if not eleSound:
 			$Elevator/ElevatorSound.play()
