@@ -64,11 +64,13 @@ func _process(delta):
 		if tilemap_instance:
 			print("not sure what the original message is meant to say but whatever i guess")
 			tilemap_instance.queue_free()
+			$RedMinLight.show()
 	
 	if (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("Level3RedMineralTilemap") and not get_node("../player").inRed:
 		var tilemap = red_mineral_tilemap.instantiate()
 		
 		add_child(tilemap)
+		$RedMinLight.hide()
 		
 	if get_node('../player').game_over:
 		$Elevator.visible=false
