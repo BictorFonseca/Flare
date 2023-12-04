@@ -65,6 +65,7 @@ func _process(delta):
 
 func _begin_level_01():
 	level_01_running = true
+	$HUD.tutorial = false
 	level = level_01_scene.instantiate()
 	
 	add_child(level)
@@ -85,7 +86,7 @@ func _end_level():
 			get_tree().reload_current_scene()
 	
 func _begin_level_03():
-	
+	$HUD.tutorial = false
 	level_03_running=true
 	print("not yet instantiated")
 	level=level_03_scene.instantiate()
@@ -104,6 +105,7 @@ func _begin_end_level():
 	player.global_position=Vector2(1055,800)
 	
 func _begin_level_02():
+	$HUD.tutorial = false
 	level_02_running=true
 	#player = player_scene.instantiate() 
 	level = level_02_scene.instantiate()

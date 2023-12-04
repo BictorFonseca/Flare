@@ -42,6 +42,10 @@ func _process(delta):
 		$Trapdoor4.position.y += 9
 		$Trapdoor5.position.y += 11
 		$Trapdoor6.position.y += 6
+		$Trapdoor3.rotation_degrees += 1
+		$Trapdoor4.rotation_degrees += 20
+		$Trapdoor5.rotation_degrees += 50
+		$Trapdoor6.rotation_degrees += 7
 
 
 
