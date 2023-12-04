@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cr5tuyfidn2tn"]
+[gd_scene load_steps=28 format=3 uid="uid://cr5tuyfidn2tn"]
 
 [ext_resource type="Script" path="res://Levels/Tutorial/cutscene.gd" id="1_g2dwx"]
 [ext_resource type="Texture2D" uid="uid://bt5g45q5cevis" path="res://Levels/Tutorial/TutorialBG.jpg" id="2_6cxmg"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://do85w7pygcigs" path="res://Objects/gate.tscn" id="10_u3lea"]
 [ext_resource type="PackedScene" uid="uid://x0ejjovjgvqq" path="res://Levels/Tutorial/sign.tscn" id="12_kydbr"]
 [ext_resource type="Script" path="res://Levels/Tutorial/TutorialFinished.gd" id="13_rj4n0"]
+[ext_resource type="Texture2D" uid="uid://cyredruoa8xns" path="res://Objects/Trapdoor Art.png" id="15_1ml6t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnt5x"]
 texture = ExtResource("6_4e358")
@@ -5789,6 +5790,7 @@ scale = Vector2(0.515625, 0.4375)
 texture = ExtResource("7_vpoe3")
 
 [node name="Trapdoor" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource("TileSet_d3ufs")
 format = 2
 layer_0/tile_data = PackedInt32Array(2359359, 3145728, 1, 2359360, 3211264, 1, 2359361, 3276800, 1, 2359362, 3342336, 1)
@@ -5838,8 +5840,9 @@ position = Vector2(996, 663)
 shape = SubResource("RectangleShape2D_1n657")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+offset_top = -1.0
 offset_right = 1152.0
-offset_bottom = 720.0
+offset_bottom = 719.0
 color = Color(0, 0, 0, 0)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -5865,6 +5868,36 @@ position = Vector2(255, 134)
 position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_0yc56")
 one_way_collision = true
+
+[node name="Trapdoor2" type="Sprite2D" parent="."]
+position = Vector2(1055, 583.755)
+scale = Vector2(0.37, 0.197)
+texture = ExtResource("15_1ml6t")
+
+[node name="Trapdoor1" type="Sprite2D" parent="."]
+position = Vector2(1022, 583.755)
+scale = Vector2(0.249999, 0.197058)
+texture = ExtResource("15_1ml6t")
+
+[node name="Trapdoor3" type="Sprite2D" parent="."]
+position = Vector2(1040.64, 579.191)
+scale = Vector2(0.2, 0.09)
+texture = ExtResource("15_1ml6t")
+
+[node name="Trapdoor4" type="Sprite2D" parent="."]
+position = Vector2(1065.18, 581.096)
+scale = Vector2(0.2, 0.1)
+texture = ExtResource("15_1ml6t")
+
+[node name="Trapdoor5" type="Sprite2D" parent="."]
+position = Vector2(1035, 588)
+scale = Vector2(0.14, 0.15)
+texture = ExtResource("15_1ml6t")
+
+[node name="Trapdoor6" type="Sprite2D" parent="."]
+position = Vector2(1061, 587)
+scale = Vector2(0.149, 0.19)
+texture = ExtResource("15_1ml6t")
 
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]
