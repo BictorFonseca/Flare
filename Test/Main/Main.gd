@@ -54,7 +54,7 @@ func _process(delta):
 			pass
 	if level_end_running:
 		player=get_node_or_null("player")
-		if player and player.position.y >= 850:
+		if player and player.position.y >= 3000:
 			_end_level()
 			level_end_running=false
 			player.game_over=true
