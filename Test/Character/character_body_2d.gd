@@ -185,16 +185,19 @@ func _light_flare():
 	$NormalFlareSFX.play()
 	get_parent().startTimer=true
 	
+	
 func _kill_flare():
 	var energy = 1.3
 	while energy > 0.05:
 		energy -= 0.05
 		$PointLight2D.energy = energy
 		await $FlareTimer.timeout
-		print("is it done now?")
+		#print("is it done now?")
 	credit=true
+	$Crying.play()
+	$EndingMusic.play()
 	$PointLight2D.enabled=false
-	print("Yoo we;re done")
+	#print("Yoo we;re done")
 		
 		
 		

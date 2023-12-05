@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cr5tuyfidn2tn"]
+[gd_scene load_steps=29 format=3 uid="uid://cr5tuyfidn2tn"]
 
 [ext_resource type="Script" path="res://Levels/Tutorial/cutscene.gd" id="1_g2dwx"]
 [ext_resource type="Texture2D" uid="uid://bt5g45q5cevis" path="res://Levels/Tutorial/TutorialBG.jpg" id="2_6cxmg"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://x0ejjovjgvqq" path="res://Levels/Tutorial/sign.tscn" id="12_kydbr"]
 [ext_resource type="Script" path="res://Levels/Tutorial/TutorialFinished.gd" id="13_rj4n0"]
 [ext_resource type="Texture2D" uid="uid://cyredruoa8xns" path="res://Objects/Trapdoor Art.png" id="15_1ml6t"]
+[ext_resource type="AudioStream" uid="uid://b0x23d4au2gcx" path="res://Character/music_zapsplat_rascals_123.mp3" id="16_bdqvj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnt5x"]
 texture = ExtResource("6_4e358")
@@ -5898,6 +5899,9 @@ texture = ExtResource("15_1ml6t")
 position = Vector2(1061, 587)
 scale = Vector2(0.149, 0.19)
 texture = ExtResource("15_1ml6t")
+
+[node name="TutMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_bdqvj")
 
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]

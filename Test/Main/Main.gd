@@ -24,12 +24,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if tutorial_running:
+		#$BGMUsic.stream_paused=true
 		player = get_node_or_null("player")
 		if player and player.position.y>3000:
 			_end_level()
 			tutorial_running=false
 			_begin_level_01()
 	if level_01_running:
+		#$BGMUsic.stream_paused=false
 		player = get_node_or_null("player")
 		if player and player.position.y < 0:
 			_end_level()

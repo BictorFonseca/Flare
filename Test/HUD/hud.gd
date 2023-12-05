@@ -46,7 +46,10 @@ func _process(delta):
 	if started and get_node("../player").credit:
 		creditScroll()
 		get_node('../player').credit=false
-	
+	if time <900 and get_node('../player').finished_tutorial:
+		$BGMusic.stream_paused=false
+		
+		
 	if scrolling:
 		$Credits.position.y-=1
 	if started and get_node('../player').game_over:
@@ -89,7 +92,7 @@ func updateTime(timeChange):
 func _on_game_timer_timeout():
 	#print('timeout' + str(time))
 	if not timerPaused:
-		time -= 1
+		time -= 100
 		self.updateTime(time)
 
 
@@ -115,7 +118,9 @@ func _on_play_button_pressed():
 	$TimerLabel.text = '15M 0S LEFT'
 	$TimerLabel.hide()
 	$TimerAnimation.play("default")
+	$BGMusic.stream_paused=true
 	start_game.emit()
+	
 
 
 func _on_instructions_pressed():

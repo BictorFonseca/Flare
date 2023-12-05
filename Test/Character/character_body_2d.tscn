@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://csnr3oaruejl0"]
+[gd_scene load_steps=28 format=3 uid="uid://csnr3oaruejl0"]
 
 [ext_resource type="Script" path="res://Character/character_body_2d.gd" id="1_f3a1b"]
 [ext_resource type="Texture2D" uid="uid://bgd1w8tbm4wvp" path="res://Character/Sprites/Player_Ladder_1.png" id="2_jac5i"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://colvflvgtyf6u" path="res://HUD/Art Assets/Fire Anim 2.png" id="13_qjepl"]
 [ext_resource type="Texture2D" uid="uid://cbrce7akhy515" path="res://HUD/Art Assets/Fire Anim 3.png" id="14_ebdnl"]
 [ext_resource type="Texture2D" uid="uid://do4qf27i2obi0" path="res://HUD/Art Assets/transparent.png" id="15_vbdd6"]
+[ext_resource type="AudioStream" uid="uid://bxfxku31xjs4y" path="res://Character/human_crying_sobbing_male_35_years_old.mp3" id="21_x20br"]
+[ext_resource type="AudioStream" uid="uid://ckcdj62j56nrt" path="res://Character/game_ending1.mp3" id="22_mkqwb"]
+[ext_resource type="AudioStream" uid="uid://b0x23d4au2gcx" path="res://Character/music_zapsplat_rascals_123.mp3" id="23_byfjp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55p1r"]
 size = Vector2(36, 59)
@@ -184,6 +187,15 @@ position = Vector2(16.5, -8)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_rww0f")
 animation = &"unlit"
+
+[node name="Crying" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_x20br")
+
+[node name="EndingMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_mkqwb")
+
+[node name="TutMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_byfjp")
 
 [connection signal="timeout" from="FlareTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LightFlareTimer" to="." method="_on_light_flare_timer_timeout"]

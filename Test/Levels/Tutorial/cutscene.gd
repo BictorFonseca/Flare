@@ -5,6 +5,8 @@ var scream = preload("res://Levels/Tutorial/scream.tscn")
 var alpha = 0
 var darken = false
 var falling = false
+var played = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,12 +48,17 @@ func _process(delta):
 		$Trapdoor4.rotation_degrees += 20
 		$Trapdoor5.rotation_degrees += 50
 		$Trapdoor6.rotation_degrees += 7
+	if not played:
+		$TutMusic.play()
+		played=true
 
 
 
 
 func _on_tutorial_finished_body_entered(body):
 	if body.is_in_group("Player"):
+		$TutMusic.stream_paused=true
+		get_node('../player').finished_tutorial=true
 		var main = get_parent()
 		var scream_instance = scream.instantiate()
 		falling = true
