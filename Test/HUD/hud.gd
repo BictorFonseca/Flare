@@ -92,7 +92,7 @@ func updateTime(timeChange):
 func _on_game_timer_timeout():
 	#print('timeout' + str(time))
 	if not timerPaused:
-		time -= 100
+		time -= 1
 		self.updateTime(time)
 
 
