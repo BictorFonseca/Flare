@@ -46,7 +46,7 @@ func _process(delta):
 	if started and get_node("../player").credit:
 		creditScroll()
 		get_node('../player').credit=false
-	if time <900 and get_node('../player').finished_tutorial:
+	if started and get_node('../player').finished_tutorial:
 		$BGMusic.stream_paused=false
 		
 		
