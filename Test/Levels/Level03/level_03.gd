@@ -56,7 +56,7 @@ func _process(delta):
 			$Elevator3/ElevatorSound.play()
 			eleSound=true
 		$Elevator3.position.y-=2
-	print(BegEle)
+	#print(BegEle)
 	if minSound and not minOnce:
 		$RockPickUp.play()
 		minSound=false
@@ -64,9 +64,9 @@ func _process(delta):
 	#Tilemap
 	if (Input.is_action_just_pressed("select_3") or get_node("../player").inventory_slot_selected == 3):
 		var tilemap_instance = get_node_or_null("Level3RedMineralTilemap")
-		print(tilemap_instance)
+		#print(tilemap_instance)
 		if tilemap_instance:
-			print("not sure what the original message is meant to say but whatever i guess")
+			#print("not sure what the original message is meant to say but whatever i guess")
 			tilemap_instance.queue_free()
 			$RedMinLight.show()
 	

@@ -169,7 +169,7 @@ func _on_back_pressed():
 
 func _on_area_2_for_mineral_1_body_entered(body):
 	if body.is_in_group('Player'):
-		print("Character has touched the mineral")
+		#print("Character has touched the mineral")
 		$Inventory2.show()
 	
 

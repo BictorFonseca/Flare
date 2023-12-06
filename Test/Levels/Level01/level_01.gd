@@ -17,7 +17,7 @@ func _ready():
 	
 	start.emit()
 	$CanvasLayer/WallWritingLabel.hide()
-	print("text hidden")
+	#print("text hidden")
 	$CanvasLayer/Inventory2.hide()
 	$EndLayer/LabelEnd.hide()
 	$CanvasModulate.hide()

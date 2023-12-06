@@ -41,9 +41,9 @@ func _process(delta):
 		player = get_node_or_null("player")
 		if player and player.position.y<0:
 			_end_level()
-			print("ended level")
+			#print("ended level")
 			level_02_running=false
-			print("stopped running")
+			#print("stopped running")
 			_begin_level_03()
 	if level_03_running:
 		player=get_node_or_null("player")
@@ -78,11 +78,11 @@ func _begin_level_01():
 	
 func _end_level():
 	if (is_instance_valid(level)):
-		print("kill the level")
+		#print("kill the level")
 		level.queue_free()
 		if not player.game_over:
 			remove_child(player)
-			print('player removed')
+			#print('player removed')
 		#get_node("player").flare_lit = false
 		else:
 			get_tree().reload_current_scene()
@@ -90,9 +90,9 @@ func _end_level():
 func _begin_level_03():
 	$HUD.tutorial = false
 	level_03_running=true
-	print("not yet instantiated")
+	#print("not yet instantiated")
 	level=level_03_scene.instantiate()
-	print("instantiated")
+	#print("instantiated")
 	add_child(level)
 	add_child(player)
 	player.global_position=Vector2(1054,800)

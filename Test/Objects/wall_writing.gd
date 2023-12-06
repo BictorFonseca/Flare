@@ -16,8 +16,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	text.emit(wall_text);
-	print("body entered");
 
 func _on_body_exited(body):
 	text.emit("hide");
-	print("body exited")

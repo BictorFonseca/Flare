@@ -41,5 +41,5 @@ func _process(delta):
 #make sure to connect the signal from area2ForMineral1 to each platform created to make it functional
 func _on_area_2_for_mineral_1_body_entered(body):
 	if body.is_in_group("Player"):
-		print('mineral1Collected = true')
+		#print('mineral1Collected = true')
 		get_node("../../player").has_mineral1=true

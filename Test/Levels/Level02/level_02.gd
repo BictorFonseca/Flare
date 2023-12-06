@@ -16,7 +16,7 @@ func _ready():
 	$Ladder2/CollisionShape2D.apply_scale(Vector2(1,0.8))
 	$Ladder3/CollisionShape2D.apply_scale(Vector2(1,0.8))
 	var tilemap = red_mineral_tilemap.instantiate()
-	print(tilemap)
+	#print(tilemap)
 	add_child(tilemap)
 	$CanvasLayer/Inventory3.hide()
 	$CanvasModulate.hide()
@@ -36,9 +36,9 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("select_3") and has_mineral2:
 		var tilemap_instance = get_node_or_null("RedMineralTilemap")
-		print(tilemap_instance)
+		#print(tilemap_instance)
 		if tilemap_instance:
-			print("yp I ecost and im not supposed to anymore")
+			#print("yp I ecost and im not supposed to anymore")
 			tilemap_instance.queue_free()
 			$RedMinLight.show()
 	elif (Input.is_action_just_pressed("select_1") or Input.is_action_just_pressed("select_2") or Input.is_action_just_pressed("select_4")) and not get_node_or_null("RedMineralTilemap") and not get_node("../player").inRed:
@@ -71,7 +71,7 @@ func _on_gate_timer_timeout():
 	
 	
 func _on_area_2d_for_elevator_body_entered(body):
-	print('e1')
+	#print('e1')
 	if body.is_in_group("Player") and get_node('../player').position.y <=100 and get_node("../player").position.x>=1000 and not elevatorIsMoving:
 		elevator2Moving=true
 		eleSound=false

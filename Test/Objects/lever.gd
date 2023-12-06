@@ -25,7 +25,7 @@ func _on_body_entered(body):
 		get_node("../../player").on_lever=leverID
 		$Lever_Prompt.visible=true
 		$E.visible=true
-		print("On")
+		#print("On")
 	pass # Replace with function body.
 
 func _on_body_exited(body):
@@ -33,6 +33,6 @@ func _on_body_exited(body):
 		get_node("../../player").on_lever=-1
 		$Lever_Prompt.visible=false
 		$E.visible=false
-	print("off")
+	#print("off")
 	pass
 	

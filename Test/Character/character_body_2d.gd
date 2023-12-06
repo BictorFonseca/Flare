@@ -147,7 +147,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("select_1") and not inRed:
 		inventory_slot_selected = 1
 		
-		print("inventory slot selected:", inventory_slot_selected)
+		#print("inventory slot selected:", inventory_slot_selected)
 		
 		$InventorySwitchSFX.play()
 		$PointLight2D.color = Color("ffffce")
@@ -162,7 +162,7 @@ func _process(delta):
 			$PointLight2D.color = Color("89fae7")
 	elif Input.is_action_just_pressed("select_3"):
 		inventory_slot_selected = 3
-		print("inventory slot selected:", inventory_slot_selected)
+		#print("inventory slot selected:", inventory_slot_selected)
 		$InventorySwitchSFX.play()
 		if not has_mineral2:
 			$PointLight2D.color = Color("ffffce")
@@ -170,7 +170,7 @@ func _process(delta):
 			$PointLight2D.color = Color("ff9f98")
 	elif Input.is_action_just_pressed("select_4") and not inRed:
 		inventory_slot_selected = 4
-		print("inventory slot selected:", inventory_slot_selected)
+		#print("inventory slot selected:", inventory_slot_selected)
 		$InventorySwitchSFX.play()
 		if not has_mineral3:
 			$PointLight2D.color = Color("ffffce")
